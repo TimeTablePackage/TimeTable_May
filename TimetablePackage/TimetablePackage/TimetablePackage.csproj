@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95383B7D-2852-4F22-8A9A-942533607956}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimetablePackage</RootNamespace>
+    <AssemblyName>TimetablePackage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TimetablePackage.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DigitalRune.Windows.Docking">
+      <HintPath>resources\DigitalRune.Windows.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>resources\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\..\..\Downloads\DockPanel_2_7_0\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_Lecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Lecturer.Designer.cs">
+      <DependentUpon>Add_Lecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildingForm.Designer.cs">
+      <DependentUpon>BuildingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseForm.Designer.cs">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Building.cs" />
+    <Compile Include="Domain\Course.cs" />
+    <Compile Include="Domain\Department.cs" />
+    <Compile Include="Domain\DomainController.cs" />
+    <Compile Include="Domain\Generate.cs" />
+    <Compile Include="Domain\Institute.cs" />
+    <Compile Include="Domain\Lecturer.cs" />
+    <Compile Include="Domain\Lesson.cs" />
+    <Compile Include="Domain\Module.cs" />
+    <Compile Include="Domain\Room.cs" />
+    <Compile Include="Domain\TimeTable.cs" />
+    <Compile Include="about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalStrings.tr-TR.Designer.cs">
+      <DependentUpon>GlobalStrings.tr-TR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Building.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Building.Designer.cs">
+      <DependentUpon>Add_Building.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer.Designer.cs">
+      <DependentUpon>Lecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForm.Designer.cs">
+      <DependentUpon>ModuleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DataBase.cs" />
+    <Compile Include="Services\LinkedList.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="timetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="timetable.Designer.cs">
+      <DependentUpon>timetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ttpDataSet.cs">
+      <DependentUpon>ttpDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ttpDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ttpDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Lecturer.resx">
+      <DependentUpon>Add_Lecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuildingForm.resx">
+      <DependentUpon>BuildingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseForm.resx">
+      <DependentUpon>CourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalStrings.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="TimeSlotOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeSlotOff.Designer.cs">
+      <DependentUpon>TimeSlotOff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add_Building.resx">
+      <DependentUpon>Add_Building.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer.resx">
+      <DependentUpon>Lecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForm.resx">
+      <DependentUpon>ModuleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeSlotOff.resx">
+      <DependentUpon>TimeSlotOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="timetable.resx">
+      <DependentUpon>timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ttpDataSet.xsc">
+      <DependentUpon>ttpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ttpDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ttpDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ttpDataSet.xss">
+      <DependentUpon>ttpDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\flags_globe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\flood_it.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\book_picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\open_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\document_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\setting_tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\book_keeping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\group_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\table_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\book_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\report_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\books_stack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\building_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\bell_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\printer_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="licence.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\32x32\add.png" />
+    <None Include="resources\32x32\bullet_edit.png" />
+    <None Include="resources\32x32\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ttp.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
