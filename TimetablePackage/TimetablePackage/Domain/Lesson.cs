@@ -20,6 +20,10 @@ namespace Domain
         /// The room details about where the Lesson will take place.
         /// </summary>
         public Room room { get; set; }
+        /// <summary>
+        /// the value given based on constraints broken
+        /// </summary>
+        private int fitness;
 
         /// <summary>
         ///     The default constructor of the Lesson object.

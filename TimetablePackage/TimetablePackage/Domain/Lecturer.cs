@@ -44,6 +44,10 @@ namespace Domain
         /// The Id of the dept the lecturer is in
         /// </summary>
         public string deptId { get; set; }
+        /// <summary>
+        /// the slots the lecturer already has class
+        /// </summary>
+        private string slotsOccupied;
 
         /// <summary>
         ///     The method constructs new object and sets properties
@@ -82,6 +86,26 @@ namespace Domain
             this.minSlotsPerDay = minSlotsPerDay;
             this.slotsOff = slotsOff;
             this.deptId = deptId;
+        }
+        /// <summary>
+        /// checks is the Lecturer available at a given time
+        /// </summary>
+        /// <param name="time">the time to check availablity for</param>
+        /// <returns>bool whether or the lecturer is available</returns>
+        public bool available(string time)
+        {
+            //better if checkes slots occupied first 
+            //sepearte soft and hard constraint
+            bool answer = false;
+            string temp = slotsOff + slotsOccupied;
+            while (temp != null && answer == false)
+            {
+                if (time == (temp = temp.Substring(0, temp.IndexOf(':'))))
+                {
+                    answer = true;
+                } 
+            }
+            return answer;
         }
     }
 }

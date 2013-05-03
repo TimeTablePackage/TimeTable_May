@@ -41,6 +41,10 @@ namespace Domain
         /// Id of the course the module is on
         /// </summary>
         public string courseId { get; set; }
+        /// <summary>
+        /// list of id's of lecturers that can teach a moudule
+        /// </summary>
+        public LinkedList lecturers { get; private set; }
 
 
         /// <summary>
@@ -89,5 +93,32 @@ namespace Domain
             this.maxConsecHours = maxConsecHours;
             this.courseId = courseId;
         }
+        /// <summary>
+        /// Add a lecturer that can teach module
+        /// when loading from database
+        /// </summary>
+        /// <param name="id">id of teh lecturer</param>
+        public void addLecturer(string id)
+        {
+            if (lecturers == null)
+	        {
+                this.lecturers = new LinkedList();
+	        }
+            lecturers.addAtTail(id);
+        }
+        /// <summary>
+        /// Add a lecturer that can teach module
+        /// when not loading from database
+        /// </summary>
+        /// <param name="theLec">the lecturer to teach this module</param>
+        public void addLecturer(Lecturer theLec)
+        {
+            if (lecturers == null)
+            {
+                this.lecturers = new LinkedList();
+            }
+            lecturers.addAtTail(theLec.ID);
+        }
+
     }
 }
