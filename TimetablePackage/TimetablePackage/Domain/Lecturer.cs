@@ -48,6 +48,10 @@ namespace Domain
         /// the slots the lecturer already has class
         /// </summary>
         private string slotsOccupied;
+        /// <summary>
+        /// hours already alocated
+        /// </summary>
+        public int hoursAllocated { get; private set; }
 
         /// <summary>
         ///     The method constructs new object and sets properties
@@ -88,24 +92,18 @@ namespace Domain
             this.deptId = deptId;
         }
         /// <summary>
-        /// checks is the Lecturer available at a given time
+        ///increase when allocated to lesson
         /// </summary>
-        /// <param name="time">the time to check availablity for</param>
-        /// <returns>bool whether or the lecturer is available</returns>
-        public bool available(string time)
+        public void AllocatedToALesson()
         {
-            //better if checkes slots occupied first 
-            //sepearte soft and hard constraint
-            bool answer = false;
-            string temp = slotsOff + slotsOccupied;
-            while (temp != null && answer == false)
-            {
-                if (time == (temp = temp.Substring(0, temp.IndexOf(':'))))
-                {
-                    answer = true;
-                } 
-            }
-            return answer;
+            this.hoursAllocated++;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void UnAllocated()
+        {
+            this.hoursAllocated--;
         }
     }
 }

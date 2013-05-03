@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DigitalRune.Windows.Docking;
 using System.Threading;
+using Domain;
 
 
 namespace TimetablePackage
@@ -127,6 +128,11 @@ namespace TimetablePackage
             {
                 document.Show(DockTabPanel);
             }
+        }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            Generate gen = new Generate();
         }
     }
 }

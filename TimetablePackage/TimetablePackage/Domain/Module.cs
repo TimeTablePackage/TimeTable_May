@@ -42,11 +42,13 @@ namespace Domain
         /// </summary>
         public string courseId { get; set; }
         /// <summary>
+        /// The amount of hours the module is on the timetable
+        /// </summary>
+        public int hoursAllocated { get; private set; }
+        /// <summary>
         /// list of id's of lecturers that can teach a moudule
         /// </summary>
-        public LinkedList lecturers { get; private set; }
-
-
+        public string[] lecturers { get; private set; }
         /// <summary>
         ///  This method constructs a new Module object and sets the properties.
         /// </summary>
@@ -95,30 +97,42 @@ namespace Domain
         }
         /// <summary>
         /// Add a lecturer that can teach module
-        /// when loading from database
-        /// </summary>
-        /// <param name="id">id of teh lecturer</param>
-        public void addLecturer(string id)
-        {
-            if (lecturers == null)
-	        {
-                this.lecturers = new LinkedList();
-	        }
-            lecturers.addAtTail(id);
-        }
-        /// <summary>
-        /// Add a lecturer that can teach module
         /// when not loading from database
         /// </summary>
         /// <param name="theLec">the lecturer to teach this module</param>
-        public void addLecturer(Lecturer theLec)
+        public void addLecturer(string id)
         {
+            bool exit = false;
             if (lecturers == null)
             {
-                this.lecturers = new LinkedList();
+                this.lecturers = new string[10];
             }
-            lecturers.addAtTail(theLec.ID);
+            for (int i = 0; i < lecturers.Length && exit == false; i++)
+            {
+                if (lecturers[i] == null)
+                {
+                    lecturers[i] = id;
+                    exit = true;
+                }
+                else if (i == 9)
+                {
+                    lecturers[i] = id;
+                }
+            }
         }
-
+        /// <summary>
+        ///increase when allocated to lesson
+        /// </summary>
+        public void AllocatedToALesson()
+        {
+            this.hoursAllocated++;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void UnAllocated()
+        {
+            this.hoursAllocated--;
+        }
     }
 }

@@ -37,7 +37,10 @@ namespace Services
         /// A OleDbDataReader to read the results of the SQL commands
         /// </summary>
         private OleDbDataReader reader;
-        
+
+        public DataBase()
+        {
+        }
         /// <summary>
         ///     Connect to access database
         /// </summary>
@@ -269,7 +272,7 @@ namespace Services
                                 reader["Email"].ToString(),
                                 Convert.ToInt32(reader["MaxHours"]),
                                 Convert.ToInt32(reader["MaxConsecHours"]),
-                                Convert.ToInt32(reader["MinSlotsPerDays"]),
+                                Convert.ToInt32(reader["MinSlotsPerDay"]),
                                 reader["SlotsOff"].ToString(),reader["DepartmentID"].ToString());
                                 lecturerList.addAtTail(newLec);
                         }
@@ -320,7 +323,6 @@ namespace Services
         /// </summary>
         private void loadRoomList()
         {
-            LinkedList roomList = new LinkedList();
             Room tempRoom;
             string sqlStatment = "SELECT * FROM Room ";
             try
@@ -413,7 +415,7 @@ namespace Services
         private void LoadModuleList()
         {
             Module tempModule;
-            string sqlStatment = "SELECT * FROM Module";
+            string sqlStatment = "SELECT * FROM [Module]";
             try
             {
                 OpenConection();
@@ -426,21 +428,55 @@ namespace Services
                         tempModule = new Module(
                         reader["ID"].ToString(),
                         reader["Module_Name"].ToString(),
-                        Convert.ToBoolean(reader["Pratcial"]),
+                        Convert.ToBoolean(reader["Practical"]),
                         Convert.ToInt32(reader["HoursPerWeek"]),
                         reader["RoomType"].ToString(),
                         Convert.ToBoolean(reader["DoubleSlots"]),
-                        Convert.ToInt32(reader["MaxConsecHours"]),
-                        reader["courseId"].ToString());
+                        Convert.ToInt32(reader["MaxConsecSlots"]),
+                        reader["CourseId"].ToString());
                         moduleList.addAtTail(tempModule);
+                        
                     }
                 }
                 CloseConnection();
+                addLecToModule();
             }
             catch
             {
+                throw;
+            }
+
+        }
+
+        private void addLecToModule()
+        {
+
+            Node moduleNode = moduleList.head;
+            Module theModule;
+
+            while (moduleNode!=null)
+            {
+                theModule = (Module)moduleNode.data;
+                String[] lecturers = theModule.lecturers;
+                try
+                {
+                    OpenConection();
+                    cmd = new OleDbCommand("SELECT * FROM [Lecturer/Module] WHERE Module_ID LIKE '" + theModule.ID + "'", conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        theModule.addLecturer(reader["Lecturer_ID"].ToString());
+                    }
+                    CloseConnection();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                moduleNode = moduleNode.next;
             }
         }
+
         /// <summary>
         /// update the linked lists
         /// </summary>
@@ -473,23 +509,67 @@ namespace Services
             }
             return list;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public LinkedList getModuleList()
         {
             return moduleList;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public LinkedList getRoomList()
         {
             return roomList;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public LinkedList getLecturerList()
         {
             return lecturerList;
         }
+        /// <summary>
+        /// find a lecturer based on their Idt
+        /// </summary>
+        /// <param name="id">the id of the lecturer</param>
+        /// <returns>the lecturer object</returns>
+        public Lecturer getLecturerById(string id)
+        {
+            Lecturer theLec;
+            Node lecNode = lecturerList.head;
+            theLec = (Lecturer) lecNode.data;
+            while (theLec.ID != id && lecNode != null)
+            {
+                theLec = (Lecturer)lecNode.data;
+                lecNode = lecNode.next;
+            }
+            return theLec;
+        }
+        /// <summary>
+        /// return a course based on its is
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Course getCourseById(string id)
+        {
+            Course theCourse;
+            Node courseNode = courseList.head;
+            theCourse = (Course) courseNode.data;
+            while (theCourse.ID != id && courseNode != null)
+            {
+                theCourse = (Course)courseNode.data;
+                courseNode = courseNode.next;
+            }
+            return theCourse;
+        }
 
 
     }
+
 }
 

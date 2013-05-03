@@ -24,7 +24,6 @@ namespace Domain
         /// the value given based on constraints broken
         /// </summary>
         private int fitness;
-
         /// <summary>
         ///     The default constructor of the Lesson object.
         /// </summary>

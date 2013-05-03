@@ -173,6 +173,7 @@ namespace TimetablePackage
             this.generateButton.MinimumSize = new System.Drawing.Size(0, 0);
             this.generateButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("generateButton.SmallImage")));
             this.generateButton.Text = "Generate";
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // lecturerTab
             // 

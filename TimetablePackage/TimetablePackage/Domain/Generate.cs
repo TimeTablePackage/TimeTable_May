@@ -17,63 +17,112 @@ namespace Domain
         /// </summary>
         public Generate()
         {
-            dbhelper = controler.getDBHelper();
-            roomList = dbhelper.getRoomList();
-
             population = new Lesson[10][];
             for (int x = 0; x < population.Length; x++)
             {
-                //gen random timetable
+                    population[x] = new Lesson[40];
             }
+            dbhelper = controler.getDBHelper();
+            roomList = dbhelper.getRoomList();
+            moduleList = dbhelper.getModuleList();
+            genRandomPop();
+            
         }
         /// <summary>
         /// generate a random timeslot for a lesson
         /// </summary>
         /// <returns></returns>
-        private string generateRandomTimeSlot()
+        private int generateRandomTimeSlot()
         {
-            Random random = new Random();
-            string timeslot;
-            int temp = random.Next(0,45);
-            
-            if (temp < 10)
-            {
-                timeslot = "0" + temp;
-            }
-            else
-            {
-                timeslot = temp.ToString();
-            }
-            return timeslot;
+            return new Random().Next(0,40);
         }
         /// <summary>
-        /// gets an available lecturer for the given timeslot;
+        /// gets an available lecturer for the given module;
         /// </summary>
-        /// <param name="time"></param>
         /// <returns></returns>
-        private Lecturer getLecturer(string time)
+        private Lecturer getLecturer(Module theModule)
         {
+            bool exit = false;
+            string[] lecturers = theModule.lecturers;
             Lecturer thelec = null;
-            Node lecNode = lecturerList.head;
-            while (lecNode != null)
+
+            for (int i = 0; i < lecturers.Length && !exit; i++)
             {
-                thelec = (Lecturer) lecNode.data;
-                if (thelec.available(time))
+                thelec = dbhelper.getLecturerById(lecturers[i]);
+                if (thelec.hoursAllocated < thelec.maxHours)
                 {
-                    lecNode = null;
-                }
-                lecNode = lecNode.next;
+                    exit = true;
+                } 
             }
             return thelec;
         }
+        /// <summary>
+        /// Get a random Module
+        /// </summary>
+        /// <returns>a random module</returns>
+        private Module getRandomModule()
+        {
+            bool found = false;
+            Module randModule = null;
+            Node moduleNode = moduleList.head;
+            // pick a random place to stop in the list
+            while (!found)
+            {
+                int numOfLoops = new Random().Next(0, moduleList.getLenght());
+                for (int i = 0; i < numOfLoops; i++)
+                {
+                    randModule = (Module)moduleNode.data;
+                    //if this module is till below the max hours per week
+                    if (randModule.hoursAllocated < randModule.hoursPerWeek)
+                    {
+                        found = true;
+                    }
+                } 
+            }
+            return randModule;
+        }
 
+        private Room getRoom(Module theModule)
+        {
+            Room theRoom = null;
+            Node roomNode = roomList.head;
+
+            while (roomNode!=null)
+            {
+                theRoom = (Room)roomNode.data;
+                if (theRoom .capacity > dbhelper.getCourseById(theModule.courseId).numOfStudents)
+                {
+                    roomNode = null;
+                }
+            }
+            return theRoom;
+        }
         /// <summary>
         /// generate a random population of timetables/ chromosones
         /// </summary>
         private void genRandomPop()
         {
-        }
+            int timeslot;
+            Module theModule;
+            Lecturer theLec;
+            Room theRoom;
+            Lesson theLesson;
 
+            for (int i = 0; i < population[0].Length; i++)
+            {
+                timeslot = generateRandomTimeSlot();
+                theModule = getRandomModule();
+                theLec = getLecturer(theModule);
+                theRoom = getRoom(theModule);
+                theLesson = new Lesson(theLec, theModule, theRoom);
+                theModule.AllocatedToALesson();
+                theLec.AllocatedToALesson();
+                population[0][i] = theLesson;
+            }
+            
+
+
+        }
         /// <summary>
         /// checks whether or not to go to the next generation based
         /// on highest fitness and number of generations
