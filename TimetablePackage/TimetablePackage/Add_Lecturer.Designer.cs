@@ -29,24 +29,6 @@
         private void InitializeComponent()
         {
             this.addLecturerGroupBox = new System.Windows.Forms.GroupBox();
-            this.lecInitialsTextBox = new System.Windows.Forms.TextBox();
-            this.lecInitialLabel = new System.Windows.Forms.Label();
-            this.lecDepartmentLabel = new System.Windows.Forms.Label();
-            this.lecSlotsOffTextBox = new System.Windows.Forms.TextBox();
-            this.lectSlotsOffLabel = new System.Windows.Forms.Label();
-            this.lecMinimumSlotsTextBox = new System.Windows.Forms.TextBox();
-            this.minDailySlotsLabel = new System.Windows.Forms.Label();
-            this.lecMaxConsecHours = new System.Windows.Forms.TextBox();
-            this.lecturerConsecutiveLabel = new System.Windows.Forms.Label();
-            this.lecMaxHoursTextBox = new System.Windows.Forms.TextBox();
-            this.lecturerMaxHoursLabel = new System.Windows.Forms.Label();
-            this.lecEmailTextBox = new System.Windows.Forms.TextBox();
-            this.lecturerEmailLabel = new System.Windows.Forms.Label();
-            this.lecNameTextBox = new System.Windows.Forms.TextBox();
-            this.lecturerNameLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okayButton = new System.Windows.Forms.Button();
-            this.lectDepartmentTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox68 = new System.Windows.Forms.PictureBox();
             this.pictureBox58 = new System.Windows.Forms.PictureBox();
@@ -111,6 +93,24 @@
             this.pictureBox60 = new System.Windows.Forms.PictureBox();
             this.pictureBox01 = new System.Windows.Forms.PictureBox();
             this.pictureBox00 = new System.Windows.Forms.PictureBox();
+            this.lecInitialsTextBox = new System.Windows.Forms.TextBox();
+            this.lecInitialLabel = new System.Windows.Forms.Label();
+            this.lectDepartmentTextBox = new System.Windows.Forms.TextBox();
+            this.lecDepartmentLabel = new System.Windows.Forms.Label();
+            this.lecSlotsOffTextBox = new System.Windows.Forms.TextBox();
+            this.lectSlotsOffLabel = new System.Windows.Forms.Label();
+            this.lecMinimumSlotsTextBox = new System.Windows.Forms.TextBox();
+            this.minDailySlotsLabel = new System.Windows.Forms.Label();
+            this.lecMaxConsecHours = new System.Windows.Forms.TextBox();
+            this.lecturerConsecutiveLabel = new System.Windows.Forms.Label();
+            this.lecMaxHoursTextBox = new System.Windows.Forms.TextBox();
+            this.lecturerMaxHoursLabel = new System.Windows.Forms.Label();
+            this.lecEmailTextBox = new System.Windows.Forms.TextBox();
+            this.lecturerEmailLabel = new System.Windows.Forms.Label();
+            this.lecNameTextBox = new System.Windows.Forms.TextBox();
+            this.lecturerNameLabel = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.okayButton = new System.Windows.Forms.Button();
             this.addLecturerGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox68)).BeginInit();
@@ -203,162 +203,6 @@
             this.addLecturerGroupBox.TabIndex = 0;
             this.addLecturerGroupBox.TabStop = false;
             this.addLecturerGroupBox.Text = "Add a Lecturer";
-            // 
-            // lecInitialsTextBox
-            // 
-            this.lecInitialsTextBox.Location = new System.Drawing.Point(249, 94);
-            this.lecInitialsTextBox.Name = "lecInitialsTextBox";
-            this.lecInitialsTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecInitialsTextBox.TabIndex = 16;
-            // 
-            // lecInitialLabel
-            // 
-            this.lecInitialLabel.AutoSize = true;
-            this.lecInitialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecInitialLabel.Location = new System.Drawing.Point(60, 99);
-            this.lecInitialLabel.Name = "lecInitialLabel";
-            this.lecInitialLabel.Size = new System.Drawing.Size(45, 15);
-            this.lecInitialLabel.TabIndex = 15;
-            this.lecInitialLabel.Text = "Initials:";
-            // 
-            // lecDepartmentLabel
-            // 
-            this.lecDepartmentLabel.AutoSize = true;
-            this.lecDepartmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecDepartmentLabel.Location = new System.Drawing.Point(58, 274);
-            this.lecDepartmentLabel.Name = "lecDepartmentLabel";
-            this.lecDepartmentLabel.Size = new System.Drawing.Size(75, 15);
-            this.lecDepartmentLabel.TabIndex = 13;
-            this.lecDepartmentLabel.Text = "Department:";
-            // 
-            // lecSlotsOffTextBox
-            // 
-            this.lecSlotsOffTextBox.Location = new System.Drawing.Point(621, 65);
-            this.lecSlotsOffTextBox.Name = "lecSlotsOffTextBox";
-            this.lecSlotsOffTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecSlotsOffTextBox.TabIndex = 11;
-            // 
-            // lectSlotsOffLabel
-            // 
-            this.lectSlotsOffLabel.AutoSize = true;
-            this.lectSlotsOffLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lectSlotsOffLabel.Location = new System.Drawing.Point(522, 65);
-            this.lectSlotsOffLabel.Name = "lectSlotsOffLabel";
-            this.lectSlotsOffLabel.Size = new System.Drawing.Size(55, 15);
-            this.lectSlotsOffLabel.TabIndex = 10;
-            this.lectSlotsOffLabel.Text = "Slots Off:";
-            // 
-            // lecMinimumSlotsTextBox
-            // 
-            this.lecMinimumSlotsTextBox.Location = new System.Drawing.Point(248, 234);
-            this.lecMinimumSlotsTextBox.Name = "lecMinimumSlotsTextBox";
-            this.lecMinimumSlotsTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecMinimumSlotsTextBox.TabIndex = 9;
-            // 
-            // minDailySlotsLabel
-            // 
-            this.minDailySlotsLabel.AutoSize = true;
-            this.minDailySlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minDailySlotsLabel.Location = new System.Drawing.Point(58, 239);
-            this.minDailySlotsLabel.Name = "minDailySlotsLabel";
-            this.minDailySlotsLabel.Size = new System.Drawing.Size(123, 15);
-            this.minDailySlotsLabel.TabIndex = 8;
-            this.minDailySlotsLabel.Text = "Minimum Daily Slots:";
-            // 
-            // lecMaxConsecHours
-            // 
-            this.lecMaxConsecHours.Location = new System.Drawing.Point(248, 199);
-            this.lecMaxConsecHours.Name = "lecMaxConsecHours";
-            this.lecMaxConsecHours.Size = new System.Drawing.Size(151, 20);
-            this.lecMaxConsecHours.TabIndex = 7;
-            // 
-            // lecturerConsecutiveLabel
-            // 
-            this.lecturerConsecutiveLabel.AutoSize = true;
-            this.lecturerConsecutiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerConsecutiveLabel.Location = new System.Drawing.Point(58, 204);
-            this.lecturerConsecutiveLabel.Name = "lecturerConsecutiveLabel";
-            this.lecturerConsecutiveLabel.Size = new System.Drawing.Size(142, 15);
-            this.lecturerConsecutiveLabel.TabIndex = 6;
-            this.lecturerConsecutiveLabel.Text = "Max. Consecutive Hours:";
-            // 
-            // lecMaxHoursTextBox
-            // 
-            this.lecMaxHoursTextBox.Location = new System.Drawing.Point(249, 164);
-            this.lecMaxHoursTextBox.Name = "lecMaxHoursTextBox";
-            this.lecMaxHoursTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecMaxHoursTextBox.TabIndex = 5;
-            // 
-            // lecturerMaxHoursLabel
-            // 
-            this.lecturerMaxHoursLabel.AutoSize = true;
-            this.lecturerMaxHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerMaxHoursLabel.Location = new System.Drawing.Point(58, 169);
-            this.lecturerMaxHoursLabel.Name = "lecturerMaxHoursLabel";
-            this.lecturerMaxHoursLabel.Size = new System.Drawing.Size(163, 15);
-            this.lecturerMaxHoursLabel.TabIndex = 4;
-            this.lecturerMaxHoursLabel.Text = "Maximum Number of Hours:";
-            // 
-            // lecEmailTextBox
-            // 
-            this.lecEmailTextBox.Location = new System.Drawing.Point(249, 129);
-            this.lecEmailTextBox.Name = "lecEmailTextBox";
-            this.lecEmailTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecEmailTextBox.TabIndex = 3;
-            // 
-            // lecturerEmailLabel
-            // 
-            this.lecturerEmailLabel.AutoSize = true;
-            this.lecturerEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerEmailLabel.Location = new System.Drawing.Point(58, 134);
-            this.lecturerEmailLabel.Name = "lecturerEmailLabel";
-            this.lecturerEmailLabel.Size = new System.Drawing.Size(46, 15);
-            this.lecturerEmailLabel.TabIndex = 2;
-            this.lecturerEmailLabel.Text = "E-mail:";
-            // 
-            // lecNameTextBox
-            // 
-            this.lecNameTextBox.Location = new System.Drawing.Point(249, 59);
-            this.lecNameTextBox.Name = "lecNameTextBox";
-            this.lecNameTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lecNameTextBox.TabIndex = 1;
-            // 
-            // lecturerNameLabel
-            // 
-            this.lecturerNameLabel.AutoSize = true;
-            this.lecturerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerNameLabel.Location = new System.Drawing.Point(60, 64);
-            this.lecturerNameLabel.Name = "lecturerNameLabel";
-            this.lecturerNameLabel.Size = new System.Drawing.Size(44, 15);
-            this.lecturerNameLabel.TabIndex = 0;
-            this.lecturerNameLabel.Text = "Name:";
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(844, 367);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "&Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // okayButton
-            // 
-            this.okayButton.Location = new System.Drawing.Point(763, 367);
-            this.okayButton.Name = "okayButton";
-            this.okayButton.Size = new System.Drawing.Size(75, 23);
-            this.okayButton.TabIndex = 2;
-            this.okayButton.Text = "&Ok";
-            this.okayButton.UseVisualStyleBackColor = true;
-            this.okayButton.Click += new System.EventHandler(this.okayButton_Click);
-            // 
-            // lectDepartmentTextBox
-            // 
-            this.lectDepartmentTextBox.Location = new System.Drawing.Point(248, 269);
-            this.lectDepartmentTextBox.Name = "lectDepartmentTextBox";
-            this.lectDepartmentTextBox.Size = new System.Drawing.Size(151, 20);
-            this.lectDepartmentTextBox.TabIndex = 14;
             // 
             // tableLayoutPanel1
             // 
@@ -1143,6 +987,162 @@
             this.pictureBox00.TabStop = false;
             this.pictureBox00.Tag = "Tick";
             // 
+            // lecInitialsTextBox
+            // 
+            this.lecInitialsTextBox.Location = new System.Drawing.Point(249, 94);
+            this.lecInitialsTextBox.Name = "lecInitialsTextBox";
+            this.lecInitialsTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecInitialsTextBox.TabIndex = 16;
+            // 
+            // lecInitialLabel
+            // 
+            this.lecInitialLabel.AutoSize = true;
+            this.lecInitialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecInitialLabel.Location = new System.Drawing.Point(60, 99);
+            this.lecInitialLabel.Name = "lecInitialLabel";
+            this.lecInitialLabel.Size = new System.Drawing.Size(45, 15);
+            this.lecInitialLabel.TabIndex = 15;
+            this.lecInitialLabel.Text = "Initials:";
+            // 
+            // lectDepartmentTextBox
+            // 
+            this.lectDepartmentTextBox.Location = new System.Drawing.Point(248, 269);
+            this.lectDepartmentTextBox.Name = "lectDepartmentTextBox";
+            this.lectDepartmentTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lectDepartmentTextBox.TabIndex = 14;
+            // 
+            // lecDepartmentLabel
+            // 
+            this.lecDepartmentLabel.AutoSize = true;
+            this.lecDepartmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecDepartmentLabel.Location = new System.Drawing.Point(58, 274);
+            this.lecDepartmentLabel.Name = "lecDepartmentLabel";
+            this.lecDepartmentLabel.Size = new System.Drawing.Size(75, 15);
+            this.lecDepartmentLabel.TabIndex = 13;
+            this.lecDepartmentLabel.Text = "Department:";
+            // 
+            // lecSlotsOffTextBox
+            // 
+            this.lecSlotsOffTextBox.Location = new System.Drawing.Point(621, 65);
+            this.lecSlotsOffTextBox.Name = "lecSlotsOffTextBox";
+            this.lecSlotsOffTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecSlotsOffTextBox.TabIndex = 11;
+            // 
+            // lectSlotsOffLabel
+            // 
+            this.lectSlotsOffLabel.AutoSize = true;
+            this.lectSlotsOffLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lectSlotsOffLabel.Location = new System.Drawing.Point(522, 65);
+            this.lectSlotsOffLabel.Name = "lectSlotsOffLabel";
+            this.lectSlotsOffLabel.Size = new System.Drawing.Size(55, 15);
+            this.lectSlotsOffLabel.TabIndex = 10;
+            this.lectSlotsOffLabel.Text = "Slots Off:";
+            // 
+            // lecMinimumSlotsTextBox
+            // 
+            this.lecMinimumSlotsTextBox.Location = new System.Drawing.Point(248, 234);
+            this.lecMinimumSlotsTextBox.Name = "lecMinimumSlotsTextBox";
+            this.lecMinimumSlotsTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecMinimumSlotsTextBox.TabIndex = 9;
+            // 
+            // minDailySlotsLabel
+            // 
+            this.minDailySlotsLabel.AutoSize = true;
+            this.minDailySlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minDailySlotsLabel.Location = new System.Drawing.Point(58, 239);
+            this.minDailySlotsLabel.Name = "minDailySlotsLabel";
+            this.minDailySlotsLabel.Size = new System.Drawing.Size(123, 15);
+            this.minDailySlotsLabel.TabIndex = 8;
+            this.minDailySlotsLabel.Text = "Minimum Daily Slots:";
+            // 
+            // lecMaxConsecHours
+            // 
+            this.lecMaxConsecHours.Location = new System.Drawing.Point(248, 199);
+            this.lecMaxConsecHours.Name = "lecMaxConsecHours";
+            this.lecMaxConsecHours.Size = new System.Drawing.Size(151, 20);
+            this.lecMaxConsecHours.TabIndex = 7;
+            // 
+            // lecturerConsecutiveLabel
+            // 
+            this.lecturerConsecutiveLabel.AutoSize = true;
+            this.lecturerConsecutiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerConsecutiveLabel.Location = new System.Drawing.Point(58, 204);
+            this.lecturerConsecutiveLabel.Name = "lecturerConsecutiveLabel";
+            this.lecturerConsecutiveLabel.Size = new System.Drawing.Size(142, 15);
+            this.lecturerConsecutiveLabel.TabIndex = 6;
+            this.lecturerConsecutiveLabel.Text = "Max. Consecutive Hours:";
+            // 
+            // lecMaxHoursTextBox
+            // 
+            this.lecMaxHoursTextBox.Location = new System.Drawing.Point(249, 164);
+            this.lecMaxHoursTextBox.Name = "lecMaxHoursTextBox";
+            this.lecMaxHoursTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecMaxHoursTextBox.TabIndex = 5;
+            // 
+            // lecturerMaxHoursLabel
+            // 
+            this.lecturerMaxHoursLabel.AutoSize = true;
+            this.lecturerMaxHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerMaxHoursLabel.Location = new System.Drawing.Point(58, 169);
+            this.lecturerMaxHoursLabel.Name = "lecturerMaxHoursLabel";
+            this.lecturerMaxHoursLabel.Size = new System.Drawing.Size(163, 15);
+            this.lecturerMaxHoursLabel.TabIndex = 4;
+            this.lecturerMaxHoursLabel.Text = "Maximum Number of Hours:";
+            // 
+            // lecEmailTextBox
+            // 
+            this.lecEmailTextBox.Location = new System.Drawing.Point(249, 129);
+            this.lecEmailTextBox.Name = "lecEmailTextBox";
+            this.lecEmailTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecEmailTextBox.TabIndex = 3;
+            // 
+            // lecturerEmailLabel
+            // 
+            this.lecturerEmailLabel.AutoSize = true;
+            this.lecturerEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerEmailLabel.Location = new System.Drawing.Point(58, 134);
+            this.lecturerEmailLabel.Name = "lecturerEmailLabel";
+            this.lecturerEmailLabel.Size = new System.Drawing.Size(46, 15);
+            this.lecturerEmailLabel.TabIndex = 2;
+            this.lecturerEmailLabel.Text = "E-mail:";
+            // 
+            // lecNameTextBox
+            // 
+            this.lecNameTextBox.Location = new System.Drawing.Point(249, 59);
+            this.lecNameTextBox.Name = "lecNameTextBox";
+            this.lecNameTextBox.Size = new System.Drawing.Size(151, 20);
+            this.lecNameTextBox.TabIndex = 1;
+            // 
+            // lecturerNameLabel
+            // 
+            this.lecturerNameLabel.AutoSize = true;
+            this.lecturerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerNameLabel.Location = new System.Drawing.Point(60, 64);
+            this.lecturerNameLabel.Name = "lecturerNameLabel";
+            this.lecturerNameLabel.Size = new System.Drawing.Size(44, 15);
+            this.lecturerNameLabel.TabIndex = 0;
+            this.lecturerNameLabel.Text = "Name:";
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(844, 367);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 1;
+            this.cancelButton.Text = "&Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // okayButton
+            // 
+            this.okayButton.Location = new System.Drawing.Point(763, 367);
+            this.okayButton.Name = "okayButton";
+            this.okayButton.Size = new System.Drawing.Size(75, 23);
+            this.okayButton.TabIndex = 2;
+            this.okayButton.Text = "&Ok";
+            this.okayButton.UseVisualStyleBackColor = true;
+            this.okayButton.Click += new System.EventHandler(this.okayButton_Click);
+            // 
             // Add_Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1155,6 +1155,7 @@
             this.Name = "Add_Lecturer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add a Lecturer";
+            this.Load += new System.EventHandler(this.Add_Lecturer_Load);
             this.addLecturerGroupBox.ResumeLayout(false);
             this.addLecturerGroupBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

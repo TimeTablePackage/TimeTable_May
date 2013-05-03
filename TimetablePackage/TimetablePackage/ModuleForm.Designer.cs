@@ -116,9 +116,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ModulesDataGridView.AutoGenerateColumns = false;
-            this.ModulesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.ModulesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.ModulesDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ModulesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ModulesDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ModulesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ModulesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.ModulesDataGridView.ColumnHeadersHeight = 21;
@@ -134,16 +133,17 @@
             this.courseCodeDataGridViewTextBoxColumn});
             this.ModulesDataGridView.DataSource = this.moduleBindingSource;
             this.ModulesDataGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.ModulesDataGridView.Location = new System.Drawing.Point(24, 16);
+            this.ModulesDataGridView.Location = new System.Drawing.Point(44, 16);
             this.ModulesDataGridView.MultiSelect = false;
             this.ModulesDataGridView.Name = "ModulesDataGridView";
             this.ModulesDataGridView.ReadOnly = true;
             this.ModulesDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.ModulesDataGridView.RowHeadersVisible = false;
             this.ModulesDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ModulesDataGridView.RowTemplate.ReadOnly = true;
             this.ModulesDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ModulesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ModulesDataGridView.Size = new System.Drawing.Size(902, 248);
+            this.ModulesDataGridView.Size = new System.Drawing.Size(860, 248);
             this.ModulesDataGridView.TabIndex = 0;
             this.ModulesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ModulesDataGridView_CellContentClick);
             // 

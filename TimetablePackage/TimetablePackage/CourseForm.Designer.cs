@@ -32,20 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CourseGroupBox = new System.Windows.Forms.GroupBox();
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttpDataSet = new TimetablePackage.ttpDataSet();
-            this.courseTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.CourseTableAdapter();
             this.CourseDataGridView = new System.Windows.Forms.DataGridView();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numOfStudentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deptIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttpDataSet = new TimetablePackage.ttpDataSet();
+            this.courseTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.CourseTableAdapter();
             this.DepartmentGroupBox = new System.Windows.Forms.GroupBox();
             this.DepartmentDataGridView = new System.Windows.Forms.DataGridView();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deptNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
             this.deleteCourseButton = new System.Windows.Forms.Button();
             this.editCourseButton = new System.Windows.Forms.Button();
             this.addCourseButton = new System.Windows.Forms.Button();
@@ -53,9 +53,9 @@
             this.editDepartmentButton = new System.Windows.Forms.Button();
             this.addDepartmentButton = new System.Windows.Forms.Button();
             this.CourseGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CourseDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseDataGridView)).BeginInit();
             this.DepartmentGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DepartmentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -69,24 +69,10 @@
             this.CourseGroupBox.Controls.Add(this.CourseDataGridView);
             this.CourseGroupBox.Location = new System.Drawing.Point(148, 53);
             this.CourseGroupBox.Name = "CourseGroupBox";
-            this.CourseGroupBox.Size = new System.Drawing.Size(459, 267);
+            this.CourseGroupBox.Size = new System.Drawing.Size(422, 267);
             this.CourseGroupBox.TabIndex = 8;
             this.CourseGroupBox.TabStop = false;
             this.CourseGroupBox.Text = "Courses";
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataMember = "Course";
-            this.courseBindingSource.DataSource = this.ttpDataSet;
-            // 
-            // ttpDataSet
-            // 
-            this.ttpDataSet.DataSetName = "ttpDataSet";
-            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // courseTableAdapter
-            // 
-            this.courseTableAdapter.ClearBeforeFill = true;
             // 
             // CourseDataGridView
             // 
@@ -97,8 +83,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CourseDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CourseDataGridView.AutoGenerateColumns = false;
-            this.CourseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.CourseDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.CourseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.CourseDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.CourseDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CourseDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -117,11 +102,12 @@
             this.CourseDataGridView.Name = "CourseDataGridView";
             this.CourseDataGridView.ReadOnly = true;
             this.CourseDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.CourseDataGridView.RowHeadersVisible = false;
             this.CourseDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.CourseDataGridView.RowTemplate.ReadOnly = true;
             this.CourseDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.CourseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGridView.Size = new System.Drawing.Size(453, 248);
+            this.CourseDataGridView.Size = new System.Drawing.Size(416, 248);
             this.CourseDataGridView.TabIndex = 1;
             // 
             // codeDataGridViewTextBoxColumn
@@ -156,6 +142,20 @@
             this.deptIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.deptIDDataGridViewTextBoxColumn.Width = 101;
             // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataMember = "Course";
+            this.courseBindingSource.DataSource = this.ttpDataSet;
+            // 
+            // ttpDataSet
+            // 
+            this.ttpDataSet.DataSetName = "ttpDataSet";
+            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // courseTableAdapter
+            // 
+            this.courseTableAdapter.ClearBeforeFill = true;
+            // 
             // DepartmentGroupBox
             // 
             this.DepartmentGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,7 +164,7 @@
             this.DepartmentGroupBox.Controls.Add(this.DepartmentDataGridView);
             this.DepartmentGroupBox.Location = new System.Drawing.Point(636, 53);
             this.DepartmentGroupBox.Name = "DepartmentGroupBox";
-            this.DepartmentGroupBox.Size = new System.Drawing.Size(208, 267);
+            this.DepartmentGroupBox.Size = new System.Drawing.Size(164, 267);
             this.DepartmentGroupBox.TabIndex = 13;
             this.DepartmentGroupBox.TabStop = false;
             this.DepartmentGroupBox.Text = "Departments";
@@ -178,8 +178,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DepartmentDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DepartmentDataGridView.AutoGenerateColumns = false;
-            this.DepartmentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.DepartmentDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.DepartmentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DepartmentDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.DepartmentDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DepartmentDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -196,21 +195,13 @@
             this.DepartmentDataGridView.Name = "DepartmentDataGridView";
             this.DepartmentDataGridView.ReadOnly = true;
             this.DepartmentDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DepartmentDataGridView.RowHeadersVisible = false;
             this.DepartmentDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DepartmentDataGridView.RowTemplate.ReadOnly = true;
             this.DepartmentDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DepartmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DepartmentDataGridView.Size = new System.Drawing.Size(202, 248);
+            this.DepartmentDataGridView.Size = new System.Drawing.Size(158, 248);
             this.DepartmentDataGridView.TabIndex = 1;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.ttpDataSet;
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -227,6 +218,15 @@
             this.deptNameDataGridViewTextBoxColumn.Name = "deptNameDataGridViewTextBoxColumn";
             this.deptNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.deptNameDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.ttpDataSet;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // deleteCourseButton
             // 
@@ -332,9 +332,9 @@
             this.Text = "Courses/Departments";
             this.Load += new System.EventHandler(this.CourseForm_Load);
             this.CourseGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CourseDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseDataGridView)).EndInit();
             this.DepartmentGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DepartmentDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();

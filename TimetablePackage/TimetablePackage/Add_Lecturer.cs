@@ -35,5 +35,10 @@ namespace TimetablePackage
             controller.addLecturer(lecturer);
             
         }
+
+        private void Add_Lecturer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

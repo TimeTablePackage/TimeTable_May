@@ -489,7 +489,22 @@ namespace Services
             return lecturerList;
         }
 
+        public DataTable getDataTable(string sqlStatement)
+        {
+            DataTable dtTable = new DataTable();
 
+            try
+            {
+                OpenConection();
+                cmd = new OleDbCommand(sqlStatement, conn);
+                reader = cmd.ExecuteReader();
+                dtTable.Load(reader);
+            }
+            catch
+            {
+            }
+            return dtTable;
+        }
     }
 }
 
