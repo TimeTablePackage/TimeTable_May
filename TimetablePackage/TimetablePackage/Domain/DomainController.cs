@@ -84,7 +84,10 @@ namespace Domain
             //to be constructed!
         }
 
-
+        public DataTable getDataTable(string sqlstatement)
+        {
+            return dataBaseHelper.getDataTable(sqlstatement);
+        }
 
 
     }//class

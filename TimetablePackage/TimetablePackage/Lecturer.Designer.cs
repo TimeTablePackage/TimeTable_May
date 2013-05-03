@@ -35,6 +35,14 @@ namespace TimetablePackage
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lecturer));
             this.lecturerGroupBox = new System.Windows.Forms.GroupBox();
             this.lecturerDataGridView = new System.Windows.Forms.DataGridView();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttpDataSet = new TimetablePackage.ttpDataSet();
+            this.lecturerTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.LecturerTableAdapter();
+            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.addLecturerButton = new System.Windows.Forms.Button();
+            this.editLecturerButton = new System.Windows.Forms.Button();
+            this.deleteLecturerButton = new System.Windows.Forms.Button();
+            this.lecturerModulesButton = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.initialsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,14 +52,6 @@ namespace TimetablePackage
             this.minSlotsPerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slotsOffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttpDataSet = new TimetablePackage.ttpDataSet();
-            this.lecturerTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.LecturerTableAdapter();
-            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.addLecturerButton = new System.Windows.Forms.Button();
-            this.editLecturerButton = new System.Windows.Forms.Button();
-            this.deleteLecturerButton = new System.Windows.Forms.Button();
-            this.lecturerModulesButton = new System.Windows.Forms.Button();
             this.lecturerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
@@ -65,9 +65,9 @@ namespace TimetablePackage
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lecturerGroupBox.Controls.Add(this.lecturerDataGridView);
-            this.lecturerGroupBox.Location = new System.Drawing.Point(21, 53);
+            this.lecturerGroupBox.Location = new System.Drawing.Point(32, 53);
             this.lecturerGroupBox.Name = "lecturerGroupBox";
-            this.lecturerGroupBox.Size = new System.Drawing.Size(951, 267);
+            this.lecturerGroupBox.Size = new System.Drawing.Size(929, 267);
             this.lecturerGroupBox.TabIndex = 0;
             this.lecturerGroupBox.TabStop = false;
             this.lecturerGroupBox.Text = "Lecturers";
@@ -84,10 +84,8 @@ namespace TimetablePackage
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lecturerDataGridView.AutoGenerateColumns = false;
-            this.lecturerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.lecturerDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.lecturerDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lecturerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lecturerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.lecturerDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.lecturerDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.lecturerDataGridView.ColumnHeadersHeight = 21;
             this.lecturerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -108,103 +106,13 @@ namespace TimetablePackage
             this.lecturerDataGridView.Name = "lecturerDataGridView";
             this.lecturerDataGridView.ReadOnly = true;
             this.lecturerDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.lecturerDataGridView.RowHeadersVisible = false;
             this.lecturerDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.lecturerDataGridView.RowTemplate.ReadOnly = true;
             this.lecturerDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.lecturerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.lecturerDataGridView.Size = new System.Drawing.Size(945, 248);
+            this.lecturerDataGridView.Size = new System.Drawing.Size(923, 248);
             this.lecturerDataGridView.TabIndex = 0;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.Frozen = true;
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // lecNameDataGridViewTextBoxColumn
-            // 
-            this.lecNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.lecNameDataGridViewTextBoxColumn.DataPropertyName = "Lec_Name";
-            this.lecNameDataGridViewTextBoxColumn.Frozen = true;
-            this.lecNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.lecNameDataGridViewTextBoxColumn.Name = "lecNameDataGridViewTextBoxColumn";
-            this.lecNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lecNameDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // initialsDataGridViewTextBoxColumn
-            // 
-            this.initialsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.initialsDataGridViewTextBoxColumn.DataPropertyName = "Initials";
-            this.initialsDataGridViewTextBoxColumn.Frozen = true;
-            this.initialsDataGridViewTextBoxColumn.HeaderText = "Initials";
-            this.initialsDataGridViewTextBoxColumn.Name = "initialsDataGridViewTextBoxColumn";
-            this.initialsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.initialsDataGridViewTextBoxColumn.Width = 61;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.Frozen = true;
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // maxHoursDataGridViewTextBoxColumn
-            // 
-            this.maxHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.maxHoursDataGridViewTextBoxColumn.DataPropertyName = "MaxHours";
-            this.maxHoursDataGridViewTextBoxColumn.Frozen = true;
-            this.maxHoursDataGridViewTextBoxColumn.HeaderText = "Maximum Number of Lecture Hours";
-            this.maxHoursDataGridViewTextBoxColumn.Name = "maxHoursDataGridViewTextBoxColumn";
-            this.maxHoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maxHoursDataGridViewTextBoxColumn.Width = 198;
-            // 
-            // maxConsecHoursDataGridViewTextBoxColumn
-            // 
-            this.maxConsecHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.maxConsecHoursDataGridViewTextBoxColumn.DataPropertyName = "MaxConsecHours";
-            this.maxConsecHoursDataGridViewTextBoxColumn.Frozen = true;
-            this.maxConsecHoursDataGridViewTextBoxColumn.HeaderText = "Maximum Consecutive Hours a Day";
-            this.maxConsecHoursDataGridViewTextBoxColumn.Name = "maxConsecHoursDataGridViewTextBoxColumn";
-            this.maxConsecHoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maxConsecHoursDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // minSlotsPerDayDataGridViewTextBoxColumn
-            // 
-            this.minSlotsPerDayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.minSlotsPerDayDataGridViewTextBoxColumn.DataPropertyName = "MinSlotsPerDay";
-            this.minSlotsPerDayDataGridViewTextBoxColumn.Frozen = true;
-            this.minSlotsPerDayDataGridViewTextBoxColumn.HeaderText = "Minimum Hours Per Day";
-            this.minSlotsPerDayDataGridViewTextBoxColumn.Name = "minSlotsPerDayDataGridViewTextBoxColumn";
-            this.minSlotsPerDayDataGridViewTextBoxColumn.ReadOnly = true;
-            this.minSlotsPerDayDataGridViewTextBoxColumn.Width = 145;
-            // 
-            // slotsOffDataGridViewTextBoxColumn
-            // 
-            this.slotsOffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.slotsOffDataGridViewTextBoxColumn.DataPropertyName = "SlotsOff";
-            this.slotsOffDataGridViewTextBoxColumn.Frozen = true;
-            this.slotsOffDataGridViewTextBoxColumn.HeaderText = "Time Off";
-            this.slotsOffDataGridViewTextBoxColumn.Name = "slotsOffDataGridViewTextBoxColumn";
-            this.slotsOffDataGridViewTextBoxColumn.ReadOnly = true;
-            this.slotsOffDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // departmentIdDataGridViewTextBoxColumn
-            // 
-            this.departmentIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.departmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId";
-            this.departmentIdDataGridViewTextBoxColumn.Frozen = true;
-            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
-            this.departmentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.departmentIdDataGridViewTextBoxColumn.Width = 87;
             // 
             // lecturerBindingSource
             // 
@@ -278,6 +186,99 @@ namespace TimetablePackage
             this.lecturerModulesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.lecturerModulesButton.UseVisualStyleBackColor = true;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.iDDataGridViewTextBoxColumn.Frozen = true;
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // lecNameDataGridViewTextBoxColumn
+            // 
+            this.lecNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lecNameDataGridViewTextBoxColumn.DataPropertyName = "Lec_Name";
+            this.lecNameDataGridViewTextBoxColumn.Frozen = true;
+            this.lecNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.lecNameDataGridViewTextBoxColumn.Name = "lecNameDataGridViewTextBoxColumn";
+            this.lecNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lecNameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // initialsDataGridViewTextBoxColumn
+            // 
+            this.initialsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.initialsDataGridViewTextBoxColumn.DataPropertyName = "Initials";
+            this.initialsDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.initialsDataGridViewTextBoxColumn.Frozen = true;
+            this.initialsDataGridViewTextBoxColumn.HeaderText = "Initials";
+            this.initialsDataGridViewTextBoxColumn.Name = "initialsDataGridViewTextBoxColumn";
+            this.initialsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.initialsDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.Frozen = true;
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // maxHoursDataGridViewTextBoxColumn
+            // 
+            this.maxHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maxHoursDataGridViewTextBoxColumn.DataPropertyName = "MaxHours";
+            this.maxHoursDataGridViewTextBoxColumn.Frozen = true;
+            this.maxHoursDataGridViewTextBoxColumn.HeaderText = "Maximum Number of Lecture Hours";
+            this.maxHoursDataGridViewTextBoxColumn.Name = "maxHoursDataGridViewTextBoxColumn";
+            this.maxHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maxHoursDataGridViewTextBoxColumn.Width = 198;
+            // 
+            // maxConsecHoursDataGridViewTextBoxColumn
+            // 
+            this.maxConsecHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maxConsecHoursDataGridViewTextBoxColumn.DataPropertyName = "MaxConsecHours";
+            this.maxConsecHoursDataGridViewTextBoxColumn.Frozen = true;
+            this.maxConsecHoursDataGridViewTextBoxColumn.HeaderText = "Maximum Consecutive Hours a Day";
+            this.maxConsecHoursDataGridViewTextBoxColumn.Name = "maxConsecHoursDataGridViewTextBoxColumn";
+            this.maxConsecHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maxConsecHoursDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // minSlotsPerDayDataGridViewTextBoxColumn
+            // 
+            this.minSlotsPerDayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.minSlotsPerDayDataGridViewTextBoxColumn.DataPropertyName = "MinSlotsPerDay";
+            this.minSlotsPerDayDataGridViewTextBoxColumn.Frozen = true;
+            this.minSlotsPerDayDataGridViewTextBoxColumn.HeaderText = "Minimum Hours Per Day";
+            this.minSlotsPerDayDataGridViewTextBoxColumn.Name = "minSlotsPerDayDataGridViewTextBoxColumn";
+            this.minSlotsPerDayDataGridViewTextBoxColumn.ReadOnly = true;
+            this.minSlotsPerDayDataGridViewTextBoxColumn.Width = 145;
+            // 
+            // slotsOffDataGridViewTextBoxColumn
+            // 
+            this.slotsOffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.slotsOffDataGridViewTextBoxColumn.DataPropertyName = "SlotsOff";
+            this.slotsOffDataGridViewTextBoxColumn.Frozen = true;
+            this.slotsOffDataGridViewTextBoxColumn.HeaderText = "Time Off";
+            this.slotsOffDataGridViewTextBoxColumn.Name = "slotsOffDataGridViewTextBoxColumn";
+            this.slotsOffDataGridViewTextBoxColumn.ReadOnly = true;
+            this.slotsOffDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // departmentIdDataGridViewTextBoxColumn
+            // 
+            this.departmentIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.departmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId";
+            this.departmentIdDataGridViewTextBoxColumn.Frozen = true;
+            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "Department";
+            this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
+            this.departmentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.departmentIdDataGridViewTextBoxColumn.Width = 87;
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +316,11 @@ namespace TimetablePackage
         private System.Windows.Forms.BindingSource lecturerBindingSource;
         private ttpDataSetTableAdapters.LecturerTableAdapter lecturerTableAdapter;
         private System.Windows.Forms.BindingSource lecturerBindingSource1;
+        private System.Windows.Forms.DataGridView lecturerDataGridView;
+        private System.Windows.Forms.Button addLecturerButton;
+        private System.Windows.Forms.Button editLecturerButton;
+        private System.Windows.Forms.Button deleteLecturerButton;
+        private System.Windows.Forms.Button lecturerModulesButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn initialsDataGridViewTextBoxColumn;
@@ -324,11 +330,6 @@ namespace TimetablePackage
         private System.Windows.Forms.DataGridViewTextBoxColumn minSlotsPerDayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn slotsOffDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView lecturerDataGridView;
-        private System.Windows.Forms.Button addLecturerButton;
-        private System.Windows.Forms.Button editLecturerButton;
-        private System.Windows.Forms.Button deleteLecturerButton;
-        private System.Windows.Forms.Button lecturerModulesButton;
 
 
 
