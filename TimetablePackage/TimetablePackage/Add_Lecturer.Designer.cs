@@ -293,6 +293,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(328, 198);
             this.tableLayoutPanel1.TabIndex = 17;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox68
             // 
@@ -880,7 +881,7 @@
             // pictureBox63
             // 
             this.pictureBox63.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox63.Location = new System.Drawing.Point(114, 168);
+            this.pictureBox63.Location = new System.Drawing.Point(186, 168);
             this.pictureBox63.Name = "pictureBox63";
             this.pictureBox63.Size = new System.Drawing.Size(27, 24);
             this.pictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -891,7 +892,7 @@
             // pictureBox66
             // 
             this.pictureBox66.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox66.Location = new System.Drawing.Point(222, 168);
+            this.pictureBox66.Location = new System.Drawing.Point(150, 168);
             this.pictureBox66.Name = "pictureBox66";
             this.pictureBox66.Size = new System.Drawing.Size(27, 24);
             this.pictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -902,7 +903,7 @@
             // pictureBox65
             // 
             this.pictureBox65.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox65.Location = new System.Drawing.Point(186, 168);
+            this.pictureBox65.Location = new System.Drawing.Point(258, 168);
             this.pictureBox65.Name = "pictureBox65";
             this.pictureBox65.Size = new System.Drawing.Size(27, 24);
             this.pictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -913,7 +914,7 @@
             // pictureBox64
             // 
             this.pictureBox64.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox64.Location = new System.Drawing.Point(150, 168);
+            this.pictureBox64.Location = new System.Drawing.Point(222, 168);
             this.pictureBox64.Name = "pictureBox64";
             this.pictureBox64.Size = new System.Drawing.Size(27, 24);
             this.pictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -924,7 +925,7 @@
             // pictureBox67
             // 
             this.pictureBox67.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox67.Location = new System.Drawing.Point(258, 168);
+            this.pictureBox67.Location = new System.Drawing.Point(114, 168);
             this.pictureBox67.Name = "pictureBox67";
             this.pictureBox67.Size = new System.Drawing.Size(27, 24);
             this.pictureBox67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -935,7 +936,7 @@
             // pictureBox62
             // 
             this.pictureBox62.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox62.Location = new System.Drawing.Point(78, 168);
+            this.pictureBox62.Location = new System.Drawing.Point(6, 168);
             this.pictureBox62.Name = "pictureBox62";
             this.pictureBox62.Size = new System.Drawing.Size(27, 24);
             this.pictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -957,7 +958,7 @@
             // pictureBox60
             // 
             this.pictureBox60.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox60.Location = new System.Drawing.Point(6, 168);
+            this.pictureBox60.Location = new System.Drawing.Point(78, 168);
             this.pictureBox60.Name = "pictureBox60";
             this.pictureBox60.Size = new System.Drawing.Size(27, 24);
             this.pictureBox60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
