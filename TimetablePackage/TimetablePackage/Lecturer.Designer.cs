@@ -113,6 +113,7 @@ namespace TimetablePackage
             this.lecturerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lecturerDataGridView.Size = new System.Drawing.Size(949, 248);
             this.lecturerDataGridView.TabIndex = 0;
+            this.lecturerDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.lecturerDataGridView_CellEnter);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -252,6 +253,7 @@ namespace TimetablePackage
             this.editLecturerButton.Text = "Edit";
             this.editLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editLecturerButton.UseVisualStyleBackColor = true;
+            this.editLecturerButton.Click += new System.EventHandler(this.editLecturerButton_Click);
             // 
             // deleteLecturerButton
             // 

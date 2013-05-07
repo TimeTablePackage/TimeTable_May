@@ -67,23 +67,13 @@ namespace TimetablePackage
         {
             Lecturer document = new Lecturer();
             document.Show();
-            /*
-            // Show document
-            if (DockTabPanel.DocumentStyle == DocumentStyle.SystemMdi)
-            {
-                document.MdiParent = this;
-                document.Show();
-            }
-            else
-            {
-                document.Show(DockTabPanel);
-            } */
-
+           
         }
 
         private void addLecturer_Click(object sender, EventArgs e)
         {
-            
+            Edit_Lecturer openWindow = new Edit_Lecturer();
+            openWindow.Show(); 
         }
 
         private void moduleListButton_Click(object sender, EventArgs e)

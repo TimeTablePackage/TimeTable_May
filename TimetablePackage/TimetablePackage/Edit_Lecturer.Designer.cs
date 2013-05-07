@@ -1197,6 +1197,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TabText = "Edit a Lecturer";
             this.Text = "Edit a Lecturer";
+            this.Load += new System.EventHandler(this.Edit_Lecturer_Load);
             this.editLecturerGroupBox.ResumeLayout(false);
             this.editLecturerGroupBox.PerformLayout();
             this.editLectableLayout.ResumeLayout(false);
