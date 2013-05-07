@@ -73,7 +73,7 @@ namespace Domain
         public void updateLecturer(string lecId, string name, string initials, string email, int maxHours,
                                     int maxConsecHours, int minSlotsPerDay, string slotsOff, string deptId)
         {
-           // Department department = institute.getDeptById(deptId);
+            // Department department = institute.getDeptById(deptId);
             //Lecturer lecturer = department.getLecById(lecId);
             //lecturer.update(name, initials, email, maxHours, maxConsecHours, minSlotsPerDay, slotsOff, deptId);
         }

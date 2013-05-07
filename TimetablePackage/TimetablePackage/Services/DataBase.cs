@@ -568,7 +568,11 @@ namespace Services
             }
             return theCourse;
         }
-
+        /// <summary>
+        /// return the results of a query back in a datatable
+        /// </summary>
+        /// <param name="sqlStatement">the query to excute</param>
+        /// <returns>the datatable of results</returns>
         public DataTable getDataTable(string sqlStatement)
         {
             DataTable dtTable = new DataTable();
@@ -585,25 +589,45 @@ namespace Services
             }
             return dtTable;
         }
-
-        public void insertLessons(Lesson[] thelessons)
+        /// <summary>
+        /// insert an array of Lessons into the database
+        /// </summary>
+        /// <param name="thelessons">the array of lessons</param>
+        public void insertLessons(Lesson[][] thelessons)
         {
-
-            for (int i = 0; i < thelessons.Length; i++)
+            for (int y = 0; y < thelessons.Length; y++)
             {
-                if (thelessons[i] != null)
+                for (int z = 0; z < thelessons[y].Length; z++)
                 {
-                    string sql;
-                    sql = "INSERT INTO Lesson (Lecturer_ID, Module_ID, Room_ID) VALUES(";
-                    sql += thelessons[i].lecturer.ID + ", ";
-                    sql += thelessons[i].module.ID + ", ";
-                    sql += thelessons[i].room.ID + ")";
-                    excuteNonQuery(sql);
-                    
-                }//update? restes all alloocated values?
+                    if (thelessons[y][z] != null)
+                    {
+                        string sql;
+                        sql = "INSERT INTO Lesson (Lecturer_ID, Module_ID, Room_ID) VALUES(";
+                        sql += thelessons[y][z].lecturer.ID + ", ";
+                        sql += thelessons[y][z].module.ID + ", ";
+                        sql += thelessons[y][z].room.ID + ")";
+                        excuteNonQuery(sql);
+                    }//update? restes all alloocated values? 
+                }
             }
         }
-
+        /// <summary>
+        /// return the total timeslots needed by the modules
+        /// </summary>
+        /// <returns>int the totsl number of time slots</returns>
+        public int totalModuleHours()
+        {
+            int total = 0;
+            Node modNode = moduleList.head;
+            Module temp;
+            while (modNode != null)
+            {
+                temp = (Module) modNode.data;
+                total = total + temp.hoursPerWeek;
+                modNode = modNode.next;
+            }
+            return total;
+        }
     }
 
 }
