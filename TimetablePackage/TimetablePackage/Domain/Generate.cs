@@ -24,15 +24,15 @@ namespace Domain
             {
                 population[x] = new Lesson[40][];
                 for (int y = 0; y < population[x].Length; y++)
-			    {
+                {
                     //max number of lessons at one time possible is equals to number of rooms;
                     population[x][y] = new Lesson[20];
-			    }
+                }
             }
             dbhelper = controler.getDBHelper();
             roomList = dbhelper.getRoomList();
             moduleList = dbhelper.getModuleList();
-            temp();
+            populate();
         }
         /// <summary>
         /// generate a random timeslot for a lesson
@@ -40,7 +40,7 @@ namespace Domain
         /// <returns></returns>
         private int generateRandomTimeSlot()
         {
-            return new Random().Next(0,40);
+            return new Random().Next(0, 40);
         }
         /// <summary>
         /// gets an available lecturer for the given module;
@@ -88,7 +88,7 @@ namespace Domain
             {
                 moduleNode = moduleList.head;
                 randModule = (Module)moduleNode.data;
-                int numOfLoops = new Random().Next(1, moduleList.getLenght()+1);
+                int numOfLoops = new Random().Next(1, moduleList.getLenght() + 1);
                 for (int i = 0; i < numOfLoops; i++)
                 {
                     randModule = (Module)moduleNode.data;
@@ -98,7 +98,7 @@ namespace Domain
                         found = true;
                     }
                     moduleNode = moduleNode.next;
-                } 
+                }
             }
             if (!found) randModule = null;
             return randModule;
@@ -110,7 +110,7 @@ namespace Domain
         /// <returns>a room</returns>
         private Room getRoom(Module theModule)
         {
-            int numOfLoops = new Random().Next(1,roomList.getLenght()+1);
+            int numOfLoops = new Random().Next(1, roomList.getLenght() + 1);
             Room theRoom = null;
             Node roomNode = roomList.head;
 
@@ -157,49 +157,139 @@ namespace Domain
 
         }
         /// <summary>
-        /// crossover two parents to produce children;
+        /// Crossover two chromosomes and retrurn the values
         /// </summary>
-        /// <param name="father">one parent chromosome</param>
-        /// <param name="mother">another parent chromosome</param>
-        /// <returns>children chromosones</returns>
-       /* private int[][] crossover(Lesson[][] father, Lesson[][] mother)
-        {
-           ///int point1 = new Random().Next(1,father
-        } */
-        
-        private void temp()
-        {
-            Lesson theLesson;
-            bool allocated = false;
-
-            for (int i = 0; i < 16 /* the total sum of hours needed for moduels*/; i++)
+        /// <param name="father">chromosome to crossover</param>
+        /// <param name="mother">chromosome to crossover</param>
+        /// <param name="newFather">the 1st child</param>
+        /// <param name="newMother">the 2nd child</param>
+        private void crossover(Lesson[][] father, Lesson[][] mother, 
+            out Lesson[][] newFather, out Lesson[][] newMother)
+        { 
+            //Lesson[][] newFather, newMother ;
+            //the time slots already swapped between parents
+            int[] alreadySwapped = new int[20];
+            //temp location to hold a genome while swapping
+            Lesson[] temp;
+            //swap 20 random genomes from father to mother
+            for (int i = 0; i < 20 /*i.e. hlaf the timeslots are swapped*/; i++)
             {
-                theLesson = genRandomLesson();
-                
-                while (!allocated)
+                bool exit = true;
+                int timeSlot = 0; 
+                // dont swap the same genome twice;
+                do
                 {
-                 
+                    timeSlot = new Random().Next(0, 21);
+                    for (int x = 0; x < alreadySwapped.Length; x++)
+                    {
+                        if (timeSlot == alreadySwapped[i])
+                        {
+                            exit = false;
+                        }
+                    } 
+                } while (!exit);
 
-                    
-                }
+                temp = father[timeSlot];
+                father[timeSlot] = mother[timeSlot];
+                mother[timeSlot] = temp;
             }
-            dbhelper.insertLessons(population[0][0]);
-
+            newFather = father;
+            newMother = mother;
         }
-
-
-        private bool contains(object[] theArray, object search)
+        /// <summary>
+        /// Check if a object is in the array
+        /// </summary>
+        /// <param name="theLessons">the array</param>
+        /// <param name="obj">the module/lecturer/room to check for</param>
+        /// <returns>boolean</returns>
+        private bool contains(Lesson[] theLessons, object obj)
         {
             bool answer = false;
 
-            for (int i = 0; i < theArray.Length; i++)
+            for (int i = 0; i < theLessons.Length; i++)
             {
-                if (theArray[i] == search)
+                if (theLessons[i] != null)
                 {
-                    answer = true;
+                    //try to cast as a lecturer 
+                    try
+                    {
+                        if (theLessons[i].lecturer == (Lecturer)obj)
+                        {
+                            answer = true;
+                        }
+                    }
+                    catch
+                    {
+                        //or as a module 
+                        try
+                        {
+                            if (theLessons[i].module == obj)
+                            {
+                                answer = true;
+                            }
+                        }
+                        catch
+                        {
+                            // must be a room so.
+                            try
+                            {
+                                if (theLessons[i].room == obj)
+                                {
+                                    answer = true;
+                                }
+                            }
+                            catch
+                            {
+
+                            }
+
+                        }
+                    }
                 }
             }
             return answer;
         }
+        /// <summary>
+        /// add a lesson to suitable place in the popluation i.e. 
+        /// </summary>
+        /// <param name="theLesson"></param>
+        private void addToPop(Lesson[][] theChromosome, Lesson theLesson)
+        {
+            bool allocated = false;
+
+            // for each chromosome
+            for (int y = 0; y < theChromosome[0].Length && !allocated; y++)
+            {
+                //ensure the same module/leturer/room is not repeated in one timeslot!
+                if (!(contains(theChromosome[y], theLesson.lecturer) ||
+                    contains(theChromosome[y], theLesson.module) ||
+                    contains(theChromosome[y], theLesson.room)))
+                {
+                    for (int z = 0; z < theChromosome[y].Length && !allocated; z++)
+                    {
+                        if (theChromosome[y][z] == null)
+                        {
+                            theChromosome[y][z] = theLesson;
+                            allocated = true;
+                        }
+                    }
+                }
+
+            }
+        }
+        /// <summary>
+        /// auto-generate the population
+        /// </summary>
+        private void populate()
+        {
+            for (int x = 0; x < dbhelper.totalModuleHours(); x++)
+            {
+                addToPop(population[0], genRandomLesson());
+                dbhelper.insertLessons(population[0]);
+            }
+
+        }
     }
+
 }
+
