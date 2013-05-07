@@ -15,6 +15,8 @@ namespace TimetablePackage
 {
     public partial class Main : Form
     {
+        private DomainControler controler;
+
         public Main()
         {
             Thread t = new Thread(new ThreadStart(Splashscreen));
@@ -22,6 +24,7 @@ namespace TimetablePackage
             Thread.Sleep(2500);
             InitializeComponent();
             t.Abort();
+            controler = DomainControler.getInstance();
         }
 
         public void Splashscreen()
@@ -43,6 +46,8 @@ namespace TimetablePackage
             {
                 document.Show(DockTabPanel);
             }
+
+            
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
@@ -135,6 +140,18 @@ namespace TimetablePackage
         private void generateButton_Click(object sender, EventArgs e)
         {
             Generate gen = new Generate();
+            timetable document = new timetable();
+
+            // Show document
+            if (DockTabPanel.DocumentStyle == DocumentStyle.SystemMdi)
+            {
+                document.MdiParent = this;
+                document.Show();
+            }
+            else
+            {
+                document.Show(DockTabPanel);
+            }
         }
     }
 }

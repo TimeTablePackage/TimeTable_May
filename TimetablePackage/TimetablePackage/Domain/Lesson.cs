@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Lesson
+    public class Lesson
     {
         /// <summary>
         /// The lecturer details that teaches the Lesson.
