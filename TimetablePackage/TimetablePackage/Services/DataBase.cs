@@ -335,7 +335,7 @@ namespace Services
                     if (reader["Deleted"].ToString().Equals("False"))
                     {
                         tempRoom = new Room(
-                        reader["ID"].ToString(),
+                        reader["Id"].ToString(),
                         reader["Number"].ToString(),
                         Convert.ToInt32(reader["Capacity"]),
                         reader["RoomType"].ToString(),
@@ -346,12 +346,12 @@ namespace Services
                 }
                 CloseConnection();
             }
-            catch
+            catch (Exception e)
             {
-                // MessageBox.Show("Failed to get data from source");
+                MessageBox.Show(e.ToString());
             }
          }
-         /// <summary>
+        /// <summary>
          /// load all the depts from the database
          /// </summary>
         private void loadDepartmentList()
@@ -447,7 +447,9 @@ namespace Services
             }
 
         }
-
+        /// <summary>
+        /// add a lecturer to a module
+        /// </summary>
         private void addLecToModule()
         {
 
@@ -476,7 +478,6 @@ namespace Services
                 moduleNode = moduleNode.next;
             }
         }
-
         /// <summary>
         /// update the linked lists
         /// </summary>
@@ -584,6 +585,25 @@ namespace Services
             }
             return dtTable;
         }
+
+        public void insertLessons(Lesson[] thelessons)
+        {
+
+            for (int i = 0; i < thelessons.Length; i++)
+            {
+                if (thelessons[i] != null)
+                {
+                    string sql;
+                    sql = "INSERT INTO Lesson (Lecturer_ID, Module_ID, Room_ID) VALUES(";
+                    sql += thelessons[i].lecturer.ID + ", ";
+                    sql += thelessons[i].module.ID + ", ";
+                    sql += thelessons[i].room.ID + ")";
+                    excuteNonQuery(sql);
+                    
+                }//update? restes all alloocated values?
+            }
+        }
+
     }
 
 }

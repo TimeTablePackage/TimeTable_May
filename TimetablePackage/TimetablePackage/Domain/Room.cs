@@ -59,6 +59,7 @@ namespace Domain
             /// <param name="slotsOff">time room is not available</param>
             public Room(string id, string roomNum, int capacity, string roomType, string slotsOff, string buildingId)
             {
+                this.ID = id;
                 this.roomNumber = roomNum;
                 this.capacity = capacity;
                 this.roomNumber = roomType;
