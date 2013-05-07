@@ -148,11 +148,8 @@
   <data name="building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\building.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\printer_empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,23 +160,26 @@
   <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="flags_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\flags_globe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="book_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\book_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="group_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\group_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printer_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\printer_empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="group_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\group_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bullet_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\bullet_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,14 +202,17 @@
   <data name="book_keeping" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\book_keeping.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bullet_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\bullet_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="book" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flags_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\flags_globe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="books" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\books.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="books_stack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\books_stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\32x32\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +223,7 @@
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="books_stack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\32x32\books_stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\32x32\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

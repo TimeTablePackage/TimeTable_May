@@ -85,6 +85,12 @@
     <Compile Include="BuildingForm.Designer.cs">
       <DependentUpon>BuildingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_Lecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Lecturer.Designer.cs">
+      <DependentUpon>Edit_Lecturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuildingForm.resx">
       <DependentUpon>BuildingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Lecturer.resx">
+      <DependentUpon>Edit_Lecturer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
@@ -379,6 +388,7 @@
     <None Include="resources\32x32\delete.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\32x32\cross.png" />
     <Content Include="ttp.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

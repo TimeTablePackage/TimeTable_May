@@ -61,7 +61,8 @@ namespace TimetablePackage
         private void ribbonButton1_Click(object sender, EventArgs e)
         {
             Lecturer document = new Lecturer();
-
+            document.Show();
+            /*
             // Show document
             if (DockTabPanel.DocumentStyle == DocumentStyle.SystemMdi)
             {
@@ -71,12 +72,13 @@ namespace TimetablePackage
             else
             {
                 document.Show(DockTabPanel);
-            }
+            } */
+
         }
 
         private void addLecturer_Click(object sender, EventArgs e)
         {
-            Add_Lecturer addALecturer = new Add_Lecturer();
+            Edit_Lecturer addALecturer = new Edit_Lecturer();
             addALecturer.ShowDialog();
         }
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.buildingGroupBox = new System.Windows.Forms.GroupBox();
             this.buildingDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buildingNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buildingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ttpDataSet = new TimetablePackage.ttpDataSet();
             this.roomGroupBox = new System.Windows.Forms.GroupBox();
@@ -44,8 +46,6 @@
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.RoomTableAdapter();
             this.buildingTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.BuildingTableAdapter();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buildingNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addBuildingButton = new System.Windows.Forms.Button();
             this.editBuildingButton = new System.Windows.Forms.Button();
             this.removeBuildingButton = new System.Windows.Forms.Button();
@@ -95,6 +95,20 @@
             this.buildingDataGridView.Size = new System.Drawing.Size(204, 280);
             this.buildingDataGridView.TabIndex = 0;
             this.buildingDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.buildingDataGridView_CellEnter);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // buildingNameDataGridViewTextBoxColumn
+            // 
+            this.buildingNameDataGridViewTextBoxColumn.DataPropertyName = "Building_Name";
+            this.buildingNameDataGridViewTextBoxColumn.HeaderText = "Building Name";
+            this.buildingNameDataGridViewTextBoxColumn.Name = "buildingNameDataGridViewTextBoxColumn";
+            this.buildingNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // buildingBindingSource
             // 
@@ -198,20 +212,6 @@
             // buildingTableAdapter
             // 
             this.buildingTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // buildingNameDataGridViewTextBoxColumn
-            // 
-            this.buildingNameDataGridViewTextBoxColumn.DataPropertyName = "Building_Name";
-            this.buildingNameDataGridViewTextBoxColumn.HeaderText = "Building Name";
-            this.buildingNameDataGridViewTextBoxColumn.Name = "buildingNameDataGridViewTextBoxColumn";
-            this.buildingNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addBuildingButton
             // 

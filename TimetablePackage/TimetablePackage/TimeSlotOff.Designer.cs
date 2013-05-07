@@ -234,7 +234,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox60, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox01, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox00, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(82, 98);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(99, 110);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -245,15 +245,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(474, 238);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 226);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // pictureBox68
             // 
             this.pictureBox68.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox68.Location = new System.Drawing.Point(422, 204);
+            this.pictureBox68.Location = new System.Drawing.Point(406, 192);
             this.pictureBox68.Name = "pictureBox68";
-            this.pictureBox68.Size = new System.Drawing.Size(46, 26);
+            this.pictureBox68.Size = new System.Drawing.Size(45, 26);
             this.pictureBox68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox68.TabIndex = 2;
             this.pictureBox68.TabStop = false;
@@ -262,9 +262,9 @@
             // pictureBox58
             // 
             this.pictureBox58.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox58.Location = new System.Drawing.Point(422, 171);
+            this.pictureBox58.Location = new System.Drawing.Point(406, 161);
             this.pictureBox58.Name = "pictureBox58";
-            this.pictureBox58.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox58.Size = new System.Drawing.Size(45, 22);
             this.pictureBox58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox58.TabIndex = 61;
             this.pictureBox58.TabStop = false;
@@ -273,9 +273,9 @@
             // pictureBox57
             // 
             this.pictureBox57.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox57.Location = new System.Drawing.Point(370, 171);
+            this.pictureBox57.Location = new System.Drawing.Point(356, 161);
             this.pictureBox57.Name = "pictureBox57";
-            this.pictureBox57.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox57.Size = new System.Drawing.Size(41, 22);
             this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox57.TabIndex = 60;
             this.pictureBox57.TabStop = false;
@@ -284,9 +284,9 @@
             // pictureBox56
             // 
             this.pictureBox56.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox56.Location = new System.Drawing.Point(318, 171);
+            this.pictureBox56.Location = new System.Drawing.Point(306, 161);
             this.pictureBox56.Name = "pictureBox56";
-            this.pictureBox56.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox56.Size = new System.Drawing.Size(41, 22);
             this.pictureBox56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox56.TabIndex = 59;
             this.pictureBox56.TabStop = false;
@@ -295,9 +295,9 @@
             // pictureBox55
             // 
             this.pictureBox55.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox55.Location = new System.Drawing.Point(266, 171);
+            this.pictureBox55.Location = new System.Drawing.Point(256, 161);
             this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox55.Size = new System.Drawing.Size(41, 22);
             this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox55.TabIndex = 58;
             this.pictureBox55.TabStop = false;
@@ -306,9 +306,9 @@
             // pictureBox54
             // 
             this.pictureBox54.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox54.Location = new System.Drawing.Point(214, 171);
+            this.pictureBox54.Location = new System.Drawing.Point(206, 161);
             this.pictureBox54.Name = "pictureBox54";
-            this.pictureBox54.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox54.Size = new System.Drawing.Size(41, 22);
             this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox54.TabIndex = 57;
             this.pictureBox54.TabStop = false;
@@ -317,9 +317,9 @@
             // pictureBox53
             // 
             this.pictureBox53.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox53.Location = new System.Drawing.Point(162, 171);
+            this.pictureBox53.Location = new System.Drawing.Point(156, 161);
             this.pictureBox53.Name = "pictureBox53";
-            this.pictureBox53.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox53.Size = new System.Drawing.Size(41, 22);
             this.pictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox53.TabIndex = 56;
             this.pictureBox53.TabStop = false;
@@ -328,9 +328,9 @@
             // pictureBox52
             // 
             this.pictureBox52.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox52.Location = new System.Drawing.Point(110, 171);
+            this.pictureBox52.Location = new System.Drawing.Point(106, 161);
             this.pictureBox52.Name = "pictureBox52";
-            this.pictureBox52.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox52.Size = new System.Drawing.Size(41, 22);
             this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox52.TabIndex = 55;
             this.pictureBox52.TabStop = false;
@@ -339,9 +339,9 @@
             // pictureBox51
             // 
             this.pictureBox51.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox51.Location = new System.Drawing.Point(58, 171);
+            this.pictureBox51.Location = new System.Drawing.Point(56, 161);
             this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox51.Size = new System.Drawing.Size(41, 22);
             this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox51.TabIndex = 54;
             this.pictureBox51.TabStop = false;
@@ -350,9 +350,9 @@
             // pictureBox50
             // 
             this.pictureBox50.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox50.Location = new System.Drawing.Point(6, 171);
+            this.pictureBox50.Location = new System.Drawing.Point(6, 161);
             this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox50.Size = new System.Drawing.Size(41, 22);
             this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox50.TabIndex = 53;
             this.pictureBox50.TabStop = false;
@@ -361,9 +361,9 @@
             // pictureBox48
             // 
             this.pictureBox48.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox48.Location = new System.Drawing.Point(422, 138);
+            this.pictureBox48.Location = new System.Drawing.Point(406, 130);
             this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox48.Size = new System.Drawing.Size(45, 22);
             this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox48.TabIndex = 52;
             this.pictureBox48.TabStop = false;
@@ -372,9 +372,9 @@
             // pictureBox47
             // 
             this.pictureBox47.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox47.Location = new System.Drawing.Point(370, 138);
+            this.pictureBox47.Location = new System.Drawing.Point(356, 130);
             this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox47.Size = new System.Drawing.Size(41, 22);
             this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox47.TabIndex = 51;
             this.pictureBox47.TabStop = false;
@@ -383,9 +383,9 @@
             // pictureBox46
             // 
             this.pictureBox46.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox46.Location = new System.Drawing.Point(318, 138);
+            this.pictureBox46.Location = new System.Drawing.Point(306, 130);
             this.pictureBox46.Name = "pictureBox46";
-            this.pictureBox46.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox46.Size = new System.Drawing.Size(41, 22);
             this.pictureBox46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox46.TabIndex = 50;
             this.pictureBox46.TabStop = false;
@@ -394,9 +394,9 @@
             // pictureBox45
             // 
             this.pictureBox45.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox45.Location = new System.Drawing.Point(266, 138);
+            this.pictureBox45.Location = new System.Drawing.Point(256, 130);
             this.pictureBox45.Name = "pictureBox45";
-            this.pictureBox45.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox45.Size = new System.Drawing.Size(41, 22);
             this.pictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox45.TabIndex = 49;
             this.pictureBox45.TabStop = false;
@@ -405,9 +405,9 @@
             // pictureBox44
             // 
             this.pictureBox44.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox44.Location = new System.Drawing.Point(214, 138);
+            this.pictureBox44.Location = new System.Drawing.Point(206, 130);
             this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox44.Size = new System.Drawing.Size(41, 22);
             this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox44.TabIndex = 48;
             this.pictureBox44.TabStop = false;
@@ -416,9 +416,9 @@
             // pictureBox43
             // 
             this.pictureBox43.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox43.Location = new System.Drawing.Point(162, 138);
+            this.pictureBox43.Location = new System.Drawing.Point(156, 130);
             this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox43.Size = new System.Drawing.Size(41, 22);
             this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox43.TabIndex = 47;
             this.pictureBox43.TabStop = false;
@@ -427,9 +427,9 @@
             // pictureBox42
             // 
             this.pictureBox42.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox42.Location = new System.Drawing.Point(110, 138);
+            this.pictureBox42.Location = new System.Drawing.Point(106, 130);
             this.pictureBox42.Name = "pictureBox42";
-            this.pictureBox42.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox42.Size = new System.Drawing.Size(41, 22);
             this.pictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox42.TabIndex = 46;
             this.pictureBox42.TabStop = false;
@@ -438,9 +438,9 @@
             // pictureBox41
             // 
             this.pictureBox41.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox41.Location = new System.Drawing.Point(58, 138);
+            this.pictureBox41.Location = new System.Drawing.Point(56, 130);
             this.pictureBox41.Name = "pictureBox41";
-            this.pictureBox41.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox41.Size = new System.Drawing.Size(41, 22);
             this.pictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox41.TabIndex = 45;
             this.pictureBox41.TabStop = false;
@@ -449,9 +449,9 @@
             // pictureBox40
             // 
             this.pictureBox40.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox40.Location = new System.Drawing.Point(6, 138);
+            this.pictureBox40.Location = new System.Drawing.Point(6, 130);
             this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox40.Size = new System.Drawing.Size(41, 22);
             this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox40.TabIndex = 44;
             this.pictureBox40.TabStop = false;
@@ -460,9 +460,9 @@
             // pictureBox38
             // 
             this.pictureBox38.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox38.Location = new System.Drawing.Point(422, 105);
+            this.pictureBox38.Location = new System.Drawing.Point(406, 99);
             this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox38.Size = new System.Drawing.Size(45, 22);
             this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox38.TabIndex = 43;
             this.pictureBox38.TabStop = false;
@@ -471,9 +471,9 @@
             // pictureBox37
             // 
             this.pictureBox37.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox37.Location = new System.Drawing.Point(370, 105);
+            this.pictureBox37.Location = new System.Drawing.Point(356, 99);
             this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox37.Size = new System.Drawing.Size(41, 22);
             this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox37.TabIndex = 42;
             this.pictureBox37.TabStop = false;
@@ -482,9 +482,9 @@
             // pictureBox36
             // 
             this.pictureBox36.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox36.Location = new System.Drawing.Point(318, 105);
+            this.pictureBox36.Location = new System.Drawing.Point(306, 99);
             this.pictureBox36.Name = "pictureBox36";
-            this.pictureBox36.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox36.Size = new System.Drawing.Size(41, 22);
             this.pictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox36.TabIndex = 41;
             this.pictureBox36.TabStop = false;
@@ -493,9 +493,9 @@
             // pictureBox35
             // 
             this.pictureBox35.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox35.Location = new System.Drawing.Point(266, 105);
+            this.pictureBox35.Location = new System.Drawing.Point(256, 99);
             this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox35.Size = new System.Drawing.Size(41, 22);
             this.pictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox35.TabIndex = 40;
             this.pictureBox35.TabStop = false;
@@ -504,9 +504,9 @@
             // pictureBox34
             // 
             this.pictureBox34.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox34.Location = new System.Drawing.Point(214, 105);
+            this.pictureBox34.Location = new System.Drawing.Point(206, 99);
             this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox34.Size = new System.Drawing.Size(41, 22);
             this.pictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox34.TabIndex = 39;
             this.pictureBox34.TabStop = false;
@@ -515,9 +515,9 @@
             // pictureBox33
             // 
             this.pictureBox33.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox33.Location = new System.Drawing.Point(162, 105);
+            this.pictureBox33.Location = new System.Drawing.Point(156, 99);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox33.Size = new System.Drawing.Size(41, 22);
             this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox33.TabIndex = 38;
             this.pictureBox33.TabStop = false;
@@ -526,9 +526,9 @@
             // pictureBox32
             // 
             this.pictureBox32.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox32.Location = new System.Drawing.Point(110, 105);
+            this.pictureBox32.Location = new System.Drawing.Point(106, 99);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox32.Size = new System.Drawing.Size(41, 22);
             this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox32.TabIndex = 37;
             this.pictureBox32.TabStop = false;
@@ -537,9 +537,9 @@
             // pictureBox31
             // 
             this.pictureBox31.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox31.Location = new System.Drawing.Point(58, 105);
+            this.pictureBox31.Location = new System.Drawing.Point(56, 99);
             this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox31.Size = new System.Drawing.Size(41, 22);
             this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox31.TabIndex = 36;
             this.pictureBox31.TabStop = false;
@@ -548,9 +548,9 @@
             // pictureBox30
             // 
             this.pictureBox30.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox30.Location = new System.Drawing.Point(6, 105);
+            this.pictureBox30.Location = new System.Drawing.Point(6, 99);
             this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox30.Size = new System.Drawing.Size(41, 22);
             this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox30.TabIndex = 35;
             this.pictureBox30.TabStop = false;
@@ -559,9 +559,9 @@
             // pictureBox28
             // 
             this.pictureBox28.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox28.Location = new System.Drawing.Point(422, 72);
+            this.pictureBox28.Location = new System.Drawing.Point(406, 68);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox28.Size = new System.Drawing.Size(45, 22);
             this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox28.TabIndex = 34;
             this.pictureBox28.TabStop = false;
@@ -570,9 +570,9 @@
             // pictureBox27
             // 
             this.pictureBox27.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox27.Location = new System.Drawing.Point(370, 72);
+            this.pictureBox27.Location = new System.Drawing.Point(356, 68);
             this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox27.Size = new System.Drawing.Size(41, 22);
             this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox27.TabIndex = 33;
             this.pictureBox27.TabStop = false;
@@ -581,9 +581,9 @@
             // pictureBox26
             // 
             this.pictureBox26.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox26.Location = new System.Drawing.Point(318, 72);
+            this.pictureBox26.Location = new System.Drawing.Point(306, 68);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox26.Size = new System.Drawing.Size(41, 22);
             this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox26.TabIndex = 32;
             this.pictureBox26.TabStop = false;
@@ -592,9 +592,9 @@
             // pictureBox25
             // 
             this.pictureBox25.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox25.Location = new System.Drawing.Point(266, 72);
+            this.pictureBox25.Location = new System.Drawing.Point(256, 68);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox25.Size = new System.Drawing.Size(41, 22);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox25.TabIndex = 31;
             this.pictureBox25.TabStop = false;
@@ -603,9 +603,9 @@
             // pictureBox24
             // 
             this.pictureBox24.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox24.Location = new System.Drawing.Point(214, 72);
+            this.pictureBox24.Location = new System.Drawing.Point(206, 68);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox24.Size = new System.Drawing.Size(41, 22);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 30;
             this.pictureBox24.TabStop = false;
@@ -614,9 +614,9 @@
             // pictureBox23
             // 
             this.pictureBox23.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox23.Location = new System.Drawing.Point(162, 72);
+            this.pictureBox23.Location = new System.Drawing.Point(156, 68);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox23.Size = new System.Drawing.Size(41, 22);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 29;
             this.pictureBox23.TabStop = false;
@@ -625,9 +625,9 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox22.Location = new System.Drawing.Point(110, 72);
+            this.pictureBox22.Location = new System.Drawing.Point(106, 68);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox22.Size = new System.Drawing.Size(41, 22);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 28;
             this.pictureBox22.TabStop = false;
@@ -636,9 +636,9 @@
             // pictureBox21
             // 
             this.pictureBox21.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox21.Location = new System.Drawing.Point(58, 72);
+            this.pictureBox21.Location = new System.Drawing.Point(56, 68);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox21.Size = new System.Drawing.Size(41, 22);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 27;
             this.pictureBox21.TabStop = false;
@@ -647,9 +647,9 @@
             // pictureBox20
             // 
             this.pictureBox20.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox20.Location = new System.Drawing.Point(6, 72);
+            this.pictureBox20.Location = new System.Drawing.Point(6, 68);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox20.Size = new System.Drawing.Size(41, 22);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox20.TabIndex = 26;
             this.pictureBox20.TabStop = false;
@@ -658,9 +658,9 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox18.Location = new System.Drawing.Point(422, 39);
+            this.pictureBox18.Location = new System.Drawing.Point(406, 37);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox18.Size = new System.Drawing.Size(45, 22);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox18.TabIndex = 25;
             this.pictureBox18.TabStop = false;
@@ -669,9 +669,9 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox17.Location = new System.Drawing.Point(370, 39);
+            this.pictureBox17.Location = new System.Drawing.Point(356, 37);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox17.Size = new System.Drawing.Size(41, 22);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 24;
             this.pictureBox17.TabStop = false;
@@ -680,9 +680,9 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox16.Location = new System.Drawing.Point(318, 39);
+            this.pictureBox16.Location = new System.Drawing.Point(306, 37);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox16.Size = new System.Drawing.Size(41, 22);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 23;
             this.pictureBox16.TabStop = false;
@@ -691,9 +691,9 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox15.Location = new System.Drawing.Point(266, 39);
+            this.pictureBox15.Location = new System.Drawing.Point(256, 37);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox15.Size = new System.Drawing.Size(41, 22);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 22;
             this.pictureBox15.TabStop = false;
@@ -702,9 +702,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox14.Location = new System.Drawing.Point(214, 39);
+            this.pictureBox14.Location = new System.Drawing.Point(206, 37);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox14.Size = new System.Drawing.Size(41, 22);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 21;
             this.pictureBox14.TabStop = false;
@@ -713,9 +713,9 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox13.Location = new System.Drawing.Point(162, 39);
+            this.pictureBox13.Location = new System.Drawing.Point(156, 37);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox13.Size = new System.Drawing.Size(41, 22);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 20;
             this.pictureBox13.TabStop = false;
@@ -724,9 +724,9 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox12.Location = new System.Drawing.Point(110, 39);
+            this.pictureBox12.Location = new System.Drawing.Point(106, 37);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox12.Size = new System.Drawing.Size(41, 22);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 19;
             this.pictureBox12.TabStop = false;
@@ -735,9 +735,9 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox11.Location = new System.Drawing.Point(58, 39);
+            this.pictureBox11.Location = new System.Drawing.Point(56, 37);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox11.Size = new System.Drawing.Size(41, 22);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 18;
             this.pictureBox11.TabStop = false;
@@ -746,9 +746,9 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox10.Location = new System.Drawing.Point(6, 39);
+            this.pictureBox10.Location = new System.Drawing.Point(6, 37);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox10.Size = new System.Drawing.Size(41, 22);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 17;
             this.pictureBox10.TabStop = false;
@@ -756,10 +756,11 @@
             // 
             // pictureBox08
             // 
+            this.pictureBox08.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox08.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox08.Location = new System.Drawing.Point(422, 6);
+            this.pictureBox08.Location = new System.Drawing.Point(406, 6);
             this.pictureBox08.Name = "pictureBox08";
-            this.pictureBox08.Size = new System.Drawing.Size(46, 24);
+            this.pictureBox08.Size = new System.Drawing.Size(45, 22);
             this.pictureBox08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox08.TabIndex = 16;
             this.pictureBox08.TabStop = false;
@@ -768,9 +769,9 @@
             // pictureBox07
             // 
             this.pictureBox07.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox07.Location = new System.Drawing.Point(370, 6);
+            this.pictureBox07.Location = new System.Drawing.Point(356, 6);
             this.pictureBox07.Name = "pictureBox07";
-            this.pictureBox07.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox07.Size = new System.Drawing.Size(41, 22);
             this.pictureBox07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox07.TabIndex = 15;
             this.pictureBox07.TabStop = false;
@@ -779,9 +780,9 @@
             // pictureBox06
             // 
             this.pictureBox06.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox06.Location = new System.Drawing.Point(318, 6);
+            this.pictureBox06.Location = new System.Drawing.Point(306, 6);
             this.pictureBox06.Name = "pictureBox06";
-            this.pictureBox06.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox06.Size = new System.Drawing.Size(41, 22);
             this.pictureBox06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox06.TabIndex = 14;
             this.pictureBox06.TabStop = false;
@@ -790,9 +791,9 @@
             // pictureBox05
             // 
             this.pictureBox05.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox05.Location = new System.Drawing.Point(266, 6);
+            this.pictureBox05.Location = new System.Drawing.Point(256, 6);
             this.pictureBox05.Name = "pictureBox05";
-            this.pictureBox05.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox05.Size = new System.Drawing.Size(41, 22);
             this.pictureBox05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox05.TabIndex = 13;
             this.pictureBox05.TabStop = false;
@@ -801,9 +802,9 @@
             // pictureBox04
             // 
             this.pictureBox04.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox04.Location = new System.Drawing.Point(214, 6);
+            this.pictureBox04.Location = new System.Drawing.Point(206, 6);
             this.pictureBox04.Name = "pictureBox04";
-            this.pictureBox04.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox04.Size = new System.Drawing.Size(41, 22);
             this.pictureBox04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox04.TabIndex = 12;
             this.pictureBox04.TabStop = false;
@@ -812,9 +813,9 @@
             // pictureBox03
             // 
             this.pictureBox03.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox03.Location = new System.Drawing.Point(162, 6);
+            this.pictureBox03.Location = new System.Drawing.Point(156, 6);
             this.pictureBox03.Name = "pictureBox03";
-            this.pictureBox03.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox03.Size = new System.Drawing.Size(41, 22);
             this.pictureBox03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox03.TabIndex = 11;
             this.pictureBox03.TabStop = false;
@@ -823,9 +824,9 @@
             // pictureBox02
             // 
             this.pictureBox02.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox02.Location = new System.Drawing.Point(110, 6);
+            this.pictureBox02.Location = new System.Drawing.Point(106, 6);
             this.pictureBox02.Name = "pictureBox02";
-            this.pictureBox02.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox02.Size = new System.Drawing.Size(41, 22);
             this.pictureBox02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox02.TabIndex = 2;
             this.pictureBox02.TabStop = false;
@@ -834,9 +835,9 @@
             // pictureBox63
             // 
             this.pictureBox63.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox63.Location = new System.Drawing.Point(162, 204);
+            this.pictureBox63.Location = new System.Drawing.Point(256, 192);
             this.pictureBox63.Name = "pictureBox63";
-            this.pictureBox63.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox63.Size = new System.Drawing.Size(41, 26);
             this.pictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox63.TabIndex = 10;
             this.pictureBox63.TabStop = false;
@@ -845,9 +846,9 @@
             // pictureBox66
             // 
             this.pictureBox66.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox66.Location = new System.Drawing.Point(318, 204);
+            this.pictureBox66.Location = new System.Drawing.Point(206, 192);
             this.pictureBox66.Name = "pictureBox66";
-            this.pictureBox66.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox66.Size = new System.Drawing.Size(41, 26);
             this.pictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox66.TabIndex = 9;
             this.pictureBox66.TabStop = false;
@@ -856,9 +857,9 @@
             // pictureBox65
             // 
             this.pictureBox65.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox65.Location = new System.Drawing.Point(266, 204);
+            this.pictureBox65.Location = new System.Drawing.Point(356, 192);
             this.pictureBox65.Name = "pictureBox65";
-            this.pictureBox65.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox65.Size = new System.Drawing.Size(41, 26);
             this.pictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox65.TabIndex = 8;
             this.pictureBox65.TabStop = false;
@@ -867,9 +868,9 @@
             // pictureBox64
             // 
             this.pictureBox64.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox64.Location = new System.Drawing.Point(214, 204);
+            this.pictureBox64.Location = new System.Drawing.Point(306, 192);
             this.pictureBox64.Name = "pictureBox64";
-            this.pictureBox64.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox64.Size = new System.Drawing.Size(41, 26);
             this.pictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox64.TabIndex = 7;
             this.pictureBox64.TabStop = false;
@@ -878,9 +879,9 @@
             // pictureBox67
             // 
             this.pictureBox67.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox67.Location = new System.Drawing.Point(370, 204);
+            this.pictureBox67.Location = new System.Drawing.Point(156, 192);
             this.pictureBox67.Name = "pictureBox67";
-            this.pictureBox67.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox67.Size = new System.Drawing.Size(41, 26);
             this.pictureBox67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox67.TabIndex = 6;
             this.pictureBox67.TabStop = false;
@@ -889,9 +890,9 @@
             // pictureBox62
             // 
             this.pictureBox62.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox62.Location = new System.Drawing.Point(110, 204);
+            this.pictureBox62.Location = new System.Drawing.Point(6, 192);
             this.pictureBox62.Name = "pictureBox62";
-            this.pictureBox62.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox62.Size = new System.Drawing.Size(41, 26);
             this.pictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox62.TabIndex = 5;
             this.pictureBox62.TabStop = false;
@@ -900,9 +901,9 @@
             // pictureBox61
             // 
             this.pictureBox61.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox61.Location = new System.Drawing.Point(58, 204);
+            this.pictureBox61.Location = new System.Drawing.Point(56, 192);
             this.pictureBox61.Name = "pictureBox61";
-            this.pictureBox61.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox61.Size = new System.Drawing.Size(41, 26);
             this.pictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox61.TabIndex = 4;
             this.pictureBox61.TabStop = false;
@@ -911,9 +912,9 @@
             // pictureBox60
             // 
             this.pictureBox60.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox60.Location = new System.Drawing.Point(6, 204);
+            this.pictureBox60.Location = new System.Drawing.Point(106, 192);
             this.pictureBox60.Name = "pictureBox60";
-            this.pictureBox60.Size = new System.Drawing.Size(43, 26);
+            this.pictureBox60.Size = new System.Drawing.Size(41, 26);
             this.pictureBox60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox60.TabIndex = 3;
             this.pictureBox60.TabStop = false;
@@ -922,9 +923,9 @@
             // pictureBox01
             // 
             this.pictureBox01.Image = global::TimetablePackage.Properties.Resources.tick;
-            this.pictureBox01.Location = new System.Drawing.Point(58, 6);
+            this.pictureBox01.Location = new System.Drawing.Point(56, 6);
             this.pictureBox01.Name = "pictureBox01";
-            this.pictureBox01.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox01.Size = new System.Drawing.Size(41, 22);
             this.pictureBox01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox01.TabIndex = 2;
             this.pictureBox01.TabStop = false;
@@ -935,7 +936,7 @@
             this.pictureBox00.Image = global::TimetablePackage.Properties.Resources.tick;
             this.pictureBox00.Location = new System.Drawing.Point(6, 6);
             this.pictureBox00.Name = "pictureBox00";
-            this.pictureBox00.Size = new System.Drawing.Size(43, 24);
+            this.pictureBox00.Size = new System.Drawing.Size(41, 22);
             this.pictureBox00.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox00.TabIndex = 1;
             this.pictureBox00.TabStop = false;

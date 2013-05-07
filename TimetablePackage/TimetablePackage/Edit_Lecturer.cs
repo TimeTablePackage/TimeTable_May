@@ -11,6 +11,7 @@ using DigitalRune.Windows.Docking;
 
 namespace TimetablePackage
 {
+    
     public partial class Edit_Lecturer : DockableForm 
     {
         String tempSlotsOff;
@@ -37,37 +38,8 @@ namespace TimetablePackage
             
         }
 
-        private void Add_Lecturer_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void addLecturerGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
-       /* private void checkBox1_CheckStateChanged(object sender, System.EventArgs e) 
-        {
-            if( checkBox1.CheckState == CheckState.Checked )
-            {
-                this.checkBox1.ImageKey = "tick.png"; 
-            }
-            else if (checkBox1.CheckState == CheckState.Unchecked)
-            {
-                this.checkBox1.ImageKey = "cross.png";
-            }*/
-
             private void commonEventHandler(object sender, System.EventArgs e)
             {
-                 
-                  
                  CheckBox myCheckBox = (CheckBox)sender ;
                 
                  if( myCheckBox.CheckState == CheckState.Checked )
