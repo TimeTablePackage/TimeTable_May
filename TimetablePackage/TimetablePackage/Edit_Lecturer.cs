@@ -14,11 +14,22 @@ namespace TimetablePackage
     
     public partial class Edit_Lecturer : DockableForm 
     {
+        Domain.Lecturer thelec;
         String tempSlotsOff;
         DomainControler controller = DomainControler.getInstance();
+        bool insert;
+
         public Edit_Lecturer()
         {
             InitializeComponent();
+            insert = true;
+        }
+
+        public Edit_Lecturer(Domain.Lecturer theLec)
+        {
+            this.thelec = thelec;
+            InitializeComponent();
+            insert = false;
         }
         
         private void okayButton_Click(object sender, EventArgs e)

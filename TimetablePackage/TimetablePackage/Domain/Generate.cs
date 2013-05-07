@@ -178,11 +178,7 @@ namespace Domain
                 
                 while (!allocated)
                 {
-                    int 
-                    if (!contains(population[0][1], theLesson))
-                    {
-                        
-                    }
+                 
 
                     
                 }

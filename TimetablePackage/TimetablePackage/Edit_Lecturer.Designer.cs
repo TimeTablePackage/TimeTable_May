@@ -131,7 +131,6 @@
             this.editLecturerGroupBox.TabIndex = 0;
             this.editLecturerGroupBox.TabStop = false;
             this.editLecturerGroupBox.Text = "Edit a Lecturer";
-            this.editLecturerGroupBox.Enter += new System.EventHandler(this.addLecturerGroupBox_Enter);
             // 
             // editLectableLayout
             // 
@@ -1198,7 +1197,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TabText = "Edit a Lecturer";
             this.Text = "Edit a Lecturer";
-            this.Load += new System.EventHandler(this.Add_Lecturer_Load);
             this.editLecturerGroupBox.ResumeLayout(false);
             this.editLecturerGroupBox.PerformLayout();
             this.editLectableLayout.ResumeLayout(false);

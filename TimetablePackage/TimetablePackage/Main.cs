@@ -83,8 +83,7 @@ namespace TimetablePackage
 
         private void addLecturer_Click(object sender, EventArgs e)
         {
-            Edit_Lecturer addALecturer = new Edit_Lecturer();
-            addALecturer.ShowDialog();
+            
         }
 
         private void moduleListButton_Click(object sender, EventArgs e)

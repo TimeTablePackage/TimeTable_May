@@ -31,8 +31,8 @@ namespace TimetablePackage
 
         private void addLecturerButton_Click(object sender, EventArgs e)
         {
-            Edit_Lecturer add_Lecturer = new Edit_Lecturer();
-            add_Lecturer.Show();
+            
+
         }
     }
 }
