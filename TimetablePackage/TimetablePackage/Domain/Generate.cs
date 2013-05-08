@@ -1,5 +1,6 @@
 ﻿using Services;
 using System;
+using System.Windows.Forms;
 
 namespace Domain
 {
@@ -32,45 +33,126 @@ namespace Domain
             dbhelper = controler.getDBHelper();
             roomList = dbhelper.getRoomList();
             moduleList = dbhelper.getModuleList();
-            populate();
+            if (!(roomList.getLenght() * 40 < dbhelper.totalModuleHours()))
+            {
+                populate();
+            }
+            else
+            {
+                MessageBox.Show("Not enough resources(rooms) to complete timetable");
+            }
         }
         /// <summary>
-        /// generate a random timeslot for a lesson
+        /// auto-generate the population
         /// </summary>
-        /// <returns></returns>
-        private int generateRandomTimeSlot()
+        private void populate()
         {
-            return new Random().Next(0, 40);
+            for (int x = 0; x < dbhelper.totalModuleHours(); x++)
+            {
+                addToPop(population[0], genRandomLesson());
+                dbhelper.insertLessons(population[0]);
+            }
+
         }
         /// <summary>
-        /// gets an available lecturer for the given module;
+        /// add a lesson to suitable place in the popluation i.e. 
         /// </summary>
-        /// <returns></returns>
-        private Lecturer getLecturer(Module theModule)
+        /// <param name="theLesson"></param>
+        private void addToPop(Lesson[][] theChromosome, Lesson theLesson)
         {
-            bool exit = false;
-            string[] lecturers = theModule.lecturers;
-            Lecturer thelec = null;
-            //search for lecturer
-            for (int i = 0; i < lecturers.Length && !exit; i++)
+            bool allocated = false;
+
+            // for each chromosome
+            for (int y = 0; y < theChromosome[0].Length && !allocated; y++)
             {
-                thelec = dbhelper.getLecturerById(lecturers[i]);
-                if (thelec.hoursAllocated < thelec.maxHours)
+                //ensure the same module/leturer/room is not repeated in one timeslot!
+                if (!(contains(theChromosome[y], theLesson.lecturer) ||
+                    contains(theChromosome[y], theLesson.module) ||
+                    contains(theChromosome[y], theLesson.room)))
                 {
-                    exit = true;
+                    for (int z = 0; z < theChromosome[y].Length && !allocated; z++)
+                    {
+                        if (theChromosome[y][z] == null)
+                        {
+                            theChromosome[y][z] = theLesson;
+                            allocated = true;
+                        }
+                    }
+                }
+
+            }
+        }
+        /// <summary>
+        /// Check if a object is in the array
+        /// </summary>
+        /// <param name="theLessons">the array</param>
+        /// <param name="obj">the module/lecturer/room to check for</param>
+        /// <returns>boolean</returns>
+        private bool contains(Lesson[] theLessons, object obj)
+        {
+            bool answer = false;
+
+            for (int i = 0; i < theLessons.Length; i++)
+            {
+                if (theLessons[i] != null)
+                {
+                    //try to cast as a lecturer 
+                    try
+                    {
+                        if (theLessons[i].lecturer == (Lecturer)obj)
+                        {
+                            answer = true;
+                        }
+                    }
+                    catch
+                    {
+                        //or as a module 
+                        try
+                        {
+                            if (theLessons[i].module == obj)
+                            {
+                                answer = true;
+                            }
+                        }
+                        catch
+                        {
+                            // must be a room so.
+                            try
+                            {
+                                if (theLessons[i].room == obj)
+                                {
+                                    answer = true;
+                                }
+                            }
+                            catch
+                            {
+
+                            }
+
+                        }
+                    }
                 }
             }
-            //if no lecturer suitable get random one
-            if (!exit)
-            {
-                //random number
-                int numOfLoops = new Random().Next(1, lecturers.Length + 1);
-                for (int i = 0; i < numOfLoops; i++)
-                {
-                    thelec = dbhelper.getLecturerById(lecturers[i]);
-                }
-            }
-            return thelec;
+            return answer;
+        }
+        /// <summary>
+        /// generate a random lesson
+        /// </summary>
+        private Lesson genRandomLesson()
+        {
+            Module theModule;
+            Lecturer theLec;
+            Room theRoom;
+            Lesson theLesson = null;
+
+            theModule = getRandomModule();
+            theLec = getLecturer(theModule);
+            theRoom = getRoom(theModule);
+            theLesson = new Lesson(theLec, theModule, theRoom);
+            theModule.AllocatedToALesson();
+            theLec.AllocatedToALesson();
+
+            return theLesson;
         }
         /// <summary>
         /// Get a random Module
@@ -104,6 +186,36 @@ namespace Domain
             return randModule;
         }
         /// <summary>
+        /// gets an available lecturer for the given module;
+        /// </summary>
+        /// <returns></returns>
+        private Lecturer getLecturer(Module theModule)
+        {
+            bool exit = false;
+            string[] lecturers = theModule.lecturers;
+            Lecturer thelec = null;
+            //search for lecturer
+            for (int i = 0; i < lecturers.Length && !exit; i++)
+            {
+                thelec = dbhelper.getLecturerById(lecturers[i]);
+                if (thelec.hoursAllocated < thelec.maxHours)
+                {
+                    exit = true;
+                }
+            }
+            //if no lecturer suitable get random one
+            if (!exit)
+            {
+                //random number
+                int numOfLoops = new Random().Next(1, lecturers.Length + 1);
+                for (int i = 0; i < numOfLoops; i++)
+                {
+                    thelec = dbhelper.getLecturerById(lecturers[i]);
+                }
+            }
+            return thelec;
+        }
+        /// <summary>
         /// get a room for the module
         /// </summary>
         /// <param name="theModule">the module</param>
@@ -119,25 +231,6 @@ namespace Domain
                 theRoom = (Room)roomNode.data;
             }
             return theRoom;
-        }
-        /// <summary>
-        /// generate a random population of timetables/ chromosones
-        /// </summary>
-        private Lesson genRandomLesson()
-        {
-            Module theModule;
-            Lecturer theLec;
-            Room theRoom;
-            Lesson theLesson = null;
-
-            theModule = getRandomModule();
-            theLec = getLecturer(theModule);
-            theRoom = getRoom(theModule);
-            theLesson = new Lesson(theLec, theModule, theRoom);
-            theModule.AllocatedToALesson();
-            theLec.AllocatedToALesson();
-
-            return theLesson;
         }
         /// <summary>
         /// checks whether or not to go to the next generation based
@@ -196,99 +289,10 @@ namespace Domain
             newFather = father;
             newMother = mother;
         }
-        /// <summary>
-        /// Check if a object is in the array
-        /// </summary>
-        /// <param name="theLessons">the array</param>
-        /// <param name="obj">the module/lecturer/room to check for</param>
-        /// <returns>boolean</returns>
-        private bool contains(Lesson[] theLessons, object obj)
-        {
-            bool answer = false;
+       
+ 
 
-            for (int i = 0; i < theLessons.Length; i++)
-            {
-                if (theLessons[i] != null)
-                {
-                    //try to cast as a lecturer 
-                    try
-                    {
-                        if (theLessons[i].lecturer == (Lecturer)obj)
-                        {
-                            answer = true;
-                        }
-                    }
-                    catch
-                    {
-                        //or as a module 
-                        try
-                        {
-                            if (theLessons[i].module == obj)
-                            {
-                                answer = true;
-                            }
-                        }
-                        catch
-                        {
-                            // must be a room so.
-                            try
-                            {
-                                if (theLessons[i].room == obj)
-                                {
-                                    answer = true;
-                                }
-                            }
-                            catch
-                            {
-
-                            }
-
-                        }
-                    }
-                }
-            }
-            return answer;
-        }
-        /// <summary>
-        /// add a lesson to suitable place in the popluation i.e. 
-        /// </summary>
-        /// <param name="theLesson"></param>
-        private void addToPop(Lesson[][] theChromosome, Lesson theLesson)
-        {
-            bool allocated = false;
-
-            // for each chromosome
-            for (int y = 0; y < theChromosome[0].Length && !allocated; y++)
-            {
-                //ensure the same module/leturer/room is not repeated in one timeslot!
-                if (!(contains(theChromosome[y], theLesson.lecturer) ||
-                    contains(theChromosome[y], theLesson.module) ||
-                    contains(theChromosome[y], theLesson.room)))
-                {
-                    for (int z = 0; z < theChromosome[y].Length && !allocated; z++)
-                    {
-                        if (theChromosome[y][z] == null)
-                        {
-                            theChromosome[y][z] = theLesson;
-                            allocated = true;
-                        }
-                    }
-                }
-
-            }
-        }
-        /// <summary>
-        /// auto-generate the population
-        /// </summary>
-        private void populate()
-        {
-            for (int x = 0; x < dbhelper.totalModuleHours(); x++)
-            {
-                addToPop(population[0], genRandomLesson());
-                dbhelper.insertLessons(population[0]);
-            }
-
-        }
+ 
     }
 
 }
