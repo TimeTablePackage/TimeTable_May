@@ -36,10 +36,15 @@ namespace Domain
                 for (int y = 0; y < population[x].Length; y++)
                 {
                     //max number of lessons at one time possible is equals to number of rooms;
+<<<<<<< HEAD
                     population[x][y] = new Lesson[roomList.Length];
+=======
+                    population[x][y] = new Lesson[20];
+>>>>>>> origin/ayhan4
                 }
             }
             moduleList = dbhelper.getModuleList();
+<<<<<<< HEAD
             //array that keeps track of the number of lessons in each time slot
             lessonsPerSlotCount = new int[40];
             Node roomNode = dbhelper.getRoomList().head;
@@ -47,6 +52,15 @@ namespace Domain
             {
                 roomList[i] = (Room)roomNode.data;
                 roomNode = roomNode.next;
+=======
+            if (!(roomList.getLenght() * 40 < dbhelper.totalModuleHours()))
+            {
+                populate();
+            }
+            else
+            {
+                MessageBox.Show("Not enough resources(rooms) to complete timetable");
+>>>>>>> origin/ayhan4
             }
         }
         /// <summary>
@@ -54,6 +68,7 @@ namespace Domain
         /// </summary>
         private void populate()
         {
+<<<<<<< HEAD
             Module tempModule;
             int numOfLoops;
             Lesson[][] Chromosome = population[0];
@@ -84,14 +99,47 @@ namespace Domain
                         {
                             chromosome[i][x] = lesson;
                             added = true;
+=======
+            for (int x = 0; x < dbhelper.totalModuleHours(); x++)
+            {
+                addToPop(population[0], genRandomLesson());
+                dbhelper.insertLessons(population[0]);
+            }
+
+        }
+        /// <summary>
+        /// add a lesson to suitable place in the popluation i.e. 
+        /// </summary>
+        /// <param name="theLesson"></param>
+        private void addToPop(Lesson[][] theChromosome, Lesson theLesson)
+        {
+            bool allocated = false;
+
+            // for each chromosome
+            for (int y = 0; y < theChromosome[0].Length && !allocated; y++)
+            {
+                //ensure the same module/leturer/room is not repeated in one timeslot!
+                if (!(contains(theChromosome[y], theLesson.lecturer) ||
+                    contains(theChromosome[y], theLesson.module) ||
+                    contains(theChromosome[y], theLesson.room)))
+                {
+                    for (int z = 0; z < theChromosome[y].Length && !allocated; z++)
+                    {
+                        if (theChromosome[y][z] == null)
+                        {
+                            theChromosome[y][z] = theLesson;
+                            allocated = true;
+>>>>>>> origin/ayhan4
                         }
                     }
                 }
+
             }
         }
         /// <summary>
         /// Check if a object is in the array
         /// </summary>
+<<<<<<< HEAD
         /// <param name="genome">the array</param>
         /// <param name="obj">the module/lecturer/room to check for</param>
         /// <returns>boolean</returns>
@@ -110,6 +158,53 @@ namespace Domain
                     else if (lesson.lecturer == genome[i].lecturer)
                     {
                         answer = true;
+=======
+        /// <param name="theLessons">the array</param>
+        /// <param name="obj">the module/lecturer/room to check for</param>
+        /// <returns>boolean</returns>
+        private bool contains(Lesson[] theLessons, object obj)
+        {
+            bool answer = false;
+
+            for (int i = 0; i < theLessons.Length; i++)
+            {
+                if (theLessons[i] != null)
+                {
+                    //try to cast as a lecturer 
+                    try
+                    {
+                        if (theLessons[i].lecturer == (Lecturer)obj)
+                        {
+                            answer = true;
+                        }
+                    }
+                    catch
+                    {
+                        //or as a module 
+                        try
+                        {
+                            if (theLessons[i].module == obj)
+                            {
+                                answer = true;
+                            }
+                        }
+                        catch
+                        {
+                            // must be a room so.
+                            try
+                            {
+                                if (theLessons[i].room == obj)
+                                {
+                                    answer = true;
+                                }
+                            }
+                            catch
+                            {
+
+                            }
+
+                        }
+>>>>>>> origin/ayhan4
                     }
                 }
             }
@@ -122,12 +217,25 @@ namespace Domain
         {
             Module theModule;
             Lecturer theLec;
+<<<<<<< HEAD
             Lesson theLesson = null;
             theModule = getRandomModule();
             theLec = getLecturer(theModule);
             theLesson = new Lesson(theLec, theModule);
             theModule.AllocatedToALesson();
             theLec.AllocatedToALesson();
+=======
+            Room theRoom;
+            Lesson theLesson = null;
+
+            theModule = getRandomModule();
+            theLec = getLecturer(theModule);
+            theRoom = getRoom(theModule);
+            theLesson = new Lesson(theLec, theModule, theRoom);
+            theModule.AllocatedToALesson();
+            theLec.AllocatedToALesson();
+
+>>>>>>> origin/ayhan4
             return theLesson;
         }
         /// <summary>
@@ -163,12 +271,53 @@ namespace Domain
         }
         /// <summary>
         /// gets an available lecturer for the given module;
+<<<<<<< HEAD
+=======
         /// </summary>
         /// <returns></returns>
         private Lecturer getLecturer(Module theModule)
         {
+            bool exit = false;
+            string[] lecturers = theModule.lecturers;
+            Lecturer thelec = null;
+            //search for lecturer
+            for (int i = 0; i < lecturers.Length && !exit; i++)
+            {
+                thelec = dbhelper.getLecturerById(lecturers[i]);
+                if (thelec.hoursAllocated < thelec.maxHours)
+                {
+                    exit = true;
+                }
+            }
+            //if no lecturer suitable get random one
+            if (!exit)
+            {
+                //random number
+                int numOfLoops = new Random().Next(1, lecturers.Length + 1);
+                for (int i = 0; i < numOfLoops; i++)
+                {
+                    thelec = dbhelper.getLecturerById(lecturers[i]);
+                }
+            }
+            return thelec;
+        }
+        /// <summary>
+        /// get a room for the module
+>>>>>>> origin/ayhan4
+        /// </summary>
+        /// <returns></returns>
+        private Lecturer getLecturer(Module theModule)
+        {
+<<<<<<< HEAD
             Lecturer thelec = null;
             try
+=======
+            int numOfLoops = new Random().Next(1, roomList.getLenght() + 1);
+            Room theRoom = null;
+            Node roomNode = roomList.head;
+
+            for (int i = 0; i < numOfLoops; i++)
+>>>>>>> origin/ayhan4
             {
                 bool exit = false;
                 string[] lecturers = theModule.lecturers;
@@ -193,12 +342,16 @@ namespace Domain
                     }
                 }
             }
+<<<<<<< HEAD
             catch (Exception)
             {
 
 
             }
             return thelec;
+=======
+            return theRoom;
+>>>>>>> origin/ayhan4
         }
         /// <summary>
         /// checks whether or not to go to the next generation based
@@ -224,10 +377,16 @@ namespace Domain
         /// <param name="mother">chromosome to crossover</param>
         /// <param name="newFather">the 1st child</param>
         /// <param name="newMother">the 2nd child</param>
+<<<<<<< HEAD
         /// not going to work :(
         private void crossover(Lesson[][] father, Lesson[][] mother,
             out Lesson[][] newFather, out Lesson[][] newMother)
         {
+=======
+        private void crossover(Lesson[][] father, Lesson[][] mother, 
+            out Lesson[][] newFather, out Lesson[][] newMother)
+        { 
+>>>>>>> origin/ayhan4
             //Lesson[][] newFather, newMother ;
             //the time slots already swapped between parents
             int[] alreadySwapped = new int[20];
@@ -237,7 +396,11 @@ namespace Domain
             for (int i = 0; i < 20 /*i.e. hlaf the timeslots are swapped*/; i++)
             {
                 bool exit = true;
+<<<<<<< HEAD
                 int timeSlot = 0;
+=======
+                int timeSlot = 0; 
+>>>>>>> origin/ayhan4
                 // dont swap the same genome twice;
                 do
                 {
@@ -248,7 +411,11 @@ namespace Domain
                         {
                             exit = false;
                         }
+<<<<<<< HEAD
                     }
+=======
+                    } 
+>>>>>>> origin/ayhan4
                 } while (!exit);
 
                 temp = father[timeSlot];
@@ -258,6 +425,7 @@ namespace Domain
             newFather = father;
             newMother = mother;
         }
+<<<<<<< HEAD
         //temp just to display!!
         public Lesson[][] getTimetable()
         {
@@ -265,6 +433,13 @@ namespace Domain
         }
 
         private 
+=======
+       
+ 
+
+ 
+>>>>>>> origin/ayhan4
     }
+
 }
 
