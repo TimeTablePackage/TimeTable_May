@@ -593,7 +593,7 @@ namespace Services
         /// insert an array of Lessons into the database
         /// </summary>
         /// <param name="thelessons">the array of lessons</param>
-        public void insertLessons(Lesson[][] thelessons)
+        public void insertLessons(Lesson[][] thelessons, Room[] roomList)
         {
             for (int y = 0; y < thelessons.Length; y++)
             {
@@ -605,7 +605,7 @@ namespace Services
                         sql = "INSERT INTO Lesson (Lecturer_ID, Module_ID, Room_ID) VALUES(";
                         sql += thelessons[y][z].lecturer.ID + ", ";
                         sql += thelessons[y][z].module.ID + ", ";
-                        sql += thelessons[y][z].room.ID + ")";
+                        sql += roomList[z].ID + ")";
                         excuteNonQuery(sql);
                     }//update? restes all alloocated values? 
                 }

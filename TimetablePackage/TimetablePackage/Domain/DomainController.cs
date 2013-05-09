@@ -89,6 +89,29 @@ namespace Domain
             return dataBaseHelper.getDataTable(sqlstatement);
         }
 
+        public string[][] GenerateTimetable()
+        {
+            Generate gen = new Generate();
+            Lesson[][] timeTable = gen.getTimetable();
+            string[][] timeTableStr = new string[timeTable[0].Length][];
+            for (int i = 0; i < timeTableStr.Length; i++)
+            {
+                timeTableStr[i] = new string[timeTable.Length];
+                for (int y = 0; y < timeTableStr[i].Length; y++)
+                {
+                    if (timeTable[y][i] != null)
+                    {
+                        timeTableStr[i][y] = timeTable[y][i].ToString();
+                    }
+                    else
+                    {
+                        timeTableStr[i][y] = "off";
+                    }
+                }
+            }
+            return timeTableStr;
+            
+        }
 
     }//class
 }

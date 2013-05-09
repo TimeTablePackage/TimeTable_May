@@ -128,10 +128,19 @@ namespace TimetablePackage
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            Generate gen = new Generate();
-            timetable document = new timetable();
+            string[][] timetable = controler.GenerateTimetable();
+            DataTable dt = new DataTable();
+            for (int i = 0; i < timetable[0].Length; i++)
+            {
+                dt.Columns.Add(i.ToString());
+            }
+            for (int i = 0; i < timetable.Length; i++)
+            {
+                dt.LoadDataRow(timetable[i], true);
+            }
 
-            // Show document
+            timetable document = new timetable(dt);
+            
             if (DockTabPanel.DocumentStyle == DocumentStyle.SystemMdi)
             {
                 document.MdiParent = this;
@@ -141,6 +150,9 @@ namespace TimetablePackage
             {
                 document.Show(DockTabPanel);
             }
+
+           
+            
         }
     }
 }

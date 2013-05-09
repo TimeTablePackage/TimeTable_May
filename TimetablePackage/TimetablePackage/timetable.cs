@@ -17,14 +17,16 @@ namespace TimetablePackage
     {
         DomainControler controler = DomainControler.getInstance();
 
-        public timetable()
+        public timetable() { }
+        public timetable(DataTable timetable)
         {
             InitializeComponent();
+            dataGridView1.DataSource = timetable;
         }
 
         private void timetable_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = controler.getDataTable("SELECT * FROM Lesson");
+            
         }
     }
 }

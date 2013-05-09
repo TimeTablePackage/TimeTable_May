@@ -17,10 +17,6 @@ namespace Domain
         /// </summary>
         public Module module { get; set; }
         /// <summary>
-        /// The room details about where the Lesson will take place.
-        /// </summary>
-        public Room room { get; set; }
-        /// <summary>
         /// the value given based on constraints broken
         /// </summary>
         private int fitness;
@@ -36,11 +32,14 @@ namespace Domain
         /// <param name="lecturer">The name of the Lecturer</param>
         /// <param name="module">The name of the Module</param>
         /// <param name="room">The name/number of the Room</param>
-        public Lesson(Lecturer lecturer, Module module, Room room)
+        public Lesson(Lecturer lecturer, Module module)
         {
             this.lecturer = lecturer;
             this.module = module;
-            this.room = room;
+        }
+        public string ToString()
+        {
+             return lecturer.name + "\n " + module.name + "\n";
         }
     }
 }
