@@ -98,7 +98,7 @@ namespace Services
         public void updateLecturer(Lecturer lecturer)
         {
             string sql;
-            sql = "UPDATE Lecturer";
+            sql = "UPDATE Lecturer SET ";
             sql += "Lec_Name='" + lecturer.name + "', ";
             sql += "Initials='" + lecturer.initials + "', ";
             sql += "Email='" + lecturer.email + "', ";
@@ -106,7 +106,7 @@ namespace Services
             sql += "MaxConsecHours=" + lecturer.maxConsecHours + ", ";
             sql += "MinSlotsPerDay=" + lecturer.minSlotsPerDay + ", ";
             sql += "SlotsOff='" + lecturer.slotsOff + "' ";
-            sql += "WHERE ID LIKE '" + lecturer.ID + "'";
+            sql += "WHERE ID LIKE " + lecturer.ID + "";
             excuteNonQuery(sql);
         }
         /// <summary>
