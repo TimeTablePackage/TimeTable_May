@@ -77,7 +77,7 @@ namespace TimetablePackage
                 MessageBox.Show("All Fields must be filled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (isAllFieldsFilled == true)
-            {    // When the Field is not empty,Check if the fields Contains a valid data e.g, int32
+            {   // If the user has filled all the fields, make the changes.Either add a new lecture or edit a lecture
                 if (addNewLecture == true)
                 {
                     Domain.Lecturer lecturer = new Domain.Lecturer(name, initials, email, maxHours, maxConsecHours, minSlotsPerday, slotsOff, department);
@@ -92,26 +92,14 @@ namespace TimetablePackage
                     thelec.maxConsecHours = maxConsecHours;
                     thelec.minSlotsPerDay = minSlotsPerday;
                     thelec.deptId = LectDepartmentComboBox.SelectedValue.ToString();
-
                     controller.updateLecturer(thelec);
-                }
-                
+                } 
             }
         }
 
- 
-
-
-           // if (maxHours < minSlotsPerday * 5 )
-          //  {
-           //     MessageBox.Show("The total number of minimum daily hours cannot be greater than Maximum number of hours","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-           // }
-           // Domain.Lecturer lecturer = new Domain.Lecturer(name, initials, email, maxHours, maxConsecHours, minSlotsPerday, slotsOff, department);
-
-           // controller.addLecturer(lecturer);
-
         public void loadForEdit()
-        {
+        { // This method will be loading the Lecture details to the Textboxes in the form. 
+           //This only happens if the user chooses to Edit Lecture Details.
             LecNameTextBox.Text = thelec.name;
             LecInitialsTextBox.Text = thelec.initials;
             LecEmailTextBox.Text = thelec.email;
@@ -240,6 +228,12 @@ namespace TimetablePackage
                 MessageBox.Show("Please check your input for 'Maximum Consecutive Hours'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LecCButton_Click(object sender, EventArgs e)
+        {
+            this.Close();            
+        }
+
+       
 
        
     }

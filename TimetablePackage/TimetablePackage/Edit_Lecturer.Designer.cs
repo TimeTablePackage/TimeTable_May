@@ -104,8 +104,8 @@
             this.lecturerEmailLabel = new System.Windows.Forms.Label();
             this.LecNameTextBox = new System.Windows.Forms.TextBox();
             this.LecturerNameLabel = new System.Windows.Forms.Label();
-            this.editLecCancelButton = new System.Windows.Forms.Button();
-            this.editLecOkayButton = new System.Windows.Forms.Button();
+            this.LecCButton = new System.Windows.Forms.Button();
+            this.LecOkayButton = new System.Windows.Forms.Button();
             this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
             this.LecturerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
@@ -1196,27 +1196,29 @@
             this.LecturerNameLabel.TabIndex = 0;
             this.LecturerNameLabel.Text = "Name:";
             // 
-            // editLecCancelButton
+            // LecCButton
             // 
-            this.editLecCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editLecCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.editLecCancelButton.Location = new System.Drawing.Point(905, 340);
-            this.editLecCancelButton.Name = "editLecCancelButton";
-            this.editLecCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.editLecCancelButton.TabIndex = 9;
-            this.editLecCancelButton.Text = "&Cancel";
-            this.editLecCancelButton.UseVisualStyleBackColor = true;
+            this.LecCButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LecCButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.LecCButton.Location = new System.Drawing.Point(905, 340);
+            this.LecCButton.Name = "LecCButton";
+            this.LecCButton.Size = new System.Drawing.Size(75, 23);
+            this.LecCButton.TabIndex = 9;
+            this.LecCButton.Text = "&Cancel";
+            this.LecCButton.UseVisualStyleBackColor = true;
+            this.LecCButton.Click += new System.EventHandler(this.LecCButton_Click);
             // 
-            // editLecOkayButton
+            // LecOkayButton
             // 
-            this.editLecOkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editLecOkayButton.Location = new System.Drawing.Point(824, 340);
-            this.editLecOkayButton.Name = "editLecOkayButton";
-            this.editLecOkayButton.Size = new System.Drawing.Size(75, 23);
-            this.editLecOkayButton.TabIndex = 8;
-            this.editLecOkayButton.Text = "&Ok";
-            this.editLecOkayButton.UseVisualStyleBackColor = true;
-            this.editLecOkayButton.Click += new System.EventHandler(this.okayButton_Click);
+            this.LecOkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LecOkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.LecOkayButton.Location = new System.Drawing.Point(824, 340);
+            this.LecOkayButton.Name = "LecOkayButton";
+            this.LecOkayButton.Size = new System.Drawing.Size(75, 23);
+            this.LecOkayButton.TabIndex = 8;
+            this.LecOkayButton.Text = "&Ok";
+            this.LecOkayButton.UseVisualStyleBackColor = true;
+            this.LecOkayButton.Click += new System.EventHandler(this.okayButton_Click);
             // 
             // departmentTableAdapter
             // 
@@ -1226,11 +1228,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.editLecCancelButton;
+            this.CancelButton = this.LecCButton;
             this.ClientSize = new System.Drawing.Size(992, 372);
-            this.Controls.Add(this.editLecOkayButton);
+            this.Controls.Add(this.LecOkayButton);
             this.Controls.Add(this.LecturerGroupBox);
-            this.Controls.Add(this.editLecCancelButton);
+            this.Controls.Add(this.LecCButton);
             this.DockAreas = ((DigitalRune.Windows.Docking.DockAreas)((((((DigitalRune.Windows.Docking.DockAreas.Float | DigitalRune.Windows.Docking.DockAreas.Left) 
             | DigitalRune.Windows.Docking.DockAreas.Right) 
             | DigitalRune.Windows.Docking.DockAreas.Top) 
@@ -1255,7 +1257,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox LecturerGroupBox;
-        private System.Windows.Forms.Button editLecCancelButton;
+        private System.Windows.Forms.Button LecCButton;
         private System.Windows.Forms.TextBox LecMaxHoursTextBox;
         private System.Windows.Forms.Label lecturerMaxHoursLabel;
         private System.Windows.Forms.TextBox LecEmailTextBox;
@@ -1268,7 +1270,7 @@
         private System.Windows.Forms.TextBox LecMaxConsecHours;
         private System.Windows.Forms.Label lecturerConsecutiveLabel;
         private System.Windows.Forms.Label lecDepartmentLabel;
-        private System.Windows.Forms.Button editLecOkayButton;
+        private System.Windows.Forms.Button LecOkayButton;
         private System.Windows.Forms.TextBox LecInitialsTextBox;
         private System.Windows.Forms.Label lecInitialLabel;
         private System.Windows.Forms.TableLayoutPanel editLectableLayout;
