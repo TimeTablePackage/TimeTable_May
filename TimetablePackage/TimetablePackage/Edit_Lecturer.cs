@@ -181,7 +181,6 @@ namespace TimetablePackage
                     e.Cancel = true;
                 }
             }
-
         }
 
         private void editLecMaxHoursTextBox_Validating(object sender, CancelEventArgs e)
@@ -232,9 +231,5 @@ namespace TimetablePackage
         {
             this.Close();            
         }
-
-       
-
-       
     }
 }

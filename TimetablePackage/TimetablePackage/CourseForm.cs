@@ -28,7 +28,8 @@ namespace TimetablePackage
 
         private void addCourseButton_Click(object sender, EventArgs e)
         {
-
+            AddEditCourseForm addCourseForm = new AddEditCourseForm();
+            addCourseForm.Show();
         }
 
         private void deleteCourseButton_Click(object sender, EventArgs e)
