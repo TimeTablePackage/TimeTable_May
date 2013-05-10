@@ -70,16 +70,12 @@ namespace Domain
         /// <param name="maxConsecHours">Integer value for maximum consecutive hours a lecturer can teach</param>
         /// <param name="minSlotsPerDay">Integer value for the minimum amount of hours that a Lecturer can teach.</param>
         /// <param name="slotsOff">String value for the time slots that a lecturer is not available.</param>
-        public void updateLecturer(Lecturer theLec)
+        public void updateLecturer(string lecId, string name, string initials, string email, int maxHours,
+                                    int maxConsecHours, int minSlotsPerDay, string slotsOff, string deptId)
         {
-<<<<<<< HEAD
             // Department department = institute.getDeptById(deptId);
             //Lecturer lecturer = department.getLecById(lecId);
             //lecturer.update(name, initials, email, maxHours, maxConsecHours, minSlotsPerDay, slotsOff, deptId);
-=======
-            dataBaseHelper.updateLecturer(theLec);
-            dataBaseHelper.update();
->>>>>>> origin/ayhan4
         }
 
 

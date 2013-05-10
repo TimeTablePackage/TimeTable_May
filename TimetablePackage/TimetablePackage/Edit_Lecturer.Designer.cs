@@ -30,11 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_Lecturer));
-            this.LecturerGroupBox = new System.Windows.Forms.GroupBox();
-            this.LectDepartmentComboBox = new System.Windows.Forms.ComboBox();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ttpDataSet = new TimetablePackage.ttpDataSet();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.editLecturerGroupBox = new System.Windows.Forms.GroupBox();
             this.editLectableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
             this.checkBoxImageList = new System.Windows.Forms.ImageList(this.components);
@@ -90,82 +86,51 @@
             this.editCheckBox8 = new System.Windows.Forms.CheckBox();
             this.editCheckBox9 = new System.Windows.Forms.CheckBox();
             this.editCheckBox10 = new System.Windows.Forms.CheckBox();
-            this.LecInitialsTextBox = new System.Windows.Forms.TextBox();
-            this.lecInitialLabel = new System.Windows.Forms.Label();
-            this.lecDepartmentLabel = new System.Windows.Forms.Label();
+            this.editLecInitialsTextBox = new System.Windows.Forms.TextBox();
+            this.editlecInitialLabel = new System.Windows.Forms.Label();
+            this.editLectDepartmentTextBox = new System.Windows.Forms.TextBox();
+            this.editlecDepartmentLabel = new System.Windows.Forms.Label();
             this.editLectSlotsOffLabel = new System.Windows.Forms.Label();
-            this.LecMinimumSlotsTextBox = new System.Windows.Forms.TextBox();
-            this.minDailySlotsLabel = new System.Windows.Forms.Label();
-            this.LecMaxConsecHours = new System.Windows.Forms.TextBox();
-            this.lecturerConsecutiveLabel = new System.Windows.Forms.Label();
-            this.LecMaxHoursTextBox = new System.Windows.Forms.TextBox();
-            this.lecturerMaxHoursLabel = new System.Windows.Forms.Label();
-            this.LecEmailTextBox = new System.Windows.Forms.TextBox();
-            this.lecturerEmailLabel = new System.Windows.Forms.Label();
-            this.LecNameTextBox = new System.Windows.Forms.TextBox();
-            this.LecturerNameLabel = new System.Windows.Forms.Label();
+            this.editLecMinimumSlotsTextBox = new System.Windows.Forms.TextBox();
+            this.editminDailySlotsLabel = new System.Windows.Forms.Label();
+            this.editLecMaxConsecHours = new System.Windows.Forms.TextBox();
+            this.editlecturerConsecutiveLabel = new System.Windows.Forms.Label();
+            this.editLecMaxHoursTextBox = new System.Windows.Forms.TextBox();
+            this.editlecturerMaxHoursLabel = new System.Windows.Forms.Label();
+            this.editLecEmailTextBox = new System.Windows.Forms.TextBox();
+            this.editlecturerEmailLabel = new System.Windows.Forms.Label();
+            this.editLecNameTextBox = new System.Windows.Forms.TextBox();
+            this.editlecturerNameLabel = new System.Windows.Forms.Label();
             this.editLecCancelButton = new System.Windows.Forms.Button();
             this.editLecOkayButton = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
-            this.LecturerGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            this.editLecturerGroupBox.SuspendLayout();
             this.editLectableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LecturerGroupBox
+            // editLecturerGroupBox
             // 
-            this.LecturerGroupBox.Controls.Add(this.LectDepartmentComboBox);
-            this.LecturerGroupBox.Controls.Add(this.editLectableLayout);
-            this.LecturerGroupBox.Controls.Add(this.LecInitialsTextBox);
-            this.LecturerGroupBox.Controls.Add(this.lecInitialLabel);
-            this.LecturerGroupBox.Controls.Add(this.lecDepartmentLabel);
-            this.LecturerGroupBox.Controls.Add(this.editLectSlotsOffLabel);
-            this.LecturerGroupBox.Controls.Add(this.LecMinimumSlotsTextBox);
-            this.LecturerGroupBox.Controls.Add(this.minDailySlotsLabel);
-            this.LecturerGroupBox.Controls.Add(this.LecMaxConsecHours);
-            this.LecturerGroupBox.Controls.Add(this.lecturerConsecutiveLabel);
-            this.LecturerGroupBox.Controls.Add(this.LecMaxHoursTextBox);
-            this.LecturerGroupBox.Controls.Add(this.lecturerMaxHoursLabel);
-            this.LecturerGroupBox.Controls.Add(this.LecEmailTextBox);
-            this.LecturerGroupBox.Controls.Add(this.lecturerEmailLabel);
-            this.LecturerGroupBox.Controls.Add(this.LecNameTextBox);
-            this.LecturerGroupBox.Controls.Add(this.LecturerNameLabel);
-            this.LecturerGroupBox.Location = new System.Drawing.Point(12, 25);
-            this.LecturerGroupBox.Name = "LecturerGroupBox";
-            this.LecturerGroupBox.Size = new System.Drawing.Size(968, 309);
-            this.LecturerGroupBox.TabIndex = 0;
-            this.LecturerGroupBox.TabStop = false;
-            this.LecturerGroupBox.Text = "Edit a Lecturer";
-            // 
-            // LectDepartmentComboBox
-            // 
-            this.LectDepartmentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource1, "ID", true));
-            this.LectDepartmentComboBox.DataSource = this.departmentBindingSource;
-            this.LectDepartmentComboBox.DisplayMember = "Dept_Name";
-            this.LectDepartmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LectDepartmentComboBox.FormattingEnabled = true;
-            this.LectDepartmentComboBox.Location = new System.Drawing.Point(229, 253);
-            this.LectDepartmentComboBox.Name = "LectDepartmentComboBox";
-            this.LectDepartmentComboBox.Size = new System.Drawing.Size(152, 21);
-            this.LectDepartmentComboBox.TabIndex = 7;
-            this.LectDepartmentComboBox.ValueMember = "ID";
-            // 
-            // departmentBindingSource1
-            // 
-            this.departmentBindingSource1.DataMember = "Department";
-            this.departmentBindingSource1.DataSource = this.ttpDataSet;
-            // 
-            // ttpDataSet
-            // 
-            this.ttpDataSet.DataSetName = "ttpDataSet";
-            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.ttpDataSet;
+            this.editLecturerGroupBox.Controls.Add(this.editLectableLayout);
+            this.editLecturerGroupBox.Controls.Add(this.editLecInitialsTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editlecInitialLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLectDepartmentTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editlecDepartmentLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLectSlotsOffLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLecMinimumSlotsTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editminDailySlotsLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLecMaxConsecHours);
+            this.editLecturerGroupBox.Controls.Add(this.editlecturerConsecutiveLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLecMaxHoursTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editlecturerMaxHoursLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLecEmailTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editlecturerEmailLabel);
+            this.editLecturerGroupBox.Controls.Add(this.editLecNameTextBox);
+            this.editLecturerGroupBox.Controls.Add(this.editlecturerNameLabel);
+            this.editLecturerGroupBox.Location = new System.Drawing.Point(12, 25);
+            this.editLecturerGroupBox.Name = "editLecturerGroupBox";
+            this.editLecturerGroupBox.Size = new System.Drawing.Size(968, 309);
+            this.editLecturerGroupBox.TabIndex = 0;
+            this.editLecturerGroupBox.TabStop = false;
+            this.editLecturerGroupBox.Text = "Edit a Lecturer";
             // 
             // editLectableLayout
             // 
@@ -1063,33 +1028,39 @@
             this.editCheckBox10.UseVisualStyleBackColor = true;
             this.editCheckBox10.CheckStateChanged += new System.EventHandler(this.commonEventHandler);
             // 
-            // LecInitialsTextBox
+            // editLecInitialsTextBox
             // 
-            this.LecInitialsTextBox.Location = new System.Drawing.Point(230, 79);
-            this.LecInitialsTextBox.Name = "LecInitialsTextBox";
-            this.LecInitialsTextBox.Size = new System.Drawing.Size(151, 20);
-            this.LecInitialsTextBox.TabIndex = 1;
-            this.LecInitialsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editLecInitialsTextBox_KeyPress);
+            this.editLecInitialsTextBox.Location = new System.Drawing.Point(230, 79);
+            this.editLecInitialsTextBox.Name = "editLecInitialsTextBox";
+            this.editLecInitialsTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLecInitialsTextBox.TabIndex = 16;
             // 
-            // lecInitialLabel
+            // editlecInitialLabel
             // 
-            this.lecInitialLabel.AutoSize = true;
-            this.lecInitialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecInitialLabel.Location = new System.Drawing.Point(41, 84);
-            this.lecInitialLabel.Name = "lecInitialLabel";
-            this.lecInitialLabel.Size = new System.Drawing.Size(45, 15);
-            this.lecInitialLabel.TabIndex = 15;
-            this.lecInitialLabel.Text = "Initials:";
+            this.editlecInitialLabel.AutoSize = true;
+            this.editlecInitialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecInitialLabel.Location = new System.Drawing.Point(41, 84);
+            this.editlecInitialLabel.Name = "editlecInitialLabel";
+            this.editlecInitialLabel.Size = new System.Drawing.Size(45, 15);
+            this.editlecInitialLabel.TabIndex = 15;
+            this.editlecInitialLabel.Text = "Initials:";
             // 
-            // lecDepartmentLabel
+            // editLectDepartmentTextBox
             // 
-            this.lecDepartmentLabel.AutoSize = true;
-            this.lecDepartmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecDepartmentLabel.Location = new System.Drawing.Point(39, 259);
-            this.lecDepartmentLabel.Name = "lecDepartmentLabel";
-            this.lecDepartmentLabel.Size = new System.Drawing.Size(75, 15);
-            this.lecDepartmentLabel.TabIndex = 13;
-            this.lecDepartmentLabel.Text = "Department:";
+            this.editLectDepartmentTextBox.Location = new System.Drawing.Point(229, 254);
+            this.editLectDepartmentTextBox.Name = "editLectDepartmentTextBox";
+            this.editLectDepartmentTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLectDepartmentTextBox.TabIndex = 14;
+            // 
+            // editlecDepartmentLabel
+            // 
+            this.editlecDepartmentLabel.AutoSize = true;
+            this.editlecDepartmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecDepartmentLabel.Location = new System.Drawing.Point(39, 259);
+            this.editlecDepartmentLabel.Name = "editlecDepartmentLabel";
+            this.editlecDepartmentLabel.Size = new System.Drawing.Size(75, 15);
+            this.editlecDepartmentLabel.TabIndex = 13;
+            this.editlecDepartmentLabel.Text = "Department:";
             // 
             // editLectSlotsOffLabel
             // 
@@ -1101,100 +1072,90 @@
             this.editLectSlotsOffLabel.TabIndex = 10;
             this.editLectSlotsOffLabel.Text = "Slots Off:";
             // 
-            // LecMinimumSlotsTextBox
+            // editLecMinimumSlotsTextBox
             // 
-            this.LecMinimumSlotsTextBox.Location = new System.Drawing.Point(229, 219);
-            this.LecMinimumSlotsTextBox.Name = "LecMinimumSlotsTextBox";
-            this.LecMinimumSlotsTextBox.Size = new System.Drawing.Size(151, 20);
-            this.LecMinimumSlotsTextBox.TabIndex = 6;
-            this.LecMinimumSlotsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editLecMinimumSlotsTextBox_KeyPress);
-            this.LecMinimumSlotsTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.LecMinimumSlotsTextBox_Validating);
+            this.editLecMinimumSlotsTextBox.Location = new System.Drawing.Point(229, 219);
+            this.editLecMinimumSlotsTextBox.Name = "editLecMinimumSlotsTextBox";
+            this.editLecMinimumSlotsTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLecMinimumSlotsTextBox.TabIndex = 9;
             // 
-            // minDailySlotsLabel
+            // editminDailySlotsLabel
             // 
-            this.minDailySlotsLabel.AutoSize = true;
-            this.minDailySlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minDailySlotsLabel.Location = new System.Drawing.Point(39, 224);
-            this.minDailySlotsLabel.Name = "minDailySlotsLabel";
-            this.minDailySlotsLabel.Size = new System.Drawing.Size(123, 15);
-            this.minDailySlotsLabel.TabIndex = 8;
-            this.minDailySlotsLabel.Text = "Minimum Daily Slots:";
+            this.editminDailySlotsLabel.AutoSize = true;
+            this.editminDailySlotsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editminDailySlotsLabel.Location = new System.Drawing.Point(39, 224);
+            this.editminDailySlotsLabel.Name = "editminDailySlotsLabel";
+            this.editminDailySlotsLabel.Size = new System.Drawing.Size(123, 15);
+            this.editminDailySlotsLabel.TabIndex = 8;
+            this.editminDailySlotsLabel.Text = "Minimum Daily Slots:";
             // 
-            // LecMaxConsecHours
+            // editLecMaxConsecHours
             // 
-            this.LecMaxConsecHours.Location = new System.Drawing.Point(229, 184);
-            this.LecMaxConsecHours.MaxLength = 2;
-            this.LecMaxConsecHours.Name = "LecMaxConsecHours";
-            this.LecMaxConsecHours.Size = new System.Drawing.Size(151, 20);
-            this.LecMaxConsecHours.TabIndex = 5;
-            this.LecMaxConsecHours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editLecMaxConsecHours_KeyPress);
-            this.LecMaxConsecHours.Validating += new System.ComponentModel.CancelEventHandler(this.LecMaxConsecHours_Validating);
+            this.editLecMaxConsecHours.Location = new System.Drawing.Point(229, 184);
+            this.editLecMaxConsecHours.Name = "editLecMaxConsecHours";
+            this.editLecMaxConsecHours.Size = new System.Drawing.Size(151, 20);
+            this.editLecMaxConsecHours.TabIndex = 7;
             // 
-            // lecturerConsecutiveLabel
+            // editlecturerConsecutiveLabel
             // 
-            this.lecturerConsecutiveLabel.AutoSize = true;
-            this.lecturerConsecutiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerConsecutiveLabel.Location = new System.Drawing.Point(39, 189);
-            this.lecturerConsecutiveLabel.Name = "lecturerConsecutiveLabel";
-            this.lecturerConsecutiveLabel.Size = new System.Drawing.Size(142, 15);
-            this.lecturerConsecutiveLabel.TabIndex = 6;
-            this.lecturerConsecutiveLabel.Text = "Max. Consecutive Hours:";
+            this.editlecturerConsecutiveLabel.AutoSize = true;
+            this.editlecturerConsecutiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecturerConsecutiveLabel.Location = new System.Drawing.Point(39, 189);
+            this.editlecturerConsecutiveLabel.Name = "editlecturerConsecutiveLabel";
+            this.editlecturerConsecutiveLabel.Size = new System.Drawing.Size(142, 15);
+            this.editlecturerConsecutiveLabel.TabIndex = 6;
+            this.editlecturerConsecutiveLabel.Text = "Max. Consecutive Hours:";
             // 
-            // LecMaxHoursTextBox
+            // editLecMaxHoursTextBox
             // 
-            this.LecMaxHoursTextBox.Location = new System.Drawing.Point(230, 149);
-            this.LecMaxHoursTextBox.MaxLength = 2;
-            this.LecMaxHoursTextBox.Name = "LecMaxHoursTextBox";
-            this.LecMaxHoursTextBox.Size = new System.Drawing.Size(151, 20);
-            this.LecMaxHoursTextBox.TabIndex = 4;
-            this.LecMaxHoursTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editLecMaxHoursTextBox_KeyPress);
-            this.LecMaxHoursTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.editLecMaxHoursTextBox_Validating);
+            this.editLecMaxHoursTextBox.Location = new System.Drawing.Point(230, 149);
+            this.editLecMaxHoursTextBox.Name = "editLecMaxHoursTextBox";
+            this.editLecMaxHoursTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLecMaxHoursTextBox.TabIndex = 5;
             // 
-            // lecturerMaxHoursLabel
+            // editlecturerMaxHoursLabel
             // 
-            this.lecturerMaxHoursLabel.AutoSize = true;
-            this.lecturerMaxHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerMaxHoursLabel.Location = new System.Drawing.Point(39, 154);
-            this.lecturerMaxHoursLabel.Name = "lecturerMaxHoursLabel";
-            this.lecturerMaxHoursLabel.Size = new System.Drawing.Size(163, 15);
-            this.lecturerMaxHoursLabel.TabIndex = 4;
-            this.lecturerMaxHoursLabel.Text = "Maximum Number of Hours:";
+            this.editlecturerMaxHoursLabel.AutoSize = true;
+            this.editlecturerMaxHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecturerMaxHoursLabel.Location = new System.Drawing.Point(39, 154);
+            this.editlecturerMaxHoursLabel.Name = "editlecturerMaxHoursLabel";
+            this.editlecturerMaxHoursLabel.Size = new System.Drawing.Size(163, 15);
+            this.editlecturerMaxHoursLabel.TabIndex = 4;
+            this.editlecturerMaxHoursLabel.Text = "Maximum Number of Hours:";
             // 
-            // LecEmailTextBox
+            // editLecEmailTextBox
             // 
-            this.LecEmailTextBox.Location = new System.Drawing.Point(230, 114);
-            this.LecEmailTextBox.Name = "LecEmailTextBox";
-            this.LecEmailTextBox.Size = new System.Drawing.Size(151, 20);
-            this.LecEmailTextBox.TabIndex = 2;
-            this.LecEmailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.editLecEmailTextBox_Validating);
+            this.editLecEmailTextBox.Location = new System.Drawing.Point(230, 114);
+            this.editLecEmailTextBox.Name = "editLecEmailTextBox";
+            this.editLecEmailTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLecEmailTextBox.TabIndex = 3;
             // 
-            // lecturerEmailLabel
+            // editlecturerEmailLabel
             // 
-            this.lecturerEmailLabel.AutoSize = true;
-            this.lecturerEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerEmailLabel.Location = new System.Drawing.Point(39, 119);
-            this.lecturerEmailLabel.Name = "lecturerEmailLabel";
-            this.lecturerEmailLabel.Size = new System.Drawing.Size(46, 15);
-            this.lecturerEmailLabel.TabIndex = 2;
-            this.lecturerEmailLabel.Text = "E-mail:";
+            this.editlecturerEmailLabel.AutoSize = true;
+            this.editlecturerEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecturerEmailLabel.Location = new System.Drawing.Point(39, 119);
+            this.editlecturerEmailLabel.Name = "editlecturerEmailLabel";
+            this.editlecturerEmailLabel.Size = new System.Drawing.Size(46, 15);
+            this.editlecturerEmailLabel.TabIndex = 2;
+            this.editlecturerEmailLabel.Text = "E-mail:";
             // 
-            // LecNameTextBox
+            // editLecNameTextBox
             // 
-            this.LecNameTextBox.Location = new System.Drawing.Point(230, 44);
-            this.LecNameTextBox.Name = "LecNameTextBox";
-            this.LecNameTextBox.Size = new System.Drawing.Size(151, 20);
-            this.LecNameTextBox.TabIndex = 0;
-            this.LecNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editLecNameTextBox_KeyPress);
+            this.editLecNameTextBox.Location = new System.Drawing.Point(230, 44);
+            this.editLecNameTextBox.Name = "editLecNameTextBox";
+            this.editLecNameTextBox.Size = new System.Drawing.Size(151, 20);
+            this.editLecNameTextBox.TabIndex = 1;
             // 
-            // LecturerNameLabel
+            // editlecturerNameLabel
             // 
-            this.LecturerNameLabel.AutoSize = true;
-            this.LecturerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturerNameLabel.Location = new System.Drawing.Point(41, 49);
-            this.LecturerNameLabel.Name = "LecturerNameLabel";
-            this.LecturerNameLabel.Size = new System.Drawing.Size(44, 15);
-            this.LecturerNameLabel.TabIndex = 0;
-            this.LecturerNameLabel.Text = "Name:";
+            this.editlecturerNameLabel.AutoSize = true;
+            this.editlecturerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editlecturerNameLabel.Location = new System.Drawing.Point(41, 49);
+            this.editlecturerNameLabel.Name = "editlecturerNameLabel";
+            this.editlecturerNameLabel.Size = new System.Drawing.Size(44, 15);
+            this.editlecturerNameLabel.TabIndex = 0;
+            this.editlecturerNameLabel.Text = "Name:";
             // 
             // editLecCancelButton
             // 
@@ -1203,7 +1164,7 @@
             this.editLecCancelButton.Location = new System.Drawing.Point(905, 340);
             this.editLecCancelButton.Name = "editLecCancelButton";
             this.editLecCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.editLecCancelButton.TabIndex = 9;
+            this.editLecCancelButton.TabIndex = 1;
             this.editLecCancelButton.Text = "&Cancel";
             this.editLecCancelButton.UseVisualStyleBackColor = true;
             // 
@@ -1213,14 +1174,10 @@
             this.editLecOkayButton.Location = new System.Drawing.Point(824, 340);
             this.editLecOkayButton.Name = "editLecOkayButton";
             this.editLecOkayButton.Size = new System.Drawing.Size(75, 23);
-            this.editLecOkayButton.TabIndex = 8;
+            this.editLecOkayButton.TabIndex = 2;
             this.editLecOkayButton.Text = "&Ok";
             this.editLecOkayButton.UseVisualStyleBackColor = true;
             this.editLecOkayButton.Click += new System.EventHandler(this.okayButton_Click);
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // Edit_Lecturer
             // 
@@ -1229,7 +1186,7 @@
             this.CancelButton = this.editLecCancelButton;
             this.ClientSize = new System.Drawing.Size(992, 372);
             this.Controls.Add(this.editLecOkayButton);
-            this.Controls.Add(this.LecturerGroupBox);
+            this.Controls.Add(this.editLecturerGroupBox);
             this.Controls.Add(this.editLecCancelButton);
             this.DockAreas = ((DigitalRune.Windows.Docking.DockAreas)((((((DigitalRune.Windows.Docking.DockAreas.Float | DigitalRune.Windows.Docking.DockAreas.Left) 
             | DigitalRune.Windows.Docking.DockAreas.Right) 
@@ -1241,11 +1198,8 @@
             this.TabText = "Edit a Lecturer";
             this.Text = "Edit a Lecturer";
             this.Load += new System.EventHandler(this.Edit_Lecturer_Load);
-            this.LecturerGroupBox.ResumeLayout(false);
-            this.LecturerGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            this.editLecturerGroupBox.ResumeLayout(false);
+            this.editLecturerGroupBox.PerformLayout();
             this.editLectableLayout.ResumeLayout(false);
             this.editLectableLayout.PerformLayout();
             this.ResumeLayout(false);
@@ -1254,23 +1208,24 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox LecturerGroupBox;
+        private System.Windows.Forms.GroupBox editLecturerGroupBox;
         private System.Windows.Forms.Button editLecCancelButton;
-        private System.Windows.Forms.TextBox LecMaxHoursTextBox;
-        private System.Windows.Forms.Label lecturerMaxHoursLabel;
-        private System.Windows.Forms.TextBox LecEmailTextBox;
-        private System.Windows.Forms.Label lecturerEmailLabel;
-        private System.Windows.Forms.TextBox LecNameTextBox;
-        private System.Windows.Forms.Label LecturerNameLabel;
+        private System.Windows.Forms.TextBox editLecMaxHoursTextBox;
+        private System.Windows.Forms.Label editlecturerMaxHoursLabel;
+        private System.Windows.Forms.TextBox editLecEmailTextBox;
+        private System.Windows.Forms.Label editlecturerEmailLabel;
+        private System.Windows.Forms.TextBox editLecNameTextBox;
+        private System.Windows.Forms.Label editlecturerNameLabel;
         private System.Windows.Forms.Label editLectSlotsOffLabel;
-        private System.Windows.Forms.TextBox LecMinimumSlotsTextBox;
-        private System.Windows.Forms.Label minDailySlotsLabel;
-        private System.Windows.Forms.TextBox LecMaxConsecHours;
-        private System.Windows.Forms.Label lecturerConsecutiveLabel;
-        private System.Windows.Forms.Label lecDepartmentLabel;
+        private System.Windows.Forms.TextBox editLecMinimumSlotsTextBox;
+        private System.Windows.Forms.Label editminDailySlotsLabel;
+        private System.Windows.Forms.TextBox editLecMaxConsecHours;
+        private System.Windows.Forms.Label editlecturerConsecutiveLabel;
+        private System.Windows.Forms.Label editlecDepartmentLabel;
         private System.Windows.Forms.Button editLecOkayButton;
-        private System.Windows.Forms.TextBox LecInitialsTextBox;
-        private System.Windows.Forms.Label lecInitialLabel;
+        private System.Windows.Forms.TextBox editLecInitialsTextBox;
+        private System.Windows.Forms.Label editlecInitialLabel;
+        private System.Windows.Forms.TextBox editLectDepartmentTextBox;
         private System.Windows.Forms.TableLayoutPanel editLectableLayout;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -1326,10 +1281,5 @@
         private System.Windows.Forms.CheckBox editCheckBox8;
         private System.Windows.Forms.CheckBox editCheckBox9;
         private System.Windows.Forms.CheckBox editCheckBox10;
-        private System.Windows.Forms.ComboBox LectDepartmentComboBox;
-        private ttpDataSet ttpDataSet;
-        private System.Windows.Forms.BindingSource departmentBindingSource;
-        private ttpDataSetTableAdapters.DepartmentTableAdapter departmentTableAdapter;
-        private System.Windows.Forms.BindingSource departmentBindingSource1;
     }
 }

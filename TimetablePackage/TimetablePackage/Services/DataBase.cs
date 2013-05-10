@@ -98,7 +98,7 @@ namespace Services
         public void updateLecturer(Lecturer lecturer)
         {
             string sql;
-            sql = "UPDATE Lecturer SET ";
+            sql = "UPDATE Lecturer";
             sql += "Lec_Name='" + lecturer.name + "', ";
             sql += "Initials='" + lecturer.initials + "', ";
             sql += "Email='" + lecturer.email + "', ";
@@ -106,7 +106,7 @@ namespace Services
             sql += "MaxConsecHours=" + lecturer.maxConsecHours + ", ";
             sql += "MinSlotsPerDay=" + lecturer.minSlotsPerDay + ", ";
             sql += "SlotsOff='" + lecturer.slotsOff + "' ";
-            sql += "WHERE ID LIKE " + lecturer.ID + "";
+            sql += "WHERE ID LIKE '" + lecturer.ID + "'";
             excuteNonQuery(sql);
         }
         /// <summary>
@@ -593,11 +593,7 @@ namespace Services
         /// insert an array of Lessons into the database
         /// </summary>
         /// <param name="thelessons">the array of lessons</param>
-<<<<<<< HEAD
         public void insertLessons(Lesson[][] thelessons, Room[] roomList)
-=======
-        public void insertLessons(Lesson[][] thelessons)
->>>>>>> origin/ayhan4
         {
             for (int y = 0; y < thelessons.Length; y++)
             {
@@ -609,11 +605,7 @@ namespace Services
                         sql = "INSERT INTO Lesson (Lecturer_ID, Module_ID, Room_ID) VALUES(";
                         sql += thelessons[y][z].lecturer.ID + ", ";
                         sql += thelessons[y][z].module.ID + ", ";
-<<<<<<< HEAD
                         sql += roomList[z].ID + ")";
-=======
-                        sql += thelessons[y][z].room.ID + ")";
->>>>>>> origin/ayhan4
                         excuteNonQuery(sql);
                     }//update? restes all alloocated values? 
                 }

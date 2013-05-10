@@ -35,16 +35,6 @@ namespace TimetablePackage
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lecturer));
             this.lecturerGroupBox = new System.Windows.Forms.GroupBox();
             this.lecturerDataGridView = new System.Windows.Forms.DataGridView();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttpDataSet = new TimetablePackage.ttpDataSet();
-            this.lecturerTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.LecturerTableAdapter();
-            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.addLecturerButton = new System.Windows.Forms.Button();
-            this.editLecturerButton = new System.Windows.Forms.Button();
-            this.deleteLecturerButton = new System.Windows.Forms.Button();
-            this.lecturerModulesButton = new System.Windows.Forms.Button();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.initialsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +44,19 @@ namespace TimetablePackage
             this.minSlotsPerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slotsOffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttpDataSet = new TimetablePackage.ttpDataSet();
+            this.lecturerTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.LecturerTableAdapter();
+            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.addLecturerButton = new System.Windows.Forms.Button();
+            this.editLecturerButton = new System.Windows.Forms.Button();
+            this.deleteLecturerButton = new System.Windows.Forms.Button();
+            this.lecturerModulesButton = new System.Windows.Forms.Button();
             this.lecturerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lecturerGroupBox
@@ -117,88 +114,6 @@ namespace TimetablePackage
             this.lecturerDataGridView.Size = new System.Drawing.Size(949, 248);
             this.lecturerDataGridView.TabIndex = 0;
             this.lecturerDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.lecturerDataGridView_CellEnter);
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "Lecturer";
-            this.lecturerBindingSource.DataSource = this.ttpDataSet;
-            // 
-            // ttpDataSet
-            // 
-            this.ttpDataSet.DataSetName = "ttpDataSet";
-            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerTableAdapter
-            // 
-            this.lecturerTableAdapter.ClearBeforeFill = true;
-            // 
-            // lecturerBindingSource1
-            // 
-            this.lecturerBindingSource1.DataMember = "Lecturer";
-            this.lecturerBindingSource1.DataSource = this.ttpDataSet;
-            // 
-            // addLecturerButton
-            // 
-            this.addLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addLecturerButton.Image = global::TimetablePackage.Properties.Resources.add;
-            this.addLecturerButton.Location = new System.Drawing.Point(281, 12);
-            this.addLecturerButton.Name = "addLecturerButton";
-            this.addLecturerButton.Size = new System.Drawing.Size(103, 43);
-            this.addLecturerButton.TabIndex = 1;
-            this.addLecturerButton.Text = "Add";
-            this.addLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addLecturerButton.UseVisualStyleBackColor = true;
-            this.addLecturerButton.Click += new System.EventHandler(this.addLecturerButton_Click);
-            // 
-            // editLecturerButton
-            // 
-            this.editLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.editLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editLecturerButton.Image = global::TimetablePackage.Properties.Resources.bullet_edit;
-            this.editLecturerButton.Location = new System.Drawing.Point(390, 12);
-            this.editLecturerButton.Name = "editLecturerButton";
-            this.editLecturerButton.Size = new System.Drawing.Size(103, 43);
-            this.editLecturerButton.TabIndex = 2;
-            this.editLecturerButton.Text = "Edit";
-            this.editLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.editLecturerButton.UseVisualStyleBackColor = true;
-            this.editLecturerButton.Click += new System.EventHandler(this.editLecturerButton_Click);
-            // 
-            // deleteLecturerButton
-            // 
-            this.deleteLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deleteLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteLecturerButton.Image = global::TimetablePackage.Properties.Resources.delete;
-            this.deleteLecturerButton.Location = new System.Drawing.Point(499, 12);
-            this.deleteLecturerButton.Name = "deleteLecturerButton";
-            this.deleteLecturerButton.Size = new System.Drawing.Size(103, 43);
-            this.deleteLecturerButton.TabIndex = 3;
-            this.deleteLecturerButton.Text = "Remove";
-            this.deleteLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.deleteLecturerButton.UseVisualStyleBackColor = true;
-            // 
-            // lecturerModulesButton
-            // 
-            this.lecturerModulesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lecturerModulesButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturerModulesButton.Image = global::TimetablePackage.Properties.Resources.books_stack1;
-            this.lecturerModulesButton.Location = new System.Drawing.Point(608, 12);
-            this.lecturerModulesButton.Name = "lecturerModulesButton";
-            this.lecturerModulesButton.Size = new System.Drawing.Size(103, 43);
-            this.lecturerModulesButton.TabIndex = 4;
-            this.lecturerModulesButton.Text = "Modules";
-            this.lecturerModulesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.lecturerModulesButton.UseVisualStyleBackColor = true;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.ttpDataSet;
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -293,6 +208,79 @@ namespace TimetablePackage
             this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.departmentIdDataGridViewTextBoxColumn.Width = 87;
             // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "Lecturer";
+            this.lecturerBindingSource.DataSource = this.ttpDataSet;
+            // 
+            // ttpDataSet
+            // 
+            this.ttpDataSet.DataSetName = "ttpDataSet";
+            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // lecturerBindingSource1
+            // 
+            this.lecturerBindingSource1.DataMember = "Lecturer";
+            this.lecturerBindingSource1.DataSource = this.ttpDataSet;
+            // 
+            // addLecturerButton
+            // 
+            this.addLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addLecturerButton.Image = global::TimetablePackage.Properties.Resources.add;
+            this.addLecturerButton.Location = new System.Drawing.Point(281, 12);
+            this.addLecturerButton.Name = "addLecturerButton";
+            this.addLecturerButton.Size = new System.Drawing.Size(103, 43);
+            this.addLecturerButton.TabIndex = 1;
+            this.addLecturerButton.Text = "Add";
+            this.addLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addLecturerButton.UseVisualStyleBackColor = true;
+            this.addLecturerButton.Click += new System.EventHandler(this.addLecturerButton_Click);
+            // 
+            // editLecturerButton
+            // 
+            this.editLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editLecturerButton.Image = global::TimetablePackage.Properties.Resources.bullet_edit;
+            this.editLecturerButton.Location = new System.Drawing.Point(390, 12);
+            this.editLecturerButton.Name = "editLecturerButton";
+            this.editLecturerButton.Size = new System.Drawing.Size(103, 43);
+            this.editLecturerButton.TabIndex = 2;
+            this.editLecturerButton.Text = "Edit";
+            this.editLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.editLecturerButton.UseVisualStyleBackColor = true;
+            this.editLecturerButton.Click += new System.EventHandler(this.editLecturerButton_Click);
+            // 
+            // deleteLecturerButton
+            // 
+            this.deleteLecturerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteLecturerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteLecturerButton.Image = global::TimetablePackage.Properties.Resources.delete;
+            this.deleteLecturerButton.Location = new System.Drawing.Point(499, 12);
+            this.deleteLecturerButton.Name = "deleteLecturerButton";
+            this.deleteLecturerButton.Size = new System.Drawing.Size(103, 43);
+            this.deleteLecturerButton.TabIndex = 3;
+            this.deleteLecturerButton.Text = "Remove";
+            this.deleteLecturerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.deleteLecturerButton.UseVisualStyleBackColor = true;
+            // 
+            // lecturerModulesButton
+            // 
+            this.lecturerModulesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lecturerModulesButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerModulesButton.Image = global::TimetablePackage.Properties.Resources.books_stack1;
+            this.lecturerModulesButton.Location = new System.Drawing.Point(608, 12);
+            this.lecturerModulesButton.Name = "lecturerModulesButton";
+            this.lecturerModulesButton.Size = new System.Drawing.Size(103, 43);
+            this.lecturerModulesButton.TabIndex = 4;
+            this.lecturerModulesButton.Text = "Modules";
+            this.lecturerModulesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.lecturerModulesButton.UseVisualStyleBackColor = true;
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,7 +307,6 @@ namespace TimetablePackage
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,8 +323,6 @@ namespace TimetablePackage
         private System.Windows.Forms.Button editLecturerButton;
         private System.Windows.Forms.Button deleteLecturerButton;
         private System.Windows.Forms.Button lecturerModulesButton;
-        private System.Windows.Forms.BindingSource departmentBindingSource;
-        private ttpDataSetTableAdapters.DepartmentTableAdapter departmentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn initialsDataGridViewTextBoxColumn;
