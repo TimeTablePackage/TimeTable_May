@@ -100,13 +100,13 @@ namespace Domain
             bool answer = false;
 
             for (int i = 0; i < genome.Length && answer == false; i++)
-            { 
+            {
                 if (genome[i] != null)
                 {
                     if (genome[i].module.courseId == lesson.module.courseId)
-	                {
-		                answer = true;
-	                }
+                    {
+                        answer = true;
+                    }
                     else if (lesson.lecturer == genome[i].lecturer)
                     {
                         answer = true;
@@ -264,7 +264,6 @@ namespace Domain
             return population[0];
         }
 
-        private 
     }
 }
 
