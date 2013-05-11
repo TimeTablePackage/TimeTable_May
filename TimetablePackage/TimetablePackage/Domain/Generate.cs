@@ -6,10 +6,12 @@ namespace Domain
 {
     public class Generate
     {
+        private int popSize = 10;
         private DomainControler controler = DomainControler.getInstance();
         private DataBase dbhelper;
         private Room[] roomList;
         private LinkedList moduleList;
+        private int[] popFitness;
         private int[] lessonsPerSlotCount;
         /// <summary>
         /// Array of chromosomes
@@ -28,8 +30,8 @@ namespace Domain
             dbhelper = controler.getDBHelper();
             //get the array of rooms
             roomList = new Room[dbhelper.getRoomList().getLenght()];
-            //int numOfRooms = roomList.getLenght();
-            population = new Lesson[10][][];
+            popFitness = new int[popSize];
+            population = new Lesson[popSize][][];
             for (int x = 0; x < population.Length; x++)
             {
                 population[x] = new Lesson[40][];
@@ -264,6 +266,11 @@ namespace Domain
             return population[0];
         }
 
+
+        private void updateFitness()
+        {
+
+        }
     }
 }
 
