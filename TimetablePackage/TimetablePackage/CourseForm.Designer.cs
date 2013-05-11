@@ -109,6 +109,7 @@
             this.CourseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CourseDataGridView.Size = new System.Drawing.Size(416, 248);
             this.CourseDataGridView.TabIndex = 1;
+            this.CourseDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGridView_CellEnter);
             // 
             // codeDataGridViewTextBoxColumn
             // 

@@ -56,8 +56,12 @@ namespace Domain
         public void addLecturer(Lecturer theLec)
         {
             dataBaseHelper.insertLecturer(theLec);
+            dataBaseHelper.update();     
+        }
+        public void addCourse(Course theCourse)
+        {
+            dataBaseHelper.insertCourse(theCourse);
             dataBaseHelper.update();
-            
         }
 
         /// <summary>
@@ -87,6 +91,11 @@ namespace Domain
             return dataBaseHelper.getDataTable(sqlstatement);
         }
 
+        public void updateCourse(Course theCourse)
+        {
+            dataBaseHelper.updateCourse(theCourse);
+            dataBaseHelper.update();
+        }
 
     }//class
 }

@@ -212,6 +212,16 @@ namespace Services
             string sql = "INSERT INTO Department VALUES('"+ dept.name + "')";
             excuteNonQuery(sql);
         }
+
+        public void insertCourse(Course course)
+        {
+            string sql = "INSERT INTO Course (Course, CourseName, numOfStudents, DeptID, Deleted) VALUES(";
+            sql += "'" + course.courseCode + "', ";
+            sql += course.name + ", ";
+            sql += "'" + course.numOfStudents + "', ";
+            sql += "'" + course.deptID + "', false ";
+            excuteNonQuery(sql);
+        }
         /// <summary>
         /// update a course in the database
         /// </summary>

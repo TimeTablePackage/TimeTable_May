@@ -255,6 +255,7 @@ namespace TimetablePackage
             this.addCourseButton.MinimumSize = new System.Drawing.Size(0, 0);
             this.addCourseButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("addCourseButton.SmallImage")));
             this.addCourseButton.Text = "Add a Course";
+            this.addCourseButton.Click += new System.EventHandler(this.addCourseButton_Click);
             // 
             // modulePanel
             // 

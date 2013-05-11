@@ -142,5 +142,11 @@ namespace TimetablePackage
                 document.Show(DockTabPanel);
             }
         }
+
+        private void addCourseButton_Click(object sender, EventArgs e)
+        {
+            AddEditCourseForm addNewCourseForm = new AddEditCourseForm();
+            addNewCourseForm.Show();
+        }
     }
 }

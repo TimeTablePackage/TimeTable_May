@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditCourseForm));
             this.addEditCourseGroupBox = new System.Windows.Forms.GroupBox();
             this.addEditCourseComboBox = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttpDataSet = new TimetablePackage.ttpDataSet();
             this.courseNameTextBox = new System.Windows.Forms.TextBox();
             this.courseNameLabel = new System.Windows.Forms.Label();
             this.departmentLabel = new System.Windows.Forms.Label();
@@ -41,12 +43,10 @@
             this.courseCodeLabel = new System.Windows.Forms.Label();
             this.courseOkButton = new System.Windows.Forms.Button();
             this.courseCanButton = new System.Windows.Forms.Button();
-            this.ttpDataSet = new TimetablePackage.ttpDataSet();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new TimetablePackage.ttpDataSetTableAdapters.DepartmentTableAdapter();
             this.addEditCourseGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // addEditCourseGroupBox
@@ -64,21 +64,33 @@
             this.addEditCourseGroupBox.Controls.Add(this.courseCodeLabel);
             this.addEditCourseGroupBox.Location = new System.Drawing.Point(12, 25);
             this.addEditCourseGroupBox.Name = "addEditCourseGroupBox";
-            this.addEditCourseGroupBox.Size = new System.Drawing.Size(422, 236);
+            this.addEditCourseGroupBox.Size = new System.Drawing.Size(422, 240);
             this.addEditCourseGroupBox.TabIndex = 0;
             this.addEditCourseGroupBox.TabStop = false;
+            this.addEditCourseGroupBox.Text = "Add a Course";
             // 
             // addEditCourseComboBox
             // 
             this.addEditCourseComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "ID", true));
             this.addEditCourseComboBox.DataSource = this.departmentBindingSource;
             this.addEditCourseComboBox.DisplayMember = "Dept_Name";
+            this.addEditCourseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addEditCourseComboBox.FormattingEnabled = true;
             this.addEditCourseComboBox.Location = new System.Drawing.Point(231, 160);
             this.addEditCourseComboBox.Name = "addEditCourseComboBox";
             this.addEditCourseComboBox.Size = new System.Drawing.Size(151, 21);
             this.addEditCourseComboBox.TabIndex = 24;
             this.addEditCourseComboBox.ValueMember = "ID";
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.ttpDataSet;
+            // 
+            // ttpDataSet
+            // 
+            this.ttpDataSet.DataSetName = "ttpDataSet";
+            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // courseNameTextBox
             // 
@@ -146,7 +158,7 @@
             // 
             this.courseOkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.courseOkButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.courseOkButton.Location = new System.Drawing.Point(278, 267);
+            this.courseOkButton.Location = new System.Drawing.Point(278, 271);
             this.courseOkButton.Name = "courseOkButton";
             this.courseOkButton.Size = new System.Drawing.Size(75, 23);
             this.courseOkButton.TabIndex = 10;
@@ -157,22 +169,12 @@
             // 
             this.courseCanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.courseCanButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.courseCanButton.Location = new System.Drawing.Point(359, 267);
+            this.courseCanButton.Location = new System.Drawing.Point(359, 271);
             this.courseCanButton.Name = "courseCanButton";
             this.courseCanButton.Size = new System.Drawing.Size(75, 23);
             this.courseCanButton.TabIndex = 11;
             this.courseCanButton.Text = "&Cancel";
             this.courseCanButton.UseVisualStyleBackColor = true;
-            // 
-            // ttpDataSet
-            // 
-            this.ttpDataSet.DataSetName = "ttpDataSet";
-            this.ttpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.ttpDataSet;
             // 
             // departmentTableAdapter
             // 
@@ -187,15 +189,23 @@
             this.Controls.Add(this.courseOkButton);
             this.Controls.Add(this.courseCanButton);
             this.Controls.Add(this.addEditCourseGroupBox);
+            this.DockAreas = ((DigitalRune.Windows.Docking.DockAreas)((((((DigitalRune.Windows.Docking.DockAreas.Float | DigitalRune.Windows.Docking.DockAreas.Left) 
+            | DigitalRune.Windows.Docking.DockAreas.Right) 
+            | DigitalRune.Windows.Docking.DockAreas.Top) 
+            | DigitalRune.Windows.Docking.DockAreas.Bottom) 
+            | DigitalRune.Windows.Docking.DockAreas.Document)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(462, 340);
+            this.MinimumSize = new System.Drawing.Size(462, 340);
             this.Name = "AddEditCourseForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddEditCourseForm_Load);
             this.addEditCourseGroupBox.ResumeLayout(false);
             this.addEditCourseGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttpDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

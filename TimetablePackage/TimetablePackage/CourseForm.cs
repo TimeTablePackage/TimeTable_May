@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DigitalRune.Windows.Docking;
+using Domain;
 
 namespace TimetablePackage
 {
     public partial class CourseForm : DockableForm
     {
+        string selectedRowString;
+        DomainControler controller = DomainControler.getInstance();
         public CourseForm()
         {
             InitializeComponent();
         }
+
 
         private void CourseForm_Load(object sender, EventArgs e)
         {
@@ -39,7 +43,9 @@ namespace TimetablePackage
 
         private void editCourseButton_Click(object sender, EventArgs e)
         {
-
+            Domain.Course theCourse = controller.getDBHelper().getCourseById(selectedRowString);
+            AddEditCourseForm addCourseForm = new AddEditCourseForm(theCourse);
+            addCourseForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,6 +61,13 @@ namespace TimetablePackage
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CourseDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = CourseDataGridView.CurrentCell.RowIndex;
+
+            selectedRowString = CourseDataGridView.Rows[rowindex].Cells[0].Value.ToString();
         }
     }
 }
