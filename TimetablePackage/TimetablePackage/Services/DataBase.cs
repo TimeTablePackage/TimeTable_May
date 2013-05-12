@@ -215,12 +215,20 @@ namespace Services
 
         public void insertCourse(Course course)
         {
-            string sql = "INSERT INTO Course (Course, CourseName, numOfStudents, DeptID, Deleted) VALUES(";
+            string sql = "INSERT INTO Course (Code, CourseName, NumOfStudents, DeptID, Deleted) VALUES(";
             sql += "'" + course.courseCode + "', ";
-            sql += course.name + ", ";
-            sql += "'" + course.numOfStudents + "', ";
-            sql += "'" + course.deptID + "', false ";
+            sql += "'" + course.name + "', ";
+            sql += course.numOfStudents + ",";
+            sql += course.deptID +",false)";
             excuteNonQuery(sql);
+            //sql += "'" + lecturer.name + "', ";
+            //sql += "'" + lecturer.initials + "', ";
+            //sql += "'" + lecturer.email + "', ";
+            //sql += lecturer.maxHours + ", ";
+            //sql += lecturer.maxConsecHours + ", ";
+            //sql += lecturer.minSlotsPerDay + ", ";
+            //sql += "'" + lecturer.slotsOff + "',";
+            //sql += "'" + lecturer.deptId + "',false)";
         }
         /// <summary>
         /// update a course in the database
@@ -229,13 +237,22 @@ namespace Services
         public void updateCourse(Course course)
         {
             string sql;
-            sql = "UPDATE Course";
-            sql += "Code=" + course.courseCode + ",";
-            sql += "Course_Name='" + course.name + "', ";
+            sql = "UPDATE Course SET ";
+            sql += "Code='" + course.courseCode + "', ";
+            sql += "CourseName='" + course.name + "', ";
             sql += "NumOfStudents=" + course.numOfStudents + ", ";
-            sql += "DeptId='" + course.deptID + "', ";
-            sql += "WHERE ID LIKE " + course.ID;
+            sql += "DeptID=" + course.deptID + " ";
+            sql += "WHERE Id LIKE " + course.ID + "";
             excuteNonQuery(sql);
+            //sql = "UPDATE Lecturer SET ";
+            //sql += "Lec_Name='" + lecturer.name + "', ";
+            //sql += "Initials='" + lecturer.initials + "', ";
+            //sql += "Email='" + lecturer.email + "', ";
+            //sql += "MaxHours=" + lecturer.maxHours + ", ";
+            //sql += "MaxConsecHours=" + lecturer.maxConsecHours + ", ";
+            //sql += "MinSlotsPerDay=" + lecturer.minSlotsPerDay + ", ";
+            //sql += "SlotsOff='" + lecturer.slotsOff + "' ";
+            //sql += "WHERE ID LIKE " + lecturer.ID + "";
         }
         /// <summary>
         ///     Load all rooms

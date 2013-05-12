@@ -79,7 +79,7 @@
             this.addEditCourseComboBox.Location = new System.Drawing.Point(231, 160);
             this.addEditCourseComboBox.Name = "addEditCourseComboBox";
             this.addEditCourseComboBox.Size = new System.Drawing.Size(151, 21);
-            this.addEditCourseComboBox.TabIndex = 24;
+            this.addEditCourseComboBox.TabIndex = 3;
             this.addEditCourseComboBox.ValueMember = "ID";
             // 
             // departmentBindingSource
@@ -95,9 +95,11 @@
             // courseNameTextBox
             // 
             this.courseNameTextBox.Location = new System.Drawing.Point(231, 91);
+            this.courseNameTextBox.MaxLength = 30;
             this.courseNameTextBox.Name = "courseNameTextBox";
             this.courseNameTextBox.Size = new System.Drawing.Size(151, 20);
-            this.courseNameTextBox.TabIndex = 18;
+            this.courseNameTextBox.TabIndex = 1;
+            this.courseNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseNameTextBox_KeyPress);
             // 
             // courseNameLabel
             // 
@@ -125,7 +127,8 @@
             this.numOfStudentsTextBox.MaxLength = 4;
             this.numOfStudentsTextBox.Name = "numOfStudentsTextBox";
             this.numOfStudentsTextBox.Size = new System.Drawing.Size(151, 20);
-            this.numOfStudentsTextBox.TabIndex = 19;
+            this.numOfStudentsTextBox.TabIndex = 2;
+            this.numOfStudentsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numOfStudentsTextBox_KeyPress);
             // 
             // numOfStudentsLabel
             // 
@@ -140,9 +143,11 @@
             // courseCodeTextBox
             // 
             this.courseCodeTextBox.Location = new System.Drawing.Point(231, 56);
+            this.courseCodeTextBox.MaxLength = 15;
             this.courseCodeTextBox.Name = "courseCodeTextBox";
             this.courseCodeTextBox.Size = new System.Drawing.Size(151, 20);
-            this.courseCodeTextBox.TabIndex = 16;
+            this.courseCodeTextBox.TabIndex = 0;
+            this.courseCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseCodeTextBox_KeyPress);
             // 
             // courseCodeLabel
             // 
@@ -161,9 +166,10 @@
             this.courseOkButton.Location = new System.Drawing.Point(278, 271);
             this.courseOkButton.Name = "courseOkButton";
             this.courseOkButton.Size = new System.Drawing.Size(75, 23);
-            this.courseOkButton.TabIndex = 10;
+            this.courseOkButton.TabIndex = 4;
             this.courseOkButton.Text = "&Ok";
             this.courseOkButton.UseVisualStyleBackColor = true;
+            this.courseOkButton.Click += new System.EventHandler(this.courseOkButton_Click);
             // 
             // courseCanButton
             // 
@@ -172,9 +178,10 @@
             this.courseCanButton.Location = new System.Drawing.Point(359, 271);
             this.courseCanButton.Name = "courseCanButton";
             this.courseCanButton.Size = new System.Drawing.Size(75, 23);
-            this.courseCanButton.TabIndex = 11;
+            this.courseCanButton.TabIndex = 5;
             this.courseCanButton.Text = "&Cancel";
             this.courseCanButton.UseVisualStyleBackColor = true;
+            this.courseCanButton.Click += new System.EventHandler(this.courseCanButton_Click);
             // 
             // departmentTableAdapter
             // 
@@ -200,7 +207,6 @@
             this.MinimumSize = new System.Drawing.Size(462, 340);
             this.Name = "AddEditCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddEditCourseForm_Load);
             this.addEditCourseGroupBox.ResumeLayout(false);
             this.addEditCourseGroupBox.PerformLayout();

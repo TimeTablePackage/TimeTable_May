@@ -13,8 +13,8 @@ namespace TimetablePackage
 {
     public partial class AddEditCourseForm : DockableForm
     {
-        bool editCourse;
-        bool isAllFieldsFilled;
+        bool editCourse ;
+        bool isAllFieldsFilled = false ;
         String courseCode;
         String courseName;
         int numberOfStudents;
@@ -52,6 +52,10 @@ namespace TimetablePackage
         }
         public void saveChanges()
         {
+            courseCode = courseCodeTextBox.Text;
+            courseName = courseNameTextBox.Text;
+            numberOfStudents = Int32.Parse( numOfStudentsTextBox.Text);
+            courseDeptId = addEditCourseComboBox.SelectedValue.ToString();
             foreach (Control c in this.addEditCourseGroupBox.Controls)
             {
                 if (c is TextBox)
@@ -61,26 +65,81 @@ namespace TimetablePackage
                     {
                         isAllFieldsFilled = false;
                     }
+                    else
+                    {
+                        isAllFieldsFilled = true;
+                    }
+
                 }
             }
             if (isAllFieldsFilled == false)
             {
                 MessageBox.Show("All Fields must be filled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                if (editCourse == true)
+                {
+                    theCourse.courseCode = courseCode;
+                    theCourse.name = courseName;
+                    theCourse.numOfStudents = numberOfStudents;
+                    theCourse.deptID = addEditCourseComboBox.SelectedValue.ToString();
+                    controller.updateCourse(theCourse);                
+                }
+                else
+                {
+
+                    Domain.Course course = new Domain.Course(courseCode, courseName, numberOfStudents, courseDeptId);
+                    controller.addCourse(course);
+                }
+            }
+        }
+        private void courseCodeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar) == false && e.KeyChar != (char)47 && e.KeyChar != (char)95 && e.KeyChar != (char)45 && e.KeyChar != (char)08)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void courseNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == false && e.KeyChar != (char)32 && e.KeyChar != (char)38 && e.KeyChar != (char)08)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void numOfStudentsTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void courseCanButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void courseOkButton_Click(object sender, EventArgs e)
+        {
             if (editCourse == true)
             {
-                theCourse.courseCode = courseCode;
-                theCourse.name = courseName;
-                theCourse.numOfStudents = numberOfStudents;
-                theCourse.deptID = addEditCourseComboBox.SelectedValue.ToString();
-                controller.updateCourse(theCourse);
-                
+                DialogResult dialogResult = MessageBox.Show("Are you sure that you want to save the changes", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    saveChanges();
+                    this.Close();
+                }
             }
             else
             {
-                Domain.Course course = new Domain.Course(courseCode, courseName, numberOfStudents, courseDeptId);
-                controller.addCourse(theCourse);
-            }
+                saveChanges();
+                MessageBox.Show("A new course has been added to system successfully!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }   
         }
     }
 }

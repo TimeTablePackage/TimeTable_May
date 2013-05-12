@@ -203,6 +203,7 @@
             this.DepartmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DepartmentDataGridView.Size = new System.Drawing.Size(158, 248);
             this.DepartmentDataGridView.TabIndex = 1;
+            this.DepartmentDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DepartmentDataGridView_CellEnter);
             // 
             // iDDataGridViewTextBoxColumn
             // 

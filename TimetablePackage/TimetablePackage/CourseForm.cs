@@ -69,5 +69,17 @@ namespace TimetablePackage
 
             selectedRowString = CourseDataGridView.Rows[rowindex].Cells[0].Value.ToString();
         }
+
+        private void DepartmentDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string selectedRowString;
+            string sqlString;
+            int rowindex = DepartmentDataGridView.CurrentCell.RowIndex;
+
+
+            selectedRowString = DepartmentDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+            sqlString = "SELECT * FROM Course WHERE DeptID LIKE " + selectedRowString;
+            CourseDataGridView.DataSource = controller.getDataTable(sqlString);
+        }
     }
 }
