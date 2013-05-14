@@ -6,7 +6,15 @@ namespace Domain
 {
     public class Generate
     {
-        private int popSize = 10;
+        /// <summary>
+        /// the number of generation
+        /// </summary>
+        private int generations;
+        /// <summary>
+        /// the level of fintess we wish to achieve
+        /// </summary>
+        private int tagetFitness;
+        private int popSize;
         private DomainControler controler = DomainControler.getInstance();
         private DataBase dbhelper;
         private Room[] roomList;
@@ -20,8 +28,11 @@ namespace Domain
         /// <summary>
         /// Constructer
         /// </summary>
-        public Generate()
+        public Generate(int populationSize, int generations, int targetFitness)
         {
+            this.popSize = populationSize;
+            this.generations = generations;
+            this.tagetFitness = targetFitness;
             InitializeVaribales();
             populate();
         }
@@ -58,19 +69,24 @@ namespace Domain
         {
             Module tempModule;
             int numOfLoops;
-            Lesson[][] Chromosome = population[0];
+            Lesson[][] Chromosome;
             Lesson newLesson;
-            Node moduleNode = moduleList.head;
-            while (moduleNode != null)
+            Node moduleNode;
+            for (int x = 0; x < popSize; x++)
             {
-                tempModule = (Module)moduleNode.data;
-                numOfLoops = tempModule.hoursPerWeek;
-                for (int i = 0; i < numOfLoops; i++)
+                Chromosome = population[x];
+                moduleNode = moduleList.head;
+                while (moduleNode != null)
                 {
-                    newLesson = new Lesson(getLecturer(tempModule), tempModule);
-                    addToChromosome(newLesson, Chromosome);
+                    tempModule = (Module)moduleNode.data;
+                    numOfLoops = tempModule.hoursPerWeek;
+                    for (int i = 0; i < numOfLoops; i++)
+                    {
+                        newLesson = new Lesson(getLecturer(tempModule), tempModule);
+                        addToChromosome(newLesson, Chromosome);
+                    }
+                    moduleNode = moduleNode.next;
                 }
-                moduleNode = moduleNode.next;
             }
         }
         private void addToChromosome(Lesson lesson, Lesson[][] chromosome)
@@ -210,8 +226,17 @@ namespace Domain
         private bool nextGen()
         {
             bool answer = false;
+
+            sortPopulation();
+            updateFitness();
+            if (popFitness[0] < tagetFitness || generations-- < 0)
+            {
+                answer = true;
+            }
+
             return answer;
         }
+
         /// <summary>
         /// sort the population by fitness
         /// </summary>
@@ -226,51 +251,78 @@ namespace Domain
         /// <param name="mother">chromosome to crossover</param>
         /// <param name="newFather">the 1st child</param>
         /// <param name="newMother">the 2nd child</param>
-        /// not going to work :(
         private void crossover(Lesson[][] father, Lesson[][] mother,
-            out Lesson[][] newFather, out Lesson[][] newMother)
+            out Lesson[][] child1, out Lesson[][] child2)
         {
-            //Lesson[][] newFather, newMother ;
-            //the time slots already swapped between parents
-            int[] alreadySwapped = new int[20];
-            //temp location to hold a genome while swapping
-            Lesson[] temp;
-            //swap 20 random genomes from father to mother
-            for (int i = 0; i < 20 /*i.e. hlaf the timeslots are swapped*/; i++)
+            //swap a chunk of each timetable between each other
+            Lesson[] temp = new Lesson[father[0].Length];
+            int crossoverPoint = new Random().Next(3, father.Length - 3);
+            for (int i = crossoverPoint; i < father.Length; i++)
             {
-                bool exit = true;
-                int timeSlot = 0;
-                // dont swap the same genome twice;
-                do
-                {
-                    timeSlot = new Random().Next(0, 21);
-                    for (int x = 0; x < alreadySwapped.Length; x++)
-                    {
-                        if (timeSlot == alreadySwapped[i])
-                        {
-                            exit = false;
-                        }
-                    }
-                } while (!exit);
-
-                temp = father[timeSlot];
-                father[timeSlot] = mother[timeSlot];
-                mother[timeSlot] = temp;
+                temp = father[i];
+                father[i] = mother[i];
+                mother[i] = temp;
             }
-            newFather = father;
-            newMother = mother;
+            child1 = mutuate(father);
+            child2 = mutuate(mother);
         }
+        /// < summary>
+        /// mutate the newly created children
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
+        private Lesson[][] mutuate(Lesson[][] child)
+        {
+            //swap 20 random lessons in the timetable
+            Lesson temp = null;
+            int randomX1, randomY1, randomX2, randomY2;
+            for (int i = 0; i < 20; i++)
+            {
+                randomX1 = new Random().Next(0, child.Length);
+                randomY1 = new Random().Next(0, child[0].Length);
+                randomX2 = new Random().Next(0, child.Length);
+                randomY2 = new Random().Next(0, child[0].Length);
+
+                temp = child[randomX1][randomY1];
+                child[randomX1][randomY1] = child[randomX2][randomY2];
+                child[randomX2][randomY2] = temp;
+            }
+            return child;
+        }
+
+
+
         //temp just to display!!
         public Lesson[][] getTimetable()
         {
             return population[0];
         }
-
-
+        /// <summary>
+        /// update the fitness array with the fitness of each chromosome
+        /// </summary>
         private void updateFitness()
         {
+            Lesson[][] chromosome;
+            for (int i = 0; i < popSize; i++)
+            {
+                chromosome = population[i];
+                int temp = 0;
+                int count = 0;
 
+                for (int x = 0; x < chromosome.Length; x++)
+                {
+                    for (int y = 0; y < chromosome[x].Length; y++)
+                    {
+                        if (chromosome[x][y] != null)
+                        {
+                            temp += chromosome[x][y].getFitness(roomList[y], y);
+                            count++;
+                        }
+                    }
+                }
+                popFitness[i] = temp / count;
+            }
         }
-    }
-}
+    }//class
+}//namespace
 

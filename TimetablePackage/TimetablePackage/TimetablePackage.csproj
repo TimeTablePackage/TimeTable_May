@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="Services\DataBase.cs" />
     <Compile Include="Services\LinkedList.cs" />
+    <Compile Include="Services\Util.cs" />
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>

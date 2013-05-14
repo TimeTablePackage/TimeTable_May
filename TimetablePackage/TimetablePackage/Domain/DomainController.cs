@@ -21,6 +21,10 @@ namespace Domain
         /// </summary>
         private Institute institute;
         /// <summary>
+        /// A Util object
+        /// </summary>
+        private Util util = new Util();
+        /// <summary>
         /// Private constructer called on start-up, loads the data from the database
         /// </summary>
         private DomainControler()
@@ -45,6 +49,14 @@ namespace Domain
         {
             return dataBaseHelper;
 
+        }
+        /// <summary>
+        /// return instance of Util
+        /// </summary>
+        /// <returns></returns>
+        public  Util getUtil()
+        {
+            return this.util;
         }
 
         public void addRoom(Room theRoom)
@@ -91,7 +103,7 @@ namespace Domain
 
         public string[][] GenerateTimetable()
         {
-            Generate gen = new Generate();
+            Generate gen = new Generate(10,100,20);
             Lesson[][] timeTable = gen.getTimetable();
             string[][] timeTableStr = new string[timeTable[0].Length][];
             for (int i = 0; i < timeTableStr.Length; i++)
