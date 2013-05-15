@@ -27,11 +27,16 @@ namespace TimetablePackage
 
         private void Lecturer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ttpDataSet.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.ttpDataSet.Department);
-            // TODO: This line of code loads data into the 'ttpDataSet.Lecturer' table. You can move, or remove it, as needed.
-            this.lecturerTableAdapter.Fill(this.ttpDataSet.Lecturer);
-
+            string sqlString = "SELECT ID,Email,Lec_Name,Initials,MaxHours,MaxConsecHours,MinSlotsPerDay,DepartmentId FROM Lecturer WHERE Deleted LIKE false";
+            lecturerDataGridView.DataSource = controller.getDataTable(sqlString);
+            lecturerDataGridView.Columns[0].HeaderText = "ID";
+            lecturerDataGridView.Columns[1].HeaderText = "E-mail";
+            lecturerDataGridView.Columns[2].HeaderText = "Lecturer Name";
+            lecturerDataGridView.Columns[3].HeaderText = "Initials";
+            lecturerDataGridView.Columns[4].HeaderText = "Maximum Hours";
+            lecturerDataGridView.Columns[5].HeaderText = " Maximum Consecutive Hours";
+            lecturerDataGridView.Columns[6].HeaderText = "Minimum Hours Per Day";
+            lecturerDataGridView.Columns[7].HeaderText = "Department";
         }
 
         private void addLecturerButton_Click(object sender, EventArgs e)

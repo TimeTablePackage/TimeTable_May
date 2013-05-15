@@ -32,6 +32,9 @@ namespace TimetablePackage
             Application.Run(new SplashScreen());
         }
 
+
+       
+
         private void Main_Load(object sender, EventArgs e)
         {
             timetable  document = new timetable();
@@ -45,9 +48,7 @@ namespace TimetablePackage
             else
             {
                 document.Show(DockTabPanel);
-            }
-
-            
+            }     
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
@@ -63,13 +64,40 @@ namespace TimetablePackage
             settings.ShowDialog();
         }
 
+        private bool CheckForm(Form form)
+        {
+            string formName = form.Name;
+            form = Application.OpenForms[formName];
+            if (form != null)
+                return true;
+            else
+                return false;
+        }
+        
         private void ribbonButton1_Click(object sender, EventArgs e)
         {
-            Lecturer document = new Lecturer();
-            document.Show();
-           
+           Lecturer LecturerForm = new Lecturer();
+            // Show document
+           if (DockTabPanel.DocumentStyle == DocumentStyle.SystemMdi)
+           {
+               LecturerForm.MdiParent = this;
+               LecturerForm.Show();
+           }
+           else
+           {
+               if (!CheckForm(LecturerForm))
+               {
+                   LecturerForm.Show(this.DockTabPanel);
+               }
+               else
+               {
+                   LecturerForm.WindowState = FormWindowState.Normal;
+                   LecturerForm.BringToFront();
+                   LecturerForm.Activate();
+               }
+           }
+            
         }
-
         private void addLecturer_Click(object sender, EventArgs e)
         {
             Edit_Lecturer openWindow = new Edit_Lecturer();
@@ -88,7 +116,16 @@ namespace TimetablePackage
             }
             else
             {
-                document.Show(DockTabPanel);
+                if (!CheckForm(document))
+                {
+                    document.Show(this.DockTabPanel);
+                }
+                else
+                {
+                    document.WindowState = FormWindowState.Normal;
+                    document.BringToFront();
+                    document.Activate();
+                }
             }
         }
 
@@ -104,7 +141,16 @@ namespace TimetablePackage
             }
             else
             {
-                document.Show(DockTabPanel);
+                if (!CheckForm(document))
+                {
+                    document.Show(this.DockTabPanel);
+                }
+                else
+                {
+                    document.WindowState = FormWindowState.Normal;
+                    document.BringToFront();
+                    document.Activate();
+                }
             }
         }
 
@@ -122,7 +168,16 @@ namespace TimetablePackage
             }
             else
             {
-                document.Show(DockTabPanel);
+                if (!CheckForm(document))
+                {
+                    document.Show(this.DockTabPanel);
+                }
+                else
+                {
+                    document.WindowState = FormWindowState.Normal;
+                    document.BringToFront();
+                    document.Activate();
+                }
             }
         }
 
@@ -147,6 +202,12 @@ namespace TimetablePackage
         {
             AddEditCourseForm addNewCourseForm = new AddEditCourseForm();
             addNewCourseForm.Show();
+        }
+
+        private void addModuleButton_Click(object sender, EventArgs e)
+        {
+            ModifyModule addNewModule = new ModifyModule();
+            addNewModule.Show();
         }
     }
 }

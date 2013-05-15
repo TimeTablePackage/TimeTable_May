@@ -63,6 +63,11 @@ namespace Domain
             dataBaseHelper.insertCourse(theCourse);
             dataBaseHelper.update();
         }
+        public void addModule(Module theModule)
+        {
+            dataBaseHelper.insertModule(theModule);
+            dataBaseHelper.update();
+        }
 
         /// <summary>
         ///    Update the values in the Lecturer
@@ -85,15 +90,25 @@ namespace Domain
         {
             //to be constructed!
         }
-
+        public void deleteCourse(string code)
+        {
+            dataBaseHelper.deleteCourse(code);
+            dataBaseHelper.update();
+        }
         public DataTable getDataTable(string sqlstatement)
         {
             return dataBaseHelper.getDataTable(sqlstatement);
+           // return dataBaseHelper.getDataTable(
         }
 
         public void updateCourse(Course theCourse)
         {
             dataBaseHelper.updateCourse(theCourse);
+            dataBaseHelper.update();
+        }
+        public void updateModule(Module theModule)
+        {
+            dataBaseHelper.updateModule(theModule);
             dataBaseHelper.update();
         }
 

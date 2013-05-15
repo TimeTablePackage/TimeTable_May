@@ -221,14 +221,6 @@ namespace Services
             sql += course.numOfStudents + ",";
             sql += course.deptID +",false)";
             excuteNonQuery(sql);
-            //sql += "'" + lecturer.name + "', ";
-            //sql += "'" + lecturer.initials + "', ";
-            //sql += "'" + lecturer.email + "', ";
-            //sql += lecturer.maxHours + ", ";
-            //sql += lecturer.maxConsecHours + ", ";
-            //sql += lecturer.minSlotsPerDay + ", ";
-            //sql += "'" + lecturer.slotsOff + "',";
-            //sql += "'" + lecturer.deptId + "',false)";
         }
         /// <summary>
         /// update a course in the database
@@ -244,15 +236,6 @@ namespace Services
             sql += "DeptID=" + course.deptID + " ";
             sql += "WHERE Id LIKE " + course.ID + "";
             excuteNonQuery(sql);
-            //sql = "UPDATE Lecturer SET ";
-            //sql += "Lec_Name='" + lecturer.name + "', ";
-            //sql += "Initials='" + lecturer.initials + "', ";
-            //sql += "Email='" + lecturer.email + "', ";
-            //sql += "MaxHours=" + lecturer.maxHours + ", ";
-            //sql += "MaxConsecHours=" + lecturer.maxConsecHours + ", ";
-            //sql += "MinSlotsPerDay=" + lecturer.minSlotsPerDay + ", ";
-            //sql += "SlotsOff='" + lecturer.slotsOff + "' ";
-            //sql += "WHERE ID LIKE " + lecturer.ID + "";
         }
         /// <summary>
         ///     Load all rooms
@@ -595,6 +578,19 @@ namespace Services
             }
             return theCourse;
         }
+       //Get the Module By iD
+        public Module getModuleById(string id)
+        {
+            Module theModule;
+            Node moduleNode = moduleList.head;
+            theModule = (Module)moduleNode.data;
+            while (theModule.ID != id && moduleNode != null)
+            {
+                theModule = (Module)moduleNode.data;
+                moduleNode = moduleNode.next;
+            }
+            return theModule;
+        }
         /// <summary>
         /// return the results of a query back in a datatable
         /// </summary>
@@ -607,15 +603,18 @@ namespace Services
             try
             {
                 OpenConection();
-                cmd = new OleDbCommand(sqlStatement, conn);
+               cmd = new OleDbCommand(sqlStatement, conn);
                 reader = cmd.ExecuteReader();
                 dtTable.Load(reader);
+                reader.Close();
+
             }
-            catch
+            catch(Exception e)
             {
             }
             return dtTable;
         }
+        
         /// <summary>
         /// insert an array of Lessons into the database
         /// </summary>
@@ -654,6 +653,15 @@ namespace Services
                 modNode = modNode.next;
             }
             return total;
+        }
+
+        public void deleteCourse(string code)
+        {
+            string sql;
+            sql = "UPDATE Course SET ";
+            sql += "Deleted=true ";
+            sql += "WHERE Code LIKE '" + code + "'";
+            excuteNonQuery(sql);
         }
     }
 

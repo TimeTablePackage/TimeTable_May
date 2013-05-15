@@ -44,7 +44,7 @@ namespace TimetablePackage
             this.generateButton = new System.Windows.Forms.RibbonButton();
             this.lecturerTab = new System.Windows.Forms.RibbonTab();
             this.lecturerPanel = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.lecturerListButton = new System.Windows.Forms.RibbonButton();
             this.addLecturer = new System.Windows.Forms.RibbonButton();
             this.departmentTab = new System.Windows.Forms.RibbonTab();
             this.departmentPanel = new System.Windows.Forms.RibbonPanel();
@@ -74,9 +74,6 @@ namespace TimetablePackage
             // DockTabPanel
             // 
             this.DockTabPanel.ActiveAutoHideContent = null;
-            this.DockTabPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DockTabPanel.DefaultFloatingWindowSize = new System.Drawing.Size(300, 300);
             this.DockTabPanel.Location = new System.Drawing.Point(0, 146);
             this.DockTabPanel.Name = "DockTabPanel";
@@ -182,18 +179,18 @@ namespace TimetablePackage
             // 
             // lecturerPanel
             // 
-            this.lecturerPanel.Items.Add(this.ribbonButton1);
+            this.lecturerPanel.Items.Add(this.lecturerListButton);
             this.lecturerPanel.Items.Add(this.addLecturer);
             this.lecturerPanel.Text = "Lecturer";
             // 
-            // ribbonButton1
+            // lecturerListButton
             // 
-            this.ribbonButton1.Image = global::TimetablePackage.Properties.Resources.group;
-            this.ribbonButton1.MaximumSize = new System.Drawing.Size(0, 0);
-            this.ribbonButton1.MinimumSize = new System.Drawing.Size(0, 0);
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "Lecturer List";
-            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
+            this.lecturerListButton.Image = global::TimetablePackage.Properties.Resources.group;
+            this.lecturerListButton.MaximumSize = new System.Drawing.Size(0, 0);
+            this.lecturerListButton.MinimumSize = new System.Drawing.Size(0, 0);
+            this.lecturerListButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("lecturerListButton.SmallImage")));
+            this.lecturerListButton.Text = "Lecturer List";
+            this.lecturerListButton.Click += new System.EventHandler(this.ribbonButton1_Click);
             // 
             // addLecturer
             // 
@@ -279,6 +276,7 @@ namespace TimetablePackage
             this.addModuleButton.MinimumSize = new System.Drawing.Size(0, 0);
             this.addModuleButton.SmallImage = ((System.Drawing.Image)(resources.GetObject("addModuleButton.SmallImage")));
             this.addModuleButton.Text = "Add a Module";
+            this.addModuleButton.Click += new System.EventHandler(this.addModuleButton_Click);
             // 
             // buildingTab
             // 
@@ -415,7 +413,7 @@ namespace TimetablePackage
         private System.Windows.Forms.RibbonButton generateButton;
         private System.Windows.Forms.RibbonPanel lecturerPanel;
         private System.Windows.Forms.RibbonButton addLecturer;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonButton lecturerListButton;
         private System.Windows.Forms.RibbonPanel departmentPanel;
         private System.Windows.Forms.RibbonButton deptListButton;
         private System.Windows.Forms.RibbonButton addDeptButton;

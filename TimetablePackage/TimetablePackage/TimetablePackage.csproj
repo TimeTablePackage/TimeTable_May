@@ -145,6 +145,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyModule.Designer.cs">
+      <DependentUpon>ModifyModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyModule.resx">
+      <DependentUpon>ModifyModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuleForm.resx">
       <DependentUpon>ModuleForm.cs</DependentUpon>

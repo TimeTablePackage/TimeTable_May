@@ -16,22 +16,23 @@ namespace TimetablePackage
     public partial class Edit_Lecturer : DockableForm
     {
         Domain.Lecturer thelec;
+        DomainControler controller = DomainControler.getInstance();
         String tempSlotsOff;
         String name ;
         String initials ;
         String email;
+        String slotsOff = "";
+        String department;
         int maxHours;
         int maxConsecHours;
         int minSlotsPerday;
-        String slotsOff = "";
-        String department ;
         bool isAllFieldsFilled = true;
         bool parseSuccess = false;
-        DomainControler controller = DomainControler.getInstance();
         bool addNewLecture;
         int minimumHours = 1;
         int maximumWeeklyHours = 40;
         int dailyHours = 8;
+        
 
         public Edit_Lecturer()
         {
@@ -51,7 +52,21 @@ namespace TimetablePackage
 
         private void okayButton_Click(object sender, EventArgs e)
         {
-            saveChanges();
+            if (addNewLecture == false)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure that you want to save the changes", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    saveChanges();
+                    this.Close();
+                }
+            }
+            else
+            {
+                saveChanges();
+                MessageBox.Show("A new lecture has been added to system successfully!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }   
         }
         public void saveChanges()
         {
@@ -76,24 +91,25 @@ namespace TimetablePackage
             {
                 MessageBox.Show("All Fields must be filled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (isAllFieldsFilled == true)
-            {   // If the user has filled all the fields, make the changes.Either add a new lecture or edit a lecture
-                if (addNewLecture == true)
-                {
-                    Domain.Lecturer lecturer = new Domain.Lecturer(name, initials, email, maxHours, maxConsecHours, minSlotsPerday, slotsOff, department);
-                    controller.addLecturer(lecturer);
-                }
-                else
-                { // The following code will update the lecturer
-                    thelec.name = name;
-                    thelec.initials = initials;
-                    thelec.email = email;
-                    thelec.maxHours = maxHours;
-                    thelec.maxConsecHours = maxConsecHours;
-                    thelec.minSlotsPerDay = minSlotsPerday;
-                    thelec.deptId = LectDepartmentComboBox.SelectedValue.ToString();
-                    controller.updateLecturer(thelec);
-                } 
+            else
+            {
+                 // If the user has filled all the fields, make the changes.Either add a new lecture or edit a lecture
+                    if (addNewLecture == true)
+                    {
+                        Domain.Lecturer lecturer = new Domain.Lecturer(name, initials, email, maxHours, maxConsecHours, minSlotsPerday, slotsOff, department);
+                        controller.addLecturer(lecturer);
+                    }
+                    else
+                    { // The following code will update the lecturer
+                        thelec.name = name;
+                        thelec.initials = initials;
+                        thelec.email = email;
+                        thelec.maxHours = maxHours;
+                        thelec.maxConsecHours = maxConsecHours;
+                        thelec.minSlotsPerDay = minSlotsPerday;
+                        thelec.deptId = LectDepartmentComboBox.SelectedValue.ToString();
+                        controller.updateLecturer(thelec);
+                    }
             }
         }
 
